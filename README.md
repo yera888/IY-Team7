@@ -50,4 +50,24 @@ Team: IY Team 7
         - The rating will be from 1 to 5 stars
         - The rating will be publicly visible
         - The rating will contain a short message related to the rating.
-2. Provider (Yeraldine Tamayo):
+        
+    2. Seller (Yeraldine Tamayo):
+        1. Create/modify/remove listings.
+
+        - Seller sets up their prices, provides all the information like package weight (for shipping details), size, product description, enable location for each product specifically.
+
+        3. View how many people have viewed or interacted with the product or profile. 
+
+        - Seller will recieve notifications for when they recieve a like or a love.
+
+        - Sellers will recieve stats and updates on how many views an item has recieved as well as how many views their profile has recived and this will be shown on a separate webpage.
+
+        - They will recieve notifications if someone chats with them about a product which will come from a button on the products page named "chat".
+
+        4. Enable Location and allow for location based servies. 
+
+        - The seller has the first pick on whether or not they will enable their locations to them provide location based services which includes being able to meet up and exchange the product for a quicker shipping or to avoid having to pay shipping fees. Then the customer will be notified if the product has this option available but only if they allow their location to be enabled as well. 
+
+        5. Customer and seller interactions.
+
+        - Both the customer and seller will be able to communicate with one another through a chat box, anyone can initiate the conversation first but it can only initiate straight from a product. 
