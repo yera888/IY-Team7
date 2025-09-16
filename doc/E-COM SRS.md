@@ -2,8 +2,8 @@
 ## For <project name>
 
 Version 0.1  
-Prepared by <Isaac Hollaway, Yeraldine Tamayo>  
-<organization>  
+Prepared by Isaac Hollaway, Yeraldine Tamayo  
+CSC-340  
 <date created> 
 
 Table of Contents
