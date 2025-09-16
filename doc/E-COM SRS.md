@@ -2,7 +2,7 @@
 ## For <project name>
 
 Version 0.1  
-Prepared by <author>  
+Prepared by <Isaac Hollaway, Yeraldine Tamayo>  
 <organization>  
 <date created> 
 
