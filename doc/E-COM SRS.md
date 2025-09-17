@@ -94,15 +94,14 @@ List any assumed factors (as opposed to known facts) that could affect the requi
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
-
-The specific requirements should:
-* Be uniquely identifiable.
-* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
-* Optionally state the conditions and constraints, if any.
-* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
-* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
-* Conform to agreed upon syntax, keywords, and terms.
+- FR0: The system will allow users to create accounts as customers. All user accounts will have a unique account id. 
+  - All customer accounts will have the option to transition into a retailer account maintaining it's unique id.
+- FR1: The system will allow for retailers to create Listings. Listings will have the following attributes: 
+  a description, condition, price, size, weight, photos, purchasedStatus, and location(if enabled).
+  - Listings will be searchable, and filterable.
+- FR2: Customers will be able to "Like", and "Heart" listings they are interested in effectively saving them 
+  for later in an "Album".
+  - All listing can be removed from user Albums at any time.
 
 #### 3.1.1 User interfaces
 Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
