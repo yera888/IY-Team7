@@ -50,10 +50,23 @@ Describe the purpose of the SRS and its intended audience.
 Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
 
-### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          |
+### 1.3 Definitions, Acronyms and Abbreviations
+| Reference  | Definition                                                                                                                                                                         |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
+| Postgresql | Open-source relational database management system.                                                                                                                                 |
+| SpringBoot | An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.                                                           |
+| Spring MVC | Model-View-Controller. This is the architectural pattern that will be used to implement our system.                                                                                |
+| Spring Web | Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.                                                                      |
+| API        | Application Programming Interface. This will be used to interface the backend and the fronted of our application.                                                                  |
+| HTML       | Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.                                                         |
+| CSS        | Cascading Style Sheets. Will be used to add styles and appearance to the web app.                                                                                                  |
+| JavaScript | An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjunction with HTML and CSS to make the web app.|
+| VS Code    | An integrated development environment (IDE) for Java. This is where our system will be created.                                                                                    |
 
 ### 1.4 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+https://spring.io/guides
+https://necolas.github.io/normalize.css
 
 ### 1.5 Document Overview
 Describe what the rest of the document contains and how it is organized.
