@@ -86,7 +86,10 @@ This subsection should provide a general description of any other items that wil
 * Constraints around design or implementation.
   
 ### 2.3 User Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+
+Our website application does not expect our users to have any abnormal computer knowledge. Our system functions were designed using other similar or widely used websites. As long as users are familiar with online shopping, creating playlists, and filling out forms they should have no issues navigating, and using the application.  
+
+Though we do plan on catering more specifically to users that are interested in selling, and buying second hand clothing. Users that are unfamiliar with the process should be able to easily ascertain how the application functions.
 
 ### 2.4 Assumptions and Dependencies
 List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
@@ -117,10 +120,12 @@ Describe the connections between this product and other specific software compon
 ### 3.2 Non Functional Requirements 
 
 #### 3.2.1 Performance
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
+- NFR0: The E-COM system will attempt to use less than 150mbs of user RAM.
+- NFR1: E-COM customers will be able to transition to a retailer in less than 10 minutes. 
+- NFR2: When actively viewing a listings the status of the listing will update every second.
 
 #### 3.2.2 Security
-Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
+- NFR3: Users emails, real name, and payment data will only be visible to users.
 
 #### 3.2.3 Reliability
 Specify the factors required to establish the required reliability of the software system at time of delivery.
