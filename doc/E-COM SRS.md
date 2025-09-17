@@ -50,16 +50,29 @@ Describe the purpose of the SRS and its intended audience.
 Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
 
-### 1.3 Definitions, Acronyms and Abbreviations                                                                                                                                                                          |
+### 1.3 Definitions, Acronyms and Abbreviations
+| Reference  | Definition                                                                                                                                                                         |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
+| Postgresql | Open-source relational database management system.                                                                                                                                 |
+| SpringBoot | An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.                                                           |
+| Spring MVC | Model-View-Controller. This is the architectural pattern that will be used to implement our system.                                                                                |
+| Spring Web | Will be used to build our web application by using Spring MVC. This is one of the dependencies of our system.                                                                      |
+| API        | Application Programming Interface. This will be used to interface the backend and the fronted of our application.                                                                  |
+| HTML       | Hypertext Markup Language. This is the code that will be used to structure and design the web application and its content.                                                         |
+| CSS        | Cascading Style Sheets. Will be used to add styles and appearance to the web app.                                                                                                  |
+| JavaScript | An object-oriented computer programming language commonly used to create interactive effects within web browsers.Will be used in conjunction with HTML and CSS to make the web app.|
+| VS Code    | An integrated development environment (IDE) for Java. This is where our system will be created.                                                                                    |
 
 ### 1.4 References
-List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+https://spring.io/guides
+https://necolas.github.io/normalize.css
 
 ### 1.5 Document Overview
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-This section should describe the general factors that affect the product and its requirements. This section does not state specific requirements. Instead, it provides a background for those requirements, which are defined in detail in Section 3, and makes them easier to understand.
+E-COM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use E-COM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. E-COM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
 
 ### 2.1 Product Functions
 Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
@@ -73,7 +86,10 @@ This subsection should provide a general description of any other items that wil
 * Constraints around design or implementation.
   
 ### 2.3 User Characteristics
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the most important user classes for this product from those who are less important to satisfy.
+
+Our website application does not expect our users to have any abnormal computer knowledge. Our system functions were designed using other similar or widely used websites. As long as users are familiar with online shopping, creating playlists, and filling out forms they should have no issues navigating, and using the application.  
+
+Though we do plan on catering more specifically to users that are interested in selling, and buying second hand clothing. Users that are unfamiliar with the process should be able to easily ascertain how the application functions.
 
 ### 2.4 Assumptions and Dependencies
 List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
@@ -81,15 +97,14 @@ List any assumed factors (as opposed to known facts) that could affect the requi
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-This section specifies the software product's requirements. Specify all of the software requirements to a level of detail sufficient to enable designers to design a software system to satisfy those requirements, and to enable testers to test that the software system satisfies those requirements.
-
-The specific requirements should:
-* Be uniquely identifiable.
-* State the subject of the requirement (e.g., system, software, etc.) and what shall be done.
-* Optionally state the conditions and constraints, if any.
-* Describe every input (stimulus) into the software system, every output (response) from the software system, and all functions performed by the software system in response to an input or in support of an output.
-* Be verifiable (e.g., the requirement realization can be proven to the customer's satisfaction)
-* Conform to agreed upon syntax, keywords, and terms.
+- FR0: The system will allow users to create accounts as customers. All user accounts will have a unique account id. 
+  - All customer accounts will have the option to transition into a retailer account maintaining it's unique id.
+- FR1: The system will allow for retailers to create Listings. Listings will have the following attributes: 
+  a description, condition, price, size, weight, photos, purchasedStatus, and location(if enabled).
+  - Listings will be searchable, and filterable.
+- FR2: Customers will be able to "Like", and "Heart" listings they are interested in effectively saving them 
+  for later in an "Album".
+  - All listing can be removed from user Albums at any time.
 
 #### 3.1.1 User interfaces
 Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
@@ -105,10 +120,12 @@ Describe the connections between this product and other specific software compon
 ### 3.2 Non Functional Requirements 
 
 #### 3.2.1 Performance
-If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
+- NFR0: The E-COM system will attempt to use less than 150mbs of user RAM.
+- NFR1: E-COM customers will be able to transition to a retailer in less than 10 minutes. 
+- NFR2: When actively viewing a listings the status of the listing will update every second.
 
 #### 3.2.2 Security
-Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
+- NFR3: Users emails, real name, and payment data will only be visible to users.
 
 #### 3.2.3 Reliability
 Specify the factors required to establish the required reliability of the software system at time of delivery.
