@@ -45,7 +45,7 @@ Table of Contents
 ## 1. Introduction
 
 ### 1.1 Document Purpose
-Describe the purpose of the SRS and its intended audience.
+The purpose of this SRS is to show both the users-view and developer-view requirements for the EdotCOM webpage. This page is an E-Commerse website that is an online second hand thift store. The requirements for the users deal with all the interactions the user can have with the website which could be interacted with as a buyer or a seller. The developer-oriented requirments specify on the developmental aspects and constraints that must be known in detail to provide the best outputs or functional features to meet the users needs. 
 
 ### 1.2 Product Scope
 Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
@@ -125,6 +125,8 @@ Describe the logical and physical characteristics of each interface between the 
 Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
 
 ### 3.2 Non Functional Requirements 
+
+
 
 #### 3.2.1 Performance
 - NFR0: The E-COM system will attempt to use less than 150mbs of user RAM.
