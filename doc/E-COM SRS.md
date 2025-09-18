@@ -48,6 +48,8 @@ Table of Contents
 Describe the purpose of the SRS and its intended audience.
 
 ### 1.2 Product Scope
+
+
 Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
 
@@ -73,7 +75,7 @@ https://necolas.github.io/normalize.css
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and sellers the option for local pickup skirting the need to use expensive mail services.
+EdotCOM will be a web platform catered to users that shop online often, are fashion savvy, and would like to buy clothing in an eco-friendly way. Instead of shopping at thrift stores that suffer from inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and have the ability to leave reviews based on their experience with other retailers. Retailers will have the ability to create listings, modify those listings, and create limited time discounts. EdotCOM will also give local customers and retailers the option for local pick-up/drop-off skirting the need to use expensive mail services.
 
 ### 2.1 Product Functions
 
