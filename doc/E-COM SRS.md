@@ -54,7 +54,11 @@ Provide a short description of the software being specified and its purpose, inc
 ### 1.3 Definitions, Acronyms and Abbreviations
 | #Tag  | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
 
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Meet-Up|In-person exchange at a public place and time chosen in the app.|
+
+|Stripe|Payment processor we use for authorize then capture.|
+
+|Health Check |Simple endpoint we ping to know if the app is up.|
 
 | Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
 | Postgresql | Open-source relational database management system.                                                                                                                                 |
@@ -175,15 +179,17 @@ Using Java 25 for the backend, Bootstrap 5, html, css for the front end and Post
 
 
 #### 3.2.1 Performance
-- NFR0: The E-COM system will attempt to use less than 150mbs of user RAM.
-- NFR1: E-COM customers will be able to transition to a retailer in less than 10 minutes. 
-- NFR2: When actively viewing a listings the status of the listing will update every second.
+
+* NFR0: The E-COM system shall use less than 150 MB of user RAM.
+* NFR1: E-COM customers shall transition to a retailer in less than 10 minutes.
+* NFR2: When actively viewing a listings the status of the listing will update every second.
+* NFR3. Order confirmation and shipped emails shall be queued within 10 seconds of the trigger and delivered within 1 minute.
 
 #### 3.2.2 Security
-- NFR3: Users emails, real name, and payment data will only be visible to users.
-
+* NFR4: Users payment information will not be stored in our database. This will be managed by the payment processors(Stripe, Paypal, etc...)
+* NFR5  Users email, real name, and order/payment details shall only be visible to that user, nothing sensitive is public by default.
 #### 3.2.3 Reliability
-Specify the factors required to establish the required reliability of the software system at time of delivery.
+* NFR6: For our system to be reliable at time of delivery(by December), we will need to have a functional database, functional HTML pages, a functional spring server, a functional external API, and functional hardware capable of running our web application in the classroom.
 
 #### 3.2.4 Availability
 * NFR7. The app should have a health-check and auto-restart itself if it crashes.
@@ -192,7 +198,8 @@ Specify the factors required to establish the required reliability of the softwa
 
 
 #### 3.2.5 Compliance
-Specify the requirements derived from existing standards or regulations
+
+* NFR610 Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
 
 #### 3.2.6 Cost
 
