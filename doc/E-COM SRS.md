@@ -52,6 +52,7 @@ Identify the product whose software requirements are specified in this document,
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
+| #Tag  | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
 | Reference  | Definition                                                                                                                                                                         |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
@@ -81,8 +82,7 @@ EdotCOM will be used by people who shop online often, are fashion savvy, and eco
 * Interact with interface easily to navigate through filtered options such as by price, popularity, etc.
 * Have the option to enable location so locals can either oick up or drop off products.
 * A feature to communicate with one another about an individual product 
-
-Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
+*
 
 ### 2.2 Product Constraints
 This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
