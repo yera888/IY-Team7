@@ -136,7 +136,7 @@ Describe the connections between this product and other specific software compon
 #### 3.2.2 Security
 - NFR3: Users emails, real name, and payment data will only be visible to users.
 - NFR4: Users payment information will not be stored in our database.
-  - it will be managed by the payment processors(i.e. Stripe, Paypal, etc...) 
+  - It will be managed by the payment processors(i.e. Stripe, Paypal, etc...) 
 
 #### 3.2.3 Reliability
 - NFR5: For our system to be reliable at time of delivery(by December), we will need to have a functional database, functional HTML pages, a functional spring server, a functional external API, and functional hardware capable of running our web application in the classroom. 
