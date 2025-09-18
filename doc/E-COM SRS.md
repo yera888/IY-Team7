@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-
 # Software Requirements Specification
 ## For <EdotCOM>
 
@@ -37,11 +35,9 @@ Table of Contents
     * 3.2.7 [Deadline](#327-deadline)
 
 ## Revision History
-| Name | Date    | Reason For Changes  | Version   |
-| Yeraldine | 9/17 | Initial SRS |       1.0 |
-|       |         |                     |           |
-|      |         |                     |           |
-|      |         |                     |           |
+| Name      | Date    | Reason For Changes  | Version   |
+| Yeraldine | 9/17    | Initial SRS         |       1.0 |
+| Isaac     | 9/18    | Completed SRS       |       1.0 |
 
 ## 1. Introduction
 
@@ -52,13 +48,13 @@ The purpose of this SRS is to show both the users-view and developer-view requir
 The purpose of EdotCom is act as an online boutique for customers, and retailers in your area. Giving retailers the ability to easily manage their listings, and customers the ability to easily find them. EdotCom will be a web based application, which will hopefully simplify the nature of storing and selling large quantities, and varieties of clothing. Our main goal is to create a welcoming online community for users that enjoy good deals on quality clothing.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
-| #Tag  | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
+| #Tag       | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
 
-|Meet-Up|In-person exchange at a public place and time chosen in the app.|
+|Meet-Up     | In-person exchange at a public place and time chosen in the app.|
 
-|Stripe|Payment processor we use for authorize then capture.|
+|Stripe      | Payment processor we use for authorize then capture.|
 
-|Health Check |Simple endpoint we ping to know if the app is up.|
+|Health Check| Simple endpoint we ping to know if the app is up.|
 
 | Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
 | Postgresql | Open-source relational database management system.                                                                                                                                 |
@@ -142,17 +138,17 @@ Our system will be dependant on Java, Spring, Spring Boot, RestAPI, and VSCode f
 
 - FR4: The system shall let sellers and buyers enable Delivery and Meet-Up, per listing. 
 
-FR5:  For Delivery, the system shall capture the authorized payment when the seller marks an order Shipped and shall email tracking to the buyer.
+- FR5:  For Delivery, the system shall capture the authorized payment when the seller marks an order Shipped and shall email tracking to the buyer.
 
-FR6:  The system shall allow buyers to rate sellers from 1 to 5 and write a short review.
+- FR6:  The system shall allow buyers to rate sellers from 1 to 5 and write a short review.
 
-FR7. The system shall send in-app and email notifications for likes/loves, chat messages, meet-up updates, shipped, confirm-received, and refunds/cancellations.
+- FR7. The system shall send in-app and email notifications for likes/loves, chat messages, meet-up updates, shipped, confirm-received, and refunds/cancellations.
 
-FR8. The system shall provide the options to refund or void an authorization, pay the seller, request more information through emailing EdotCOM, and ban users.
+- FR8. The system shall provide the options to refund or void an authorization, pay the seller, request more information through emailing EdotCOM, and ban users.
 
-FR9. The system shall prevent login for banned accounts and block re-signup using the same email or phone.
+- FR9. The system shall prevent login for banned accounts and block re-signup using the same email or phone.
 
-FR10. The system shall support product-based chat initiated from an item page between buyer and seller
+- FR10. The system shall support product-based chat initiated from an item page between buyer and seller
 
 
 
