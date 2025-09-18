@@ -53,8 +53,9 @@ Provide a short description of the software being specified and its purpose, inc
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 | #Tag  | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
-| Reference  | Definition                                                                                                                                                                         |
+
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 | Java       | A programming language originally developed by James Gosling at Sun Microsystems. We will be using this language to build the backend service for LocalHarvest Hub                 |
 | Postgresql | Open-source relational database management system.                                                                                                                                 |
 | SpringBoot | An open-source Java-based framework used to create a micro Service. This will be used to create and run our application.                                                           |
@@ -71,7 +72,7 @@ https://spring.io/guides
 https://necolas.github.io/normalize.css
 
 ### 1.5 Document Overview
-Describe what the rest of the document contains and how it is organized.
+Section 1 contains a detailed introduction of the document to give readers a good general idea of what it is about. Section 2 has information on the functions/features for all the suggested roles and ways to interact with the webpage. Section 3 gives the requiements both functional and non-functional with aadded nitty-gritty information about the webpage mostly for the developer.
 
 ## 2. Product Overview
 EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
