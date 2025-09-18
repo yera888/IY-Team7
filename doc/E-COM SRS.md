@@ -186,11 +186,10 @@ Using Java 25 for the backend, Bootstrap 5, html, css for the front end and Post
 Specify the factors required to establish the required reliability of the software system at time of delivery.
 
 #### 3.2.4 Availability
--Use automated health checks and auto restart the app if it crashes.
+* NFR7. The app should have a health-check and auto-restart itself if it crashes.
+* NFR8 If the site goes down, send an alert within five minutes to the on-call part-timers.
+* NFR9. Do maintenance outside demo times and let users know ahead of time the part-timers will handle this.
 
--Log errors and set uptime alerts so someone is notified within five minutes.
-
--Schedule maintenance outside demo times and notify users beforehand this would be handled during the 2 part-timers shifts.
 
 #### 3.2.5 Compliance
 Specify the requirements derived from existing standards or regulations
