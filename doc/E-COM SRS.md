@@ -49,8 +49,7 @@ Table of Contents
 The purpose of this SRS is to show both the users-view and developer-view requirements for the EdotCOM webpage. This page is an E-Commerse website that is an online second hand thift store. The requirements for the users deal with all the interactions the user can have with the website which could be interacted with as a buyer or a seller. The developer-oriented requirments specify on the developmental aspects and constraints that must be known in detail to provide the best outputs or functional features to meet the users needs. 
 
 ### 1.2 Product Scope
-Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
-Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
+The purpose of EdotCom is act as an online boutique for customers, and retailers in your area. Giving retailers the ability to easily manage their listings, and customers the ability to easily find them. EdotCom will be a web based application, which will hopefully simplify the nature of storing and selling large quantities, and varieties of clothing. Our main goal is to create a welcoming online community for users that enjoy good deals on quality clothing.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 | #Tag  | A set of curated label users can add that gives a description to categorize an item. Tags make searching through different sections/styles of clothing easier to help users have a more curated search. Examples are #coquette #punk #streetwear |
@@ -80,7 +79,7 @@ https://necolas.github.io/normalize.css
 Section 1 contains a detailed introduction of the document to give readers a good general idea of what it is about. Section 2 has information on the functions/features for all the suggested roles and ways to interact with the webpage. Section 3 gives the requiements both functional and non-functional with aadded nitty-gritty information about the webpage mostly for the developer.
 
 ## 2. Product Overview
-EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
+EdotCOM will be a web platform catered to users that shop online often, are fashion savvy, and would like to buy clothing in an eco-friendly way. Instead of shopping at thrift stores that suffer from inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and have the ability to leave reviews based on their experience with other retailers. Retailers will have the ability to create listings, modify those listings, and create limited time discounts. EdotCOM will also give local customers and retailers the option for local pick-up/drop-off skirting the need to use expensive mail services.
 
 ### 2.1 Product Functions
 
@@ -127,7 +126,7 @@ Our website application does not expect our users to have any abnormal computer 
 Though we do plan on catering more specifically to users that are interested in selling, and buying second hand clothing. Users that are unfamiliar with the process should be able to easily ascertain how the application functions.
 
 ### 2.4 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+Our system will be dependant on Java, Spring, Spring Boot, RestAPI, and VSCode for the back end of our application. We will be dependant on HTML, CSS, JavaScript, and VSCode for the front end of our application. We are likely to reuse some of our CSS, and HTML from previous assignments. We are also relying on PostgreSQL which means we will be limited by the constraints of it's free database.
 
 ## 3. Requirements
 
@@ -161,7 +160,7 @@ FR10. The system shall support product-based chat initiated from an item page be
 Webpages will be built with HTML/CSS/JavaScript. Sign-up, Login, Profile, Photo Gallery of filtered items, individual item details, Albums (Liked/Loved), Cart/Checkout will all have their own pages. It will use two simple option to choose between Delivery or Meet-Up. Order Details will provide a confirmation email. There will be a Chat box button for each product. All the Seller details like the listings, views analytics, and notifications will be displayed on separate pages.
 
 #### 3.1.2 Hardware interfaces
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+Our system will work on Desktop Devices with web browser access. I also hope to have it working on mobile devices, and tablets that have web browser access.
 
 #### 3.1.3 Software interfaces
 Using Java 25 for the backend, Bootstrap 5, html, css for the front end and PostgreSQL for the database.
