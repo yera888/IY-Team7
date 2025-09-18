@@ -137,8 +137,6 @@ Describe the connections between this product and other specific software compon
 #### 3.2.3 Reliability
 - NFR4: For our system to be reliable at time of delivery(by December), we will need to have a functional database, functional HTML pages, a functional spring server, a functional external API, and functional hardware capable of running our web application in the classroom. 
 
-Specify the factors required to establish the required reliability of the software system at time of delivery.
-
 #### 3.2.4 Availability
 Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
