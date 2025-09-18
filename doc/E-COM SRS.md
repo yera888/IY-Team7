@@ -1,10 +1,11 @@
+
 # Software Requirements Specification
-## For <project name>
+## For <EdotCOM>
 
 Version 0.1  
 Prepared by Isaac Hollaway, Yeraldine Tamayo  
 CSC-340  
-9/16/2025 
+September 16, 2025
 
 Table of Contents
 =================
@@ -36,8 +37,8 @@ Table of Contents
 
 ## Revision History
 | Name | Date    | Reason For Changes  | Version   |
-| ---- | ------- | ------------------- | --------- |
-|      |         |                     |           |
+| Yeraldine | 9/17 | Initial SRS |       1.0 |
+|       |         |                     |           |
 |      |         |                     |           |
 |      |         |                     |           |
 
@@ -72,9 +73,15 @@ https://necolas.github.io/normalize.css
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-E-COM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use E-COM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. E-COM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
+EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
 
 ### 2.1 Product Functions
+
+* Create Listing of each product with detail description of all its attributes.
+* Interact with interface easily to navigate through filtered options such as by price, popularity, etc.
+* Have the option to enable location so locals can either oick up or drop off products.
+* A feature to communicate with one another about an individual product 
+
 Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary (such as a bullet list) is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, is often effective.
 
 ### 2.2 Product Constraints
@@ -141,3 +148,4 @@ Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
 Specify schedule for delivery of the software product.
+  
