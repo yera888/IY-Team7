@@ -137,14 +137,30 @@ List any assumed factors (as opposed to known facts) that could affect the requi
 ## 3. Requirements
 
 ### 3.1 Functional Requirements 
-- FR0: The system will allow users to create accounts as customers. All user accounts will have a unique account id. 
-  - All customer accounts will have the option to transition into a retailer account maintaining it's unique id.
-- FR1: The system will allow for retailers to create Listings. Listings will have the following attributes: 
-  a description, condition, price, size, weight, photos, purchasedStatus, and location(if enabled).
-  - Listings will be searchable, and filterable.
-- FR2: Customers will be able to "Like", and "Heart" listings they are interested in effectively saving them 
-  for later in an "Album".
-  - All listing can be removed from user Albums at any time.
+- FR0: The system shall allow users to create accounts as customers with email, password, and a unique account ID; a customer shall be able to transition to a retailer account while keeping the same ID.
+
+
+- FR1: The system shall allow retailers to create, modify, and delete listings with description, condition, price, size, weight, photos, purchasedStatus, and location if enabled; listings shall be searchable and filterable.
+
+- FR2: The system shall let customers “Like” or “Heart” listings to save them into Liked and Loved albums, and remove items from those albums at any time. These will be displayed on separate webpages. 
+
+- FR3 : The seller must add at least one system-generated #Tag on each listing no unknown or free-text tag. The full #Tag catalog is displayed inside the search bar for the user/seller to pick.
+
+- FR4: The system shall let sellers and buyers enable Delivery and Meet-Up, per listing. 
+
+FR5:  For Delivery, the system shall capture the authorized payment when the seller marks an order Shipped and shall email tracking to the buyer.
+
+FR6:  The system shall allow buyers to rate sellers from 1 to 5 and write a short review.
+
+FR7. The system shall send in-app and email notifications for likes/loves, chat messages, meet-up updates, shipped, confirm-received, and refunds/cancellations.
+
+FR8. The system shall provide the options to refund or void an authorization, pay the seller, request more information through emailing EdotCOM, and ban users.
+
+FR9. The system shall prevent login for banned accounts and block re-signup using the same email or phone.
+
+FR10. The system shall support product-based chat initiated from an item page between buyer and seller
+
+
 
 #### 3.1.1 User interfaces
 Webpages will be built with HTML/CSS/JavaScript. Sign-up, Login, Profile, Photo Gallery of filtered items, individual item details, Albums (Liked/Loved), Cart/Checkout will all have their own pages. It will use two simple option to choose between Delivery or Meet-Up. Order Details will provide a confirmation email. There will be a Chat box button for each product. All the Seller details like the listings, views analytics, and notifications will be displayed on separate pages.
