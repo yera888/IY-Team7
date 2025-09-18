@@ -141,11 +141,11 @@ Specify the factors required to establish the required reliability of the softwa
 Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
 #### 3.2.5 Compliance
-Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
+- NFR4: Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
 
 #### 3.2.6 Cost
 Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
-NFR4: The final product will be finished by the first or second week of December. 
+- NFR5: The final product will be finished by the first or second week of December. 
   
