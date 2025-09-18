@@ -48,10 +48,7 @@ Table of Contents
 Describe the purpose of the SRS and its intended audience.
 
 ### 1.2 Product Scope
-
-
-Identify the product whose software requirements are specified in this document, including the revision or release number. Explain what the product that is covered by this SRS will do, particularly if this SRS describes only part of the system or a single subsystem. 
-Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here.
+The purpose of EdotCom is act as an online boutique for customers, and retailers in your area. Giving retailers the ability to easily manage their listings, and customers the ability to easily find them. EdotCom will be a web based application, which will hopefully simplify the nature of storing and selling large quantities, and varieties of clothing. Our main goal is to create a welcoming online community for users that enjoy good deals on quality clothing.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 | Reference  | Definition                                                                                                                                                                         |
@@ -121,6 +118,8 @@ Define the software components for which a user interface is needed. Describe th
 Could be further divided into Usability and Convenience requirements.
 
 #### 3.1.2 Hardware interfaces
+
+
 Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
 
 #### 3.1.3 Software interfaces
@@ -151,5 +150,5 @@ Specify the factors required to guarantee a defined availability level for the e
 Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
-- NFR7: The final product will be finished by the first or second week of December. 
+- NFR7: The final product will be finished by the first or second week of December 2025. 
   
