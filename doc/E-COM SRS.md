@@ -73,7 +73,7 @@ https://necolas.github.io/normalize.css
 Describe what the rest of the document contains and how it is organized.
 
 ## 2. Product Overview
-EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and retailers two options: to drop off or pick up from the retailer or customer.
+EdotCOM will be used by people who shop online often, are fashion savvy, and eco-friendly. Instead of shopping at thrift stores which have inflated prices and filthy workspaces. Customers can use EdotCOM to find local sellers, view listings and the ability to leave reviews based on their experience with other retailers. EdotCOM will also give local customers, and sellers the option for local pickup skirting the need to use expensive mail services.
 
 ### 2.1 Product Functions
 
@@ -99,7 +99,7 @@ Our website application does not expect our users to have any abnormal computer 
 Though we do plan on catering more specifically to users that are interested in selling, and buying second hand clothing. Users that are unfamiliar with the process should be able to easily ascertain how the application functions.
 
 ### 2.4 Assumptions and Dependencies
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+Our system will be dependant on Java, Spring, Spring Boot, RestAPI, and VSCode for the back end of our application. We will be dependant on HTML, CSS, JavaScript, and VSCode for the front end of our application. We are likely to reuse some of our CSS, and HTML from previous assignments. We are also relying on PostgreSQL which means we will be limited by the constraints of it's free database.
 
 ## 3. Requirements
 
@@ -141,11 +141,11 @@ Specify the factors required to establish the required reliability of the softwa
 Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
 #### 3.2.5 Compliance
-Specify the requirements derived from existing standards or regulations
+Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
 
 #### 3.2.6 Cost
 Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
-Specify schedule for delivery of the software product.
+NFR4: The final product will be finished by the first or second week of December. 
   
