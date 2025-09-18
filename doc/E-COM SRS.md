@@ -80,9 +80,19 @@ EdotCOM will be used by people who shop online often, are fashion savvy, and eco
 
 * Create Listing of each product with detail description of all its attributes.
 * Interact with interface easily to navigate through filtered options such as by price, popularity, etc.
-* Have the option to enable location so locals can either oick up or drop off products.
-* A feature to communicate with one another about an individual product 
-*
+* Have the option to enable location so locals can either pick up or drop off products.
+* A feature for the buyer and seller to communicate with one another about an individual product.
+* #Tag system that you can apply to each product for neater organization and categorized sections to search through.
+* #Tags only shown inside the search bar and can be clicked on from there no free word tags.
+* Filtering option by popularity, price as well as a sorting option for low to high or high to low prices etc.
+* Seller Rating and review System 
+* Feed of listed items presented as a photo gallery
+* Saving feature which would be a Like or Love albumn both in separate webpage locations.
+* Recieved notifications for both the seller and buyers for things like when a product has been shipped, how many views a listiing recieved, if a buyer sent a chat message to the seller, meet up updates, refunds or cancels. 
+* Stats shown to seller of their most viewed items.
+* Discount UX if a product has reduced in price it shows the product is on sale.
+* Create an account with username and password and requires both an email and a phone number. 
+* Banning option for potential scammers which doesnt allow scammers to re-signup through email and number.
 
 ### 2.2 Product Constraints
 This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
@@ -146,7 +156,15 @@ Specify the factors required to guarantee a defined availability level for the e
 Specify the requirements derived from existing standards or regulations
 
 #### 3.2.6 Cost
-Specify monetary cost of the software product.
+
+To begin the costs would start out like this.
+* Domain name - $10-$20/year
+* Website Rles and Policies - $100/one time purchase 
+* Payment Processing fees (Paypal) - $0.50/per payment 
+* Moderators - 2 Part-timers: 15 hrs/ mo * $30/hr 
+* Payment fees - 3% of processed orders so if we generated $5k ≈ $160 in fees
+Beta Infrastucture - $150 - $250 
+* Managed database with encryption - $25–$50/mo
 
 #### 3.2.7 Deadline
 Specify schedule for delivery of the software product.
