@@ -159,7 +159,7 @@ Webpages will be built with HTML/CSS/JavaScript. Sign-up, Login, Profile, Photo 
 Our system will work on Desktop Devices with web browser access. I also hope to have it working on mobile devices, and tablets that have web browser access.
 
 #### 3.1.3 Software interfaces
-Using Java 25 for the backend, Bootstrap 5, html, css for the front end and PostgreSQL for the database.
+Using Java 21 for the backend, Bootstrap 5, html, css for the front end and PostgreSQL for the database.
 
 ### 3.2 Non Functional Requirements 
 
