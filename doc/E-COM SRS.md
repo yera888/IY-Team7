@@ -158,7 +158,6 @@ Using Java 25 for the backend, Bootstrap 5, html, css for the front end and Post
 ### 3.2 Non Functional Requirements 
 
 
-
 #### 3.2.1 Performance
 - NFR0: The E-COM system will attempt to use less than 150mbs of user RAM.
 - NFR1: E-COM customers will be able to transition to a retailer in less than 10 minutes. 
@@ -171,21 +170,40 @@ Using Java 25 for the backend, Bootstrap 5, html, css for the front end and Post
 Specify the factors required to establish the required reliability of the software system at time of delivery.
 
 #### 3.2.4 Availability
-Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
+-Use automated health checks and auto restart the app if it crashes.
+
+-Log errors and set uptime alerts so someone is notified within five minutes.
+
+-Schedule maintenance outside demo times and notify users beforehand this would be handled during the 2 part-timers shifts.
 
 #### 3.2.5 Compliance
 Specify the requirements derived from existing standards or regulations
 
 #### 3.2.6 Cost
 
-To begin the costs would start out like this.
-* Domain name - $10-$20/year
-* Website Rles and Policies - $100/one time purchase 
-* Payment Processing fees (Paypal) - $0.50/per payment .
-* Moderators - 2 Part-timers: 15 hrs/ mo * $30/hr 
-* Payment fees - 3% of processed orders so if we generated $5k ≈ $160 in fees
-Beta Infrastucture - $150 - $250 
-* Managed database with encryption - $25–$50/mo
+To begin using a demo version, the costs would start out like this.
+
+One-time Purchase 
+
+Domain name. $10–$20 per year.
+
+Website rules and policies templates. $0–$100 one-time.
+
+Monthly (Beta infrastructure)
+
+$150–$250 per month. Hosting, storage, email, monitoring.
+
+Managed database with encryption. $25–$50 per month. Either included in the line above or added on top, depending on your provider.
+
+Moderators. 2 part-timers × 15 hours/month × $30/hour = $900 per month.
+
+Payment processing 
+
+Per-transaction fee. About $0.30–$0.50 each payment.
+
+Percentage fee around 3% of the order amount.
+
+If you process $5,000 in orders in a month: 3% ≈ $150 in percentage fees, plus the per-transaction fees 
 
 #### 3.2.7 Deadline
 Specify schedule for delivery of the software product.
