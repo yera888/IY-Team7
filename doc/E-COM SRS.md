@@ -101,33 +101,23 @@ EdotCOM will be used by people who shop online often, are fashion savvy, and eco
 
 ### 2.2 Product Constraints
 
-Scamming can be a big issue on these websites.
+Fraud risk: Some users may try to scam by not delivering the products and recieving payments. We use payment holds, simple dispute reports, and bans.
 
+ Big clothing drops that have been scheduled and promoted can slow the site due to traffic. We may need basic caching and limits later.
 
-If there are too many people on when a popular drop happens it can cause lagging
+Delivery mistakes: Wrong addresses cause problems. We’ll validate addresses and keep meet-ups to public places.
 
+Third-party services: We rely on payments, email, maps, and photo storage. If they go down or have issues, parts of our site are affected.
 
- packages being sent to the wrong location/adress, since they are one.
+Free plan limits. Starter tiers cap database, storage, and API calls. We might need to upgrade as we grow.
 
+Tag catalog upkee: Only system generated tags (created by us) are allowed. We must update the list to follow trends.
 
- Uses outside services for payments, emails, maps, and image storage.
+Payment timing for security/reliability purposes: We hold money at checkout and capture later. Holds can expire if no one ships or confirms.
 
- 
- Free or beta plans may limit how much we can store or how many requests we can make.
+Meet-up safety: We show a short safety note and only allow public locations. We don’t supervise in-person exchanges and have nothing to do with what happens at these times.
 
-
- Use a fixed set of tags provided by the system, will have to keep updating with new trends.
-
-
- Hold the payment at checkout and finish it only after shipping or meet up confirmation
-
-
- Meet ups happen at public places and show a short safety note
-
-
- keeping logs of people who get banned 
-
-
+Logging and privacy: We keep basic logs for payments and bans which is tracked by phone number and emails but people can still find loop-holes.
   
 ### 2.3 User Characteristics
 
