@@ -95,12 +95,34 @@ EdotCOM will be used by people who shop online often, are fashion savvy, and eco
 * Banning option for potential scammers which doesnt allow scammers to re-signup through email and number.
 
 ### 2.2 Product Constraints
-This subsection should provide a general description of any other items that will limit the developer’s options. These may include:  
 
-* Interfaces to users, other applications or hardware.  
-* Quality of service constraints.  
-* Standards compliance.  
-* Constraints around design or implementation.
+Scamming can be a big issue on these websites.
+
+
+If there are too many people on when a popular drop happens it can cause lagging
+
+
+ packages being sent to the wrong location/adress, since they are one.
+
+
+ Uses outside services for payments, emails, maps, and image storage.
+
+ 
+ Free or beta plans may limit how much we can store or how many requests we can make.
+
+
+ Use a fixed set of tags provided by the system, will have to keep updating with new trends.
+
+
+ Hold the payment at checkout and finish it only after shipping or meet up confirmation
+
+
+ Meet ups happen at public places and show a short safety note
+
+
+ keeping logs of people who get banned 
+
+
   
 ### 2.3 User Characteristics
 
@@ -124,15 +146,13 @@ List any assumed factors (as opposed to known facts) that could affect the requi
   - All listing can be removed from user Albums at any time.
 
 #### 3.1.1 User interfaces
-Define the software components for which a user interface is needed. Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Details of the user interface design should be documented in a separate user interface specification.
-
-Could be further divided into Usability and Convenience requirements.
+Webpages will be built with HTML/CSS/JavaScript. Sign-up, Login, Profile, Photo Gallery of filtered items, individual item details, Albums (Liked/Loved), Cart/Checkout will all have their own pages. It will use two simple option to choose between Delivery or Meet-Up. Order Details will provide a confirmation email. There will be a Chat box button for each product. All the Seller details like the listings, views analytics, and notifications will be displayed on separate pages.
 
 #### 3.1.2 Hardware interfaces
 Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
 
 #### 3.1.3 Software interfaces
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+Using Java 25 for the backend, Bootstrap 5, html, css for the front end and PostgreSQL for the database.
 
 ### 3.2 Non Functional Requirements 
 
@@ -160,7 +180,7 @@ Specify the requirements derived from existing standards or regulations
 To begin the costs would start out like this.
 * Domain name - $10-$20/year
 * Website Rles and Policies - $100/one time purchase 
-* Payment Processing fees (Paypal) - $0.50/per payment 
+* Payment Processing fees (Paypal) - $0.50/per payment .
 * Moderators - 2 Part-timers: 15 hrs/ mo * $30/hr 
 * Payment fees - 3% of processed orders so if we generated $5k ≈ $160 in fees
 Beta Infrastucture - $150 - $250 
