@@ -218,3 +218,4 @@ Percentage fee around 3% of the order amount.
 If you process $5,000 in orders in a month: 3% ≈ $150 in percentage fees, plus the per-transaction fees 
 
 #### 3.2.7 Deadline
+- NFR7: The final product will be finished by the first or second week of December 2025. 
