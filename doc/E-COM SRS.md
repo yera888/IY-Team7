@@ -118,9 +118,7 @@ Define the software components for which a user interface is needed. Describe th
 Could be further divided into Usability and Convenience requirements.
 
 #### 3.1.2 Hardware interfaces
-
-
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+Our system will work on Desktop Devices with web browser access. I also hope to have it working on mobile devices, and tablets that have web browser access.
 
 #### 3.1.3 Software interfaces
 Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
