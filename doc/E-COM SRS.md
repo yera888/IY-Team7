@@ -135,17 +135,19 @@ Describe the connections between this product and other specific software compon
 - NFR3: Users emails, real name, and payment data will only be visible to users.
 
 #### 3.2.3 Reliability
+- NF4:For our system to be reliable at time of delivery(by December), we will need to have a functional database, functional HTML pages, a functional spring server, a functional external API, and functional hardware capable of running our web application in the classroom. 
+
 Specify the factors required to establish the required reliability of the software system at time of delivery.
 
 #### 3.2.4 Availability
 Specify the factors required to guarantee a defined availability level for the entire system such as checkpoint, recovery, and restart.
 
 #### 3.2.5 Compliance
-- NFR4: Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
+- NFR5: Our web application will comply with the CCPA(California Consumer Privacy Act), GDPR(General Data Protection Regulation), WCAG(Web Content Accessibility Guidelines), and all other consumer privacy and accessibility requirements.
 
 #### 3.2.6 Cost
 Specify monetary cost of the software product.
 
 #### 3.2.7 Deadline
-- NFR5: The final product will be finished by the first or second week of December. 
+- NFR6: The final product will be finished by the first or second week of December. 
   
