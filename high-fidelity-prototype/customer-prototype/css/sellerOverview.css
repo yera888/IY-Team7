@@ -49,8 +49,12 @@
 }
 
 .quickBarBox {
+    border: 1.5px solid white;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
     width: 20rem;
-    height: 2rem;
+    height: 10rem;
     color: white;
     margin-top: 8rem;
 }
