@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'beryliumregular';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/berylium-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/berylium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'beryliumbold';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/beryliumbold-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/beryliumbold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.styleBar {
+    height: 125px;
+    background-image: url('/high-fidelity-prototype/customer-prototype/images/Marcy.webp');
+    background-size: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(20px);
+}
+
+.styleBarText {
+    color: white;
+    transform: translate(0, -250%);
+    text-align: center;
+    font-family: 'beryliumregular';
+}
