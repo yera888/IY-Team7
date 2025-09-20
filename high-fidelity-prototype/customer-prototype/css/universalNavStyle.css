@@ -16,7 +16,85 @@ body {
 }
 
 .navContainer {
-  display: flex;
+    display: flex;
+}
+
+.menu-burger > * {
+    position: absolute;
+    inset-inline-start: 30px;
+    inset-block-start: 33px;
+}
+
+.menu-burger input {
+    height: 32px;
+    margin: 0;
+    opacity: 0;
+    width: 32px;
+    z-index: 5;
+}
+
+.menu-burger svg {
+    height: 32px;
+    width: 32px;
+    z-index: 2;
+}
+
+ul.menu-burger__item-list {
+    background: rgba(0, 0, 0, 0.95);
+    bottom: 0;
+    color: white;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -30px;
+    padding: 32px;
+    top: 0;
+    transform: translate(-200%, 0);
+    transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+    width: 100vw;
+    z-index: 1;
+}
+
+input:checked ~ .menu-burger__item-list {
+    transform: none;
+}
+
+.menu-burger input:checked ~ svg line {
+    stroke: #3c3836;
+}
+
+.menu-burger svg line:nth-of-type(1) {
+    stroke: white;
+    transform-origin: center 6px;
+}
+
+.menu-burger svg line:nth-of-type(2) {
+    stroke: white;
+    transform-origin: center 12px;
+}
+
+.menu-burger svg line:nth-of-type(3) {
+    stroke: white;
+    transform-origin: center 18px;
+}
+
+.menu-burger svg line {
+    transition-duration: 0.5s;
+    transition-property: stroke, opacity, transform;
+    transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(2) {
+    opacity: 0;
+    transform: scale(0.2);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(1) {
+    transform: translate(0, 6px) rotate(45deg);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(3) {
+    transform: translate(0, -6px) rotate(-45deg);
 }
 
 .navBoxOne {
@@ -25,7 +103,9 @@ body {
     height: 100px;
     border-left: 0;
     border-right: 0;
-    z-index: 1;
+
+    z-index: 4;
+    
     display: flex;
     justify-content: left;
     align-items: center;
@@ -43,7 +123,9 @@ body {
     width: 100px;
     height: 100px;
     border-right: 0;
-    z-index: 1;
+
+    z-index: 4;
+
     display: flex;
     background-image: url('/high-fidelity-prototype/customer-prototype/images/Marcy.webp');
     background-repeat: no-repeat;
