@@ -7,9 +7,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'beryliumbold';
     src: url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/beryliumbold-webfont.woff2') format('woff2'),
@@ -36,13 +33,19 @@
     font-family: 'beryliumregular';
 }
 
+.sellerStatAndBarContainer {
+    display: flex;
+}
+
 .sellerQuickBarContainer {
     border: 1.5px solid white;
     border-left: 0;
     border-bottom: 0;
     width: 20rem;
     height: 100vh;
-    margin-top: -95px;
+    margin-top: -110px;
+
+    z-index: 2;
 }
 
 .quickBarBox {
@@ -54,4 +57,25 @@
 
 .quickBarBox p {
     text-align: center;
+}
+
+.sellerStatOverviewContainer {
+    display: grid;
+    margin-top: -110px;
+
+    z-index: 2;
+
+    grid-template-rows: 100px;
+    grid-template-columns: 100px 100px;
+    border: 1.5px solid white;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    width: 100vw;
+
+    justify-items: center;
+    align-items: center;
+
+    justify-content: center;
+    align-content: center;
 }
