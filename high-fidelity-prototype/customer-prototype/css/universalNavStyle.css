@@ -99,8 +99,8 @@ input:checked ~ .menu-burger__item-list {
 
 .navBoxOne {
     border: 1.5px solid white;
-    width: 96vw;
-    height: 100px;
+    width: 96.9vw;
+    height: 10rem;
     border-left: 0;
     border-right: 0;
 
@@ -120,8 +120,8 @@ input:checked ~ .menu-burger__item-list {
 
 .navBoxTwo {
     border: 1.5px solid white;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     border-right: 0;
 
     z-index: 4;

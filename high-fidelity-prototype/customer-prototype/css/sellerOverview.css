@@ -80,7 +80,7 @@
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 100vw;
+    width: 92.188vw;
     height: 99.9rem;
 }
 
@@ -94,14 +94,14 @@
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 100vw;
+    width: 92.188vw;
     height: 40rem;
 }
 
 .sellerWeeklyStats {
     display: grid;
     grid-template-rows: repeat(1, 20rem);
-    grid-template-columns: repeat(2, 50vw);
+    grid-template-columns: repeat(2, 46.094vw);
 
     z-index: 2;
 
@@ -110,7 +110,7 @@
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 100vw;
+    width: 92.188vw;
     height: 20rem;
 }
 
@@ -153,7 +153,7 @@
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 100vw;
+    width: 92.188vw;
     height: 20rem;
 }
 
@@ -186,7 +186,7 @@
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 100vw;
+    width: 92.188vw;
     height: 20rem;
 }
 
