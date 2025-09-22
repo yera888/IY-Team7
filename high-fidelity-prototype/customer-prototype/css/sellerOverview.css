@@ -73,6 +73,7 @@ body {
 
 .quickBarBox:hover {
     background-color: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
 }
 
 .quickBarBox p {
@@ -127,6 +128,7 @@ body {
 
 .boxButton:hover {
     background: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
 }
 
 .boxButton p {
