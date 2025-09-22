@@ -52,6 +52,7 @@ ul.menu-burger__item-list {
     transform: translate(-200%, 0);
     transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
     width: 100vw;
+    height: 141rem;
     z-index: 3;
 }
 

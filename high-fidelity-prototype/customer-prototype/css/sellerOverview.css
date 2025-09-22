@@ -60,6 +60,7 @@ a:hover {
 .sellerQuickBarContainer {
     border: 1.5px solid white;
     border-left: 0;
+    border-top: 0;
     border-bottom: 0;
     width: 20rem;
     height: 100.15rem;
@@ -72,7 +73,7 @@ a:hover {
     border: 1.5px solid white;
     border-left: 0;
     border-right: 0;
-    border-top: 0;
+    border-bottom: 0;
     width: 20rem;
     height: 19.9rem;
     color: white;
@@ -243,4 +244,27 @@ a:hover {
 .boxSold p {
     text-align: justify;
     margin-left: 2rem;
+}
+
+.footer {
+    height: 25rem;
+    width: 100vw;
+
+    border: 1.5px solid white;
+    border-left: 0;
+    border-right: 0;
+
+    align-content: center;
+    text-align: center;
+}
+
+.footer h1 {
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.footer p {
+    color: white;
+    font-family: 'beryliumregular';
+    margin: .5rem;
 }
