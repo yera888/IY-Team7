@@ -119,11 +119,14 @@ body {
 
 .boxButton {
     margin: 2rem;
-    background: rgba(255, 255, 255, 0.213);
 
     align-content: center;
 
     border: 1.5px solid white;
+}
+
+.boxButton:hover {
+    background: rgba(255, 255, 255, 0.213);
 }
 
 .boxButton p {
