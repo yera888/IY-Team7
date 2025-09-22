@@ -20,6 +20,16 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'beryliumregular';
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .styleBarContainer {
     width: 100vw;
 }
@@ -78,16 +88,6 @@ body {
     cursor: pointer;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-    font-family: 'beryliumregular';
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 .sellerWeeklyStatOverviewContainer {
     display: block;
     margin-top: -110px;
@@ -108,6 +108,7 @@ a:hover {
 
     justify-content: center;
     align-content: center;
+    text-align: center;
 
     z-index: 2;
 
@@ -118,11 +119,6 @@ a:hover {
     border-bottom: 0;
     width: 84vw;
     height: 40rem;
-}
-
-.sellerCreateListing p {
-    color: white;
-    font-family: 'beryliumregular';
 }
 
 .boxButton {
