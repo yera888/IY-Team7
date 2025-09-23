@@ -40,7 +40,7 @@ body {
 }
 
 ul.menu-burger__item-list {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(255, 255, 255, 0.909);
     bottom: 0;
     color: white;
     list-style: none;
@@ -61,21 +61,21 @@ input:checked ~ .menu-burger__item-list {
 }
 
 .menu-burger input:checked ~ svg line {
-    stroke: white;
+    stroke: black;
 }
 
 .menu-burger svg line:nth-of-type(1) {
-    stroke: white;
+    stroke: black;
     transform-origin: center .6rem;
 }
 
 .menu-burger svg line:nth-of-type(2) {
-    stroke: white;
+    stroke: black;
     transform-origin: center 1.2rem;
 }
 
 .menu-burger svg line:nth-of-type(3) {
-    stroke: white;
+    stroke: black;
     transform-origin: center 1.8rem;
 }
 
@@ -99,7 +99,7 @@ input:checked ~ .menu-burger__item-list {
 }
 
 .navBoxOne {
-    border: 1.5px solid white;
+    border: 1.5px solid black;
     width: 246rem;
     height: 9.9rem;
     border-left: 0;
@@ -113,12 +113,11 @@ input:checked ~ .menu-burger__item-list {
     align-items: center;
 
     background: transparent;
-    position: sticky;
 }
 
 .navBoxOne p {
     padding-left: 12rem;
-    color: white;
+    color: black;
     font-family: 'porcelainregular';
     font-size: 5rem;
 
@@ -126,7 +125,7 @@ input:checked ~ .menu-burger__item-list {
 }
 
 .navBoxTwo {
-    border: 1.5px solid white;
+    border: 1.5px solid black;
     width: 10rem;
     height: 9.9rem;
     border-right: 0;
@@ -137,12 +136,11 @@ input:checked ~ .menu-burger__item-list {
 
     display: flex; 
     background: transparent;
-    position: sticky;
 }
 
 .navBoxTwo a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 2.0rem;
     padding: 1.5rem;
     display:inline-block;
@@ -183,4 +181,17 @@ ul li ul li a {
 
 ul li ul li:hover {
     background: rgba(255, 255, 255, 0.213);
+}
+
+.backGroundFlare {
+    height: 20rem;
+    width: 256rem;
+
+    margin-top: -10rem;
+
+    background-image: url(/high-fidelity-prototype/customer-prototype/images/whiteDressBackground-ezgif.com-rotate.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
 }
