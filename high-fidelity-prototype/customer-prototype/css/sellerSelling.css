@@ -1,0 +1,45 @@
+.listingsBox {
+    color: white;
+    font-family: 'beryliumregular';
+
+    border: 1.5px solid white;
+    border-left: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+
+    width: 84.5vw;
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.createListing {
+    border: 1.5px solid white;
+
+    margin: 2rem;
+    margin-left: 26.5rem;
+    width: 42vw;
+    height: 15rem;
+
+    color: white;
+    font-family: 'beryliumregular';
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.createListing:hover {
+    background: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
+}
+
+.createListing p:hover {
+    text-decoration: underline;
+}
