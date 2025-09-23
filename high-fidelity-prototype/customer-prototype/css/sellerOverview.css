@@ -32,17 +32,13 @@ a:hover {
 
 .styleBarContainer {
     width: 100vw;
+    height: 20vh;
+    
 }
 
 .styleBar {
-    width: 100vw;
+    width: 100rem;
     height: 125px;
-    background-image: url('/high-fidelity-prototype/customer-prototype/images/whiteDressBackground-ezgif.com-rotate.jpg');
-    background-size: 100vw 10.2rem;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    transform: rotate(180deg);
 }
 
 .styleBarText {
@@ -90,7 +86,8 @@ a:hover {
 }
 
 .sellerWeeklyStatOverviewContainer {
-    display: block;
+    margin-right: 0;
+    padding-right: 0;
     margin-top: -110px;
     z-index: 2;
 
@@ -98,14 +95,15 @@ a:hover {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 92.188vw;
+
+    width: 2560px;
     height: 99.9rem;
 }
 
 .sellerCreateListing {
     display: grid;
     grid-template-rows: repeat(2, 15rem);
-    grid-template-columns: repeat(2, 42vw);
+    grid-template-columns: repeat(2, 46.094vw);
 
     justify-content: center;
     align-content: center;
@@ -118,7 +116,7 @@ a:hover {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 84vw;
+    width: 92.188vw;
     height: 40rem;
 }
 
@@ -142,7 +140,7 @@ a:hover {
 .sellerWeeklyStats {
     display: grid;
     grid-template-rows: repeat(1, 20rem);
-    grid-template-columns: repeat(2, 42vw);
+    grid-template-columns: repeat(2, 50vw);
 
     z-index: 2;
 
@@ -151,7 +149,7 @@ a:hover {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 84vw;
+    width: 100vw;
     height: 20rem;
 }
 
@@ -194,7 +192,7 @@ a:hover {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 82.5vw;
+    width: 100vw;
     height: 20rem;
 }
 
@@ -227,7 +225,7 @@ a:hover {
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
-    width: 82.5vw;
+    width: 100vw;
     height: 20rem;
 }
 

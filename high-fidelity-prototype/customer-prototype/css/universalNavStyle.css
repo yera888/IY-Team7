@@ -100,7 +100,7 @@ input:checked ~ .menu-burger__item-list {
 
 .navBoxOne {
     border: 1.5px solid white;
-    width: 96.9vw;
+    width: 100vw;
     height: 10rem;
     border-left: 0;
     border-right: 0;
@@ -111,6 +111,9 @@ input:checked ~ .menu-burger__item-list {
     display: flex;
     justify-content: left;
     align-items: center;
+
+    background: transparent;
+    position: sticky;
 }
 
 .navBoxOne p {
@@ -118,11 +121,13 @@ input:checked ~ .menu-burger__item-list {
     color: white;
     font-family: 'porcelainregular';
     font-size: 5rem;
+
+    z-index: 1;
 }
 
 .navBoxTwo {
     border: 1.5px solid white;
-    width: 10rem;
+    width: 5vw;
     height: 10rem;
     border-right: 0;
     border-bottom: 0;
@@ -130,11 +135,9 @@ input:checked ~ .menu-burger__item-list {
 
     z-index: 4;
 
-    display: flex;
-    background-image: url('/high-fidelity-prototype/customer-prototype/images/Marcy.webp');
-    background-repeat: no-repeat;
-    background-size: 75px;
-    background-position: center;
+    display: flex; 
+    background: transparent;
+    position: sticky;
 }
 
 .navBoxTwo a {
