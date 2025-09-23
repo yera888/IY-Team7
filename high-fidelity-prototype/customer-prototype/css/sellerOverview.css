@@ -139,7 +139,7 @@ a:hover {
 
 .sellerWeeklyStats {
     display: grid;
-    grid-template-rows: repeat(1, 20rem);
+    grid-template-rows: repeat(1, 7.813vw);
     grid-template-columns: repeat(2, 46.094vw);
 
     z-index: 2;
@@ -180,8 +180,8 @@ a:hover {
 
 .sellerSellingContainer {
     display: grid;
-    grid-template-rows: repeat(1, 20rem);
-    grid-template-columns: repeat(20, 20rem);
+    grid-template-rows: repeat(1, 7.813vw);
+    grid-template-columns: repeat(20, 7.813vw);
 
     overflow-x: scroll;
 
@@ -245,7 +245,7 @@ a:hover {
 }
 
 .footer {
-    height: 25rem;
+    height: 25vh;
     width: 100vw;
 
     border: 1.5px solid white;
