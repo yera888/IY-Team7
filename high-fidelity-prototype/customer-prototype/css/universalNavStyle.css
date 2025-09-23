@@ -21,21 +21,21 @@ body {
 
 .menu-burger > * {
     position: absolute;
-    inset-inline-start: 30px;
-    inset-block-start: 33px;
+    inset-inline-start: 3.0rem;
+    inset-block-start: 3.3rem;
 }
 
 .menu-burger input {
-    height: 32px;
+    height: 3.2rem;
     margin: 0;
     opacity: 0;
-    width: 32px;
+    width: 3.2rem;
     z-index: 5;
 }
 
 .menu-burger svg {
-    height: 32px;
-    width: 32px;
+    height: 3.2rem;
+    width: 3.2rem;
     z-index: 4;
 }
 
@@ -46,12 +46,12 @@ ul.menu-burger__item-list {
     list-style: none;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: -30px;
-    padding: 32px;
+    margin-left: -3.0rem;
+    padding: 3.2rem;
     top: 0;
     transform: translate(-200%, 0);
     transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
-    width: 100vw;
+    width: 256rem;
     height: 141rem;
     z-index: 3;
 }
@@ -66,17 +66,17 @@ input:checked ~ .menu-burger__item-list {
 
 .menu-burger svg line:nth-of-type(1) {
     stroke: white;
-    transform-origin: center 6px;
+    transform-origin: center .6rem;
 }
 
 .menu-burger svg line:nth-of-type(2) {
     stroke: white;
-    transform-origin: center 12px;
+    transform-origin: center 1.2rem;
 }
 
 .menu-burger svg line:nth-of-type(3) {
     stroke: white;
-    transform-origin: center 18px;
+    transform-origin: center 1.8rem;
 }
 
 .menu-burger svg line {
@@ -91,11 +91,11 @@ input:checked ~ .menu-burger__item-list {
 }
 
 .menu-burger input:checked ~ svg line:nth-of-type(1) {
-    transform: translate(0, 6px) rotate(45deg);
+    transform: translate(0, .6rem) rotate(45deg);
 }
 
 .menu-burger input:checked ~ svg line:nth-of-type(3) {
-    transform: translate(0, -6px) rotate(-45deg);
+    transform: translate(0, -.6rem) rotate(-45deg);
 }
 
 .navBoxOne {
@@ -143,8 +143,8 @@ input:checked ~ .menu-burger__item-list {
 .navBoxTwo a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
-    padding: 15px;
+    font-size: 2.0rem;
+    padding: 1.5rem;
     display:inline-block;
 }
 
@@ -168,7 +168,7 @@ ul li:hover ul {
 
 ul li ul {
     position: absolute;
-    width: 200px;
+    width: 20rem;
     display: none;
 }
 
