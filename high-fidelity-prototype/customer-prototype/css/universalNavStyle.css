@@ -104,6 +104,7 @@ input:checked ~ .menu-burger__item-list {
     height: 10rem;
     border-left: 0;
     border-right: 0;
+    border-bottom: 0;
 
     z-index: 4;
     
@@ -124,6 +125,8 @@ input:checked ~ .menu-burger__item-list {
     width: 10rem;
     height: 10rem;
     border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
 
     z-index: 4;
 

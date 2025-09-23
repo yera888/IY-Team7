@@ -37,12 +37,12 @@ a:hover {
 .styleBar {
     width: 100vw;
     height: 125px;
-    background-image: url('/high-fidelity-prototype/customer-prototype/images/Marcy.webp');
-    background-size: 100vw;
+    background-image: url('/high-fidelity-prototype/customer-prototype/images/whiteDressBackground-ezgif.com-rotate.jpg');
+    background-size: 100vw 10.2rem;
     background-position: center;
     background-repeat: no-repeat;
 
-    filter: blur(20px);
+    transform: rotate(180deg);
 }
 
 .styleBarText {
