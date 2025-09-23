@@ -1,14 +1,27 @@
+.playNiceContainer {
+    display: flex;
+}
+
+.newListingContainer {
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: -110px;
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+
+    width: 236rem;
+    height: 99.9rem;
+}
+
 .listingsBox {
     color: white;
     font-family: 'beryliumregular';
 
-    border: 1.5px solid white;
-    border-left: 0;
-    border-bottom: 0;
-    border-top: 0;
-    border-right: 0;
-
-    width: 84.5vw;
+    width: 236rem;
 
     align-content: center;
     justify-content: center;
@@ -20,10 +33,9 @@
 .createListing {
     border: 1.5px solid white;
 
-    margin: 2rem;
-    margin-left: 26.5rem;
-    width: 42vw;
-    height: 15rem;
+    margin-left: 59rem;
+    width: 113.8rem;
+    height: 10.8rem;
 
     color: white;
     font-family: 'beryliumregular';
