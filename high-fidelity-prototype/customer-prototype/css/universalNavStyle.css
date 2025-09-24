@@ -10,6 +10,26 @@ html {
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: 'synnovabold';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/synnova/synnova-bold-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/synnova/synnova-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'synnovaregular';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/synnova/synnova-regular-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/synnova/synnova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     background-color: rgba(0, 0, 0, 0.95);
     font-size: 2rem;
@@ -118,7 +138,7 @@ input:checked ~ .menu-burger__item-list {
 .navBoxOne p {
     padding-left: 12rem;
     color: black;
-    font-family: 'porcelainregular';
+    font-family: 'synnovaregular';
     font-size: 5rem;
 
     z-index: 1;
