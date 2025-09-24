@@ -1,5 +1,11 @@
 .sellerStatOverviewContainer {
     height: 100rem;
+    width: 236rem;
+
+    border: 1.5px solid white;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
 
     align-items: center;
     align-content: center;
@@ -8,14 +14,14 @@
 .sellerStatOverviewContainer p {
     color: white;
     text-decoration: underline;
-
     margin-left: 2rem
+
 }
 
 img {
     border-radius: 5rem;
 
     margin-left: 10rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3.7rem;
 }
 
