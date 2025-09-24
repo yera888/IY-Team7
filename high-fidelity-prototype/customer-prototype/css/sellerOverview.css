@@ -30,18 +30,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.styleBar {
-    width: 256rem;
-    height: 12.5rem;
-}
-
-.styleBarText {
-    color: white;
-    transform: translate(0, -250%);
-    text-align: center;
-    font-family: 'beryliumregular';
-}
-
 .sellerStatAndBarContainer {
     display: flex;
     width: 256rem;
