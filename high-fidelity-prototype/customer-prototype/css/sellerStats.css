@@ -7,6 +7,7 @@
 
 .sellerStatOverviewContainer p {
     color: white;
+    text-decoration: underline;
 
     margin-left: 2rem
 }
