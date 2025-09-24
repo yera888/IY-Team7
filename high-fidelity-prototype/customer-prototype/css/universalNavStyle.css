@@ -60,7 +60,7 @@ body {
 }
 
 ul.menu-burger__item-list {
-    background: rgba(255, 255, 255, 0.909);
+    background: rgb(255, 255, 255);
     bottom: 0;
     color: white;
     list-style: none;
@@ -72,7 +72,7 @@ ul.menu-burger__item-list {
     transform: translate(-200%, 0);
     transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
     width: 256rem;
-    height: 141rem;
+    height: 145rem;
     z-index: 3;
 }
 
