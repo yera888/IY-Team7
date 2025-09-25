@@ -1,0 +1,65 @@
+.balanceBox {
+    border: 1.5px solid white;
+    margin-top: 5rem;
+    margin-left: 59rem;
+    width: 118rem;
+    height: 90rem;
+
+    text-align: center;
+}
+
+.balanceBox h1 {
+    font-family: 'beryliumregular';
+    color: white;
+    text-decoration: underline;
+}
+
+.specific {
+    font-family: 'synnovaregular';
+}
+
+.cardBox {
+    border: 1.5px solid white;
+    border-radius: 1.5rem;
+
+    background-image: url(/high-fidelity-prototype/customer-prototype/images/backGroundCard.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 30rem;
+    width: 59rem;
+
+    margin-top: 22rem;
+    margin-left: 29.5rem;
+}
+
+.cardBox p {
+    margin-top: 13rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    color: white;
+    text-align: left;
+    font-size: 60px;
+}
+
+.line {
+    border: 1.5px solid white;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+
+    height: 0;
+    width: 58.99rem;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    margin-left: 2rem;
+    padding-top: 1rem;
+
+    font-family: 'synnovaregular';
+}

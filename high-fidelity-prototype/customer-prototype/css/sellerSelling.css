@@ -1,0 +1,56 @@
+.playNiceContainer {
+    display: flex;
+}
+
+.newListingContainer {
+    margin-right: 0;
+    padding-right: 0;
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+
+    width: 236rem;
+    height: 99.9rem;
+}
+
+.listingsBox {
+    color: white;
+    font-family: 'beryliumregular';
+
+    width: 236rem;
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.createListing {
+    border: 1.5px solid white;
+
+    margin-left: 59rem;
+    width: 113.8rem;
+    height: 10.8rem;
+
+    color: white;
+    font-family: 'beryliumregular';
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.createListing:hover {
+    background: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
+}
+
+.createListing p:hover {
+    text-decoration: underline;
+}

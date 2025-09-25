@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'beryliumregular';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/berylium-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/berylium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'beryliumbold';
+    src: url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/beryliumbold-webfont.woff2') format('woff2'),
+         url('/high-fidelity-prototype/customer-prototype/css/fonts/berylium/beryliumbold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'beryliumregular';
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.sellerStatAndBarContainer {
+    display: flex;
+    width: 256rem;
+}
+
+.sellerQuickBarContainer {
+    border: 1.5px solid white;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    width: 20rem;
+    height: 100.15rem;
+
+    z-index: 2;
+}
+
+.quickBarBox {
+    border: 1.5px solid white;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    width: 20rem;
+    height: 19.9rem;
+    color: white;
+
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+}
+
+.quickBarBox:hover {
+    background-color: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
+}
+
+.sellerWeeklyStatOverviewContainer {
+    margin-right: 0;
+    padding-right: 0;
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+
+    width: 236rem;
+    height: 99.9rem;
+}
+
+.sellerCreateListing {
+    display: grid;
+    grid-template-rows: repeat(2, 15rem);
+    grid-template-columns: repeat(1, 118rem);
+
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    width: 236rem;
+    height: 40rem;
+}
+
+.boxButton {
+    margin: 2rem;
+
+    align-content: center;
+
+    border: 1.5px solid white;
+}
+
+.boxButton:hover {
+    background: rgba(255, 255, 255, 0.213);
+    cursor: pointer;
+}
+
+.boxButton p {
+    text-align: center;
+}
+
+.sellerWeeklyStats {
+    display: grid;
+    grid-template-rows: repeat(1, 20rem);
+    grid-template-columns: repeat(2, 118rem);
+
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    width: 236rem;
+    height: 20rem;
+}
+
+.sellerWeeklyStats p {
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.boxSales {
+    margin: 2rem;
+    background: rgba(255, 255, 255, 0.213);
+}
+
+.boxSales p {
+    text-align: justify;
+    margin-left: 2rem;
+}
+
+.boxRevenue {
+    margin: 2rem;
+    background: rgba(255, 255, 255, 0.213);
+}
+
+.boxRevenue p {
+    text-align: justify;
+    margin-left: 2rem;
+}
+
+.sellerSellingContainer {
+    display: grid;
+    grid-template-rows: repeat(1, 20rem);
+    grid-template-columns: repeat(20, 20rem);
+
+    overflow-x: scroll;
+
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    width: 236rem;
+    height: 20rem;
+}
+
+.sellerSellingContainer p {
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.boxSelling {
+    margin: 2rem;
+    background: rgba(255, 255, 255, 0.213);
+}
+
+.boxSelling p {
+    text-align: justify;
+    margin-left: 2rem;
+}
+
+.sellerSoldContainer {
+    display: grid;
+    grid-template-rows: repeat(1, 20rem);
+    grid-template-columns: repeat(20, 20rem);
+
+    overflow-x: scroll;
+
+    z-index: 2;
+
+    border: 1.5px solid white;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    width: 236rem;
+    height: 20rem;
+}
+
+.sellerSoldContainer p {
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.boxSold {
+    margin: 2rem;
+    background: rgba(255, 255, 255, 0.213);
+}
+
+.boxSold p {
+    text-align: justify;
+    margin-left: 2rem;
+}
+
+.footer {
+    height: 29.8rem;
+    width: 256rem;
+
+    border: 1.5px solid white;
+    border-left: 0;
+    border-right: 0;
+
+    align-content: center;
+    text-align: center;
+}
+
+.footer h1 {
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.footer p {
+    color: white;
+    font-family: 'beryliumregular';
+    margin: .5rem;
+}
