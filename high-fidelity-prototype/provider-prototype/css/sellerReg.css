@@ -1,0 +1,30 @@
+.fieldset {
+  margin: .2rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.radio-row {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  margin-top: .6rem;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+.hint {
+  margin: .4rem 0 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+.hint a {
+  color: #444;
+  text-decoration: underline;
+}

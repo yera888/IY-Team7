@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat</title>
+
+    <link
+      rel="stylesheet"
+      href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/high-fidelity-prototype/provider-prototype/css/chat.css"
+    />
+  </head>
+  <body>
+
+    <main class="chat-wrap">
+      <header class="chat-header">
+        <div class="avatar">
+          <img id="chat-avatar" alt="Product image" />
+        </div>
+        <h1 id="chat-title">Chat</h1>
+      </header>
+
+      <section class="chat-body" id="chat-body">
+        <div class="msg msg-left">
+          Hey! Ask about measurements, meet-ups, or any other questions you may have!
+        </div>
+      </section>
+
+      <form class="chat-input" id="chat-form">
+        <input
+          id="chat-text"
+          type="text"
+          placeholder="Type a message…"
+          autocomplete="off"
+        />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <script>
+      const PRODUCTS = {
+        "black-dress": {
+          name: "Black Dress",
+          photoDesc:
+            "Classic Black Dress",
+        },
+        "platform-boots": {
+          name: "Platform Boots",
+          photoDesc:
+            "Chunky ankle boots",
+        },
+        "mesh-top": {
+          name: "Mesh Top",
+          photoDesc:
+            "Sheer long-sleeve mesh",
+        },
+        "pleated-skirt": {
+          name: "Pleated Skirt",
+          photoDesc: "Knife-pleat mini",
+        },
+      };
+
+      const slug = new URLSearchParams(location.search).get("slug");
+      const p = PRODUCTS[slug];
+      const title = document.getElementById("chat-title");
+      const avatarImg = document.getElementById("chat-avatar");
+
+      if (p) {
+        title.textContent = `Chat about ${p.name}`;
+        document.title = `Chat — ${p.name}`;
+
+        avatarImg.src = p.img; 
+        avatarImg.alt = p.name;
+      } else {
+        avatarImg.removeAttribute("src");
+        title.textContent = "Chat";
+      }
+
+      const form = document.getElementById("chat-form");
+      const input = document.getElementById("chat-text");
+      const body = document.getElementById("chat-body");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
+        body.insertAdjacentHTML(
+          "beforeend",
+          `<div class="msg msg-right"></div>`
+        );
+        body.lastElementChild.textContent = text;
+        input.value = "";
+        body.scrollTop = body.scrollHeight;
+      });
+      avatarImg.style.objectPosition = "center 60%";
+    </script>
+  </body>
+</html>
