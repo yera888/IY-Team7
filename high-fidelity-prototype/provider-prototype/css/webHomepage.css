@@ -1,7 +1,40 @@
 body {
   background: #fff;
 }
+@font-face {
+  font-family: "syn_novaregular";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
+.product-media {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  background: #f7f7f7;
+}
+
+.product-media img {
+  display: none;
+}
+
+.product-card .product-info {
+  display: none;
+}
+
+.media-text {
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 1rem;
+}
 .hero {
   height: 100vh;
   display: grid;
@@ -34,33 +67,154 @@ body {
   margin: 0 auto;
   padding: 4rem 2rem;
 }
-
-.divcontainer {
+.product-grid {
   display: grid;
-
-  grid-template-columns: repeat(4, 20rem);
-  grid-template-rows: repeat(1, 20rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+  align-items: stretch;
 }
 
-/*pixels for borders 
-*/
+.product-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: #f7f7f7;
+  transition: transform 120ms ease;
+}
+.product-card:hover {
+  transform: translateY(-2px);
+}
 
-.div {
+.product-media {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 0.8rem 1rem;
+  font-size: 1.4rem;
+}
+
+.badge {
+  position: absolute;
+  left: 0.8rem;
+  top: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 600;
+  background: #111;
+  color: #fff;
+}
+.badge-blue {
+  background: #1e66f5;
+}
+
+.feature-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  padding: 1.2rem;
+}
+
+.frame {
+  background: #fff;
+  padding: 0.8rem;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+@media (max-width: 840px) {
+  .feature-pair {
+    grid-template-columns: 1fr;
+  }
+}
+.carousel {
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding: 0 1.2rem;
+}
+
+.carousel-track {
   display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 0;
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
 
-  border: 2px solid black;
-
-  width: 20rem;
-  height: inherit;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
 }
 
-.flexcontainer {
-  display: flex;
+.carousel-track::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-.flexbox {
-  border: 2rem solid black;
+@supports (scrollbar-width: none) {
+  .carousel-track { scrollbar-width: none; }
+}
 
-  width: 20rem;
-  height: 20rem;
+@supports (-webkit-overflow-scrolling: touch) {
+  .carousel-track { -webkit-overflow-scrolling: touch; }
+}
+
+.carousel-card {
+  flex: 0 0 clamp(220px, 28vw, 340px);
+  aspect-ratio: 4 / 5;
+  background: #f7f7f7;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #111;
+  scroll-snap-align: start;
+  box-shadow: -1px 0 0 #fff;
+}
+
+.carousel-card .media-text {
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.2rem + 0.6vw, 2rem);
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 1rem;
+  color: #111;
+}
+
+.carousel-card .media-text {
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 1.2rem + 0.6vw, 2rem);
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 1rem;
+  color: #111;
+}
+
+@media (hover:hover) {
+  .carousel-card:hover { filter: brightness(0.96); }
+}
+
+@media (max-width: 640px) {
+  .carousel { padding: 0 .8rem; }
 }

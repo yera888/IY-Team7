@@ -3,68 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css">
+    <link
+      rel="stylesheet"
+      href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css"
+    />
     <link
       rel="stylesheet"
       href="/high-fidelity-prototype/provider-prototype/css/webHomepage.css"
     />
     <title>Document</title>
   </head>
- <body>
-  <div class="navContainer">
-    <div class="menu-burger">
-      <input id="nav-toggle" type="checkbox" />
-      <label for="nav-toggle" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-             stroke-width="2" stroke="currentColor" fill="none"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <line x1="4" y1="6"  x2="20" y2="6" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>
-      </label>
-      <ul class="menu-burger__item-list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Catalog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+  <body>
+    <div class="navContainer">
+      <div class="menu-burger">
+        <input id="nav-toggle" type="checkbox" />
+        <label for="nav-toggle" aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </label>
+        <ul class="menu-burger__item-list" role="menu" aria-label="Store menu">
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=shop-all">Shop All</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=new-arrivals"
+              >New Arrivals</a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=sale">Sale</a>
+          </li>
+
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=dresses">Dresses</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=tops">Tops</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=bottoms"
+              >Skirts & Pants</a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=outerwear"
+              >Outerwear</a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=shoes">Shoes</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/products.html?slug=accessories"
+              >Accessories</a
+            >
+          </li>
+
+          <li role="none">
+            <a
+              role="menuitem"
+              href="/high-fidelity-prototype/provider-prototype/login.html"
+              >Sign In</a
+            >
+          </li>
+          <li role="none">
+            <a
+              role="menuitem"
+              href="/high-fidelity-prototype/provider-prototype/signup.html"
+              >Create Account</a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/help.html">Help / FAQ</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/track.html">Track Order</a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="/stores.html">Find a Store</a>
+          </li>
+          <li role="none"><a role="menuitem" href="/cart.html">Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="navBoxOne"><p>YARAH</p></div>
+
+      <div class="navBoxTwo">
+        <ul>
+          <li>
+            <a href="#">Dropdown Link</a>
+            <ul
+              class="nav-dropdown"
+              role="menu"
+              aria-label="Store menu"
+            >
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=shop-all"
+                  >Shop All</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=new-arrivals"
+                  >New Arrivals</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=sale">Sale</a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=dresses"
+                  >Dresses</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=tops">Tops</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=bottoms"
+                  >Skirts & Pants</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=outerwear"
+                  >Outerwear</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=shoes">Shoes</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/products.html?slug=accessories"
+                  >Accessories</a
+                >
+              </li>
+
+              <li role="none">
+                <a
+                  role="menuitem"
+                  href="/high-fidelity-prototype/provider-prototype/loginPage.html"
+                  >Sign In</a
+                >
+              </li>
+              <li role="none">
+                <a
+                  role="menuitem"
+                  href="/high-fidelity-prototype/provider-prototype/signup.html"
+                  >Create Account</a
+                >
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/help.html">Help / FAQ</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/track.html">Track Order</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="/stores.html">Find a Store</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/cart.html">Cart</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="navBoxOne"><p>YARAH</p></div>
-
-    <div class="navBoxTwo">
-      <ul>
-        <li>
-          <a href="#">Dropdown Link</a>
-          <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-<section class="hero">
-  <img src="/high-fidelity-prototype/provider-prototype/images/whitedress.jpg" alt="Hero">
-</section>
+    <section class="hero">
+      <img
+        src="/high-fidelity-prototype/provider-prototype/images/whitedress.jpg"
+        alt="Hero"
+      />
+    </section>
 
     <main class="main">
-      <div class="divcontainer">
-        <div class="div">a</div>
-        <div class="div">b</div>
-        <div class="div">c</div>
-        <div class="div">d</div>
-      </div>
+      <section class="product-grid">
+        <a
+          class="product-card"
+          href="products.html?slug=black-dress"
+          aria-label="Black Dress"
+        >
+          <div class="product-media">
+            <span class="media-text">Black Dress</span>
+          </div>
+        </a>
 
-      <div class="flexcontainer">
-        <div class="flexbox">1</div>
-        <div class="flexbox">2</div>
-        <div class="flexbox">3</div>
-        <div class="flexbox">4</div>
-      </div>
+        <a
+          class="product-card"
+          href="products.html?slug=platform-boots"
+          aria-label="Platform Boots"
+        >
+          <span class="badge badge-blue">New</span>
+          <div class="product-media">
+            <span class="media-text">Platform Boots</span>
+          </div>
+        </a>
+
+        <a
+          class="product-card"
+          href="products.html?slug=mesh-top"
+          aria-label="Mesh Top"
+        >
+          <span class="badge badge-blue">Sale</span>
+          <div class="product-media">
+            <span class="media-text">Mesh Top</span>
+          </div>
+        </a>
+
+        <a
+          class="product-card"
+          href="products.html?slug=pleated-skirt"
+          aria-label="Pleated Skirt"
+        >
+          <span class="badge badge-blue">New</span>
+          <div class="product-media">
+            <span class="media-text">Pleated Skirt</span>
+          </div>
+        </a>
+      </section>
+      <section class="feature-pair">
+        <div class="frame">
+          <img
+            src="/high-fidelity-prototype/provider-prototype/images/greenblueshoes.jpg"
+            alt="Left feature"
+          />
+        </div>
+        <div class="frame">
+          <img
+            src="/high-fidelity-prototype/provider-prototype/images/greenweird.jpg"
+            alt="Right feature"
+          />
+        </div>
+      </section>
+      <section class="carousel">
+        <div class="carousel-track">
+          <a class="carousel-card" href="products.html?slug=satin-slip-dress">
+            <span class="media-text">Satin Slip Dress</span>
+          </a>
+
+          <a class="carousel-card" href="products.html?slug=buckle-mary-janes">
+            <span class="media-text">Buckle Mary Janes</span>
+          </a>
+
+          <a class="carousel-card" href="products.html?slug=sheer-blouse">
+            <span class="media-text">Sheer Blouse</span>
+          </a>
+
+          <a
+            class="carousel-card"
+            href="products.html?slug=cargo-parachute-pants"
+          >
+            <span class="media-text">Cargo Parachute Pants</span>
+          </a>
+
+          <a class="carousel-card" href="products.html?slug=denim-maxi-skirt">
+            <span class="media-text">Denim Maxi Skirt</span>
+          </a>
+
+          <a class="carousel-card" href="products.html?slug=ribbed-baby-tee">
+            <span class="media-text">Ribbed Baby Tee</span>
+          </a>
+
+          <a class="carousel-card" href="products.html?slug=platform-loafers">
+            <span class="media-text">Platform Loafers</span>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>

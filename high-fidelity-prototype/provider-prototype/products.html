@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product</title>
+
+  <link rel="stylesheet" href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css">
+  <link rel="stylesheet" href="/high-fidelity-prototype/provider-prototype/css/products.css">
+</head>
+<body>
+
+  <main class="product-wrap">
+    <div id="product"></div>
+  </main>
+
+  <script>
+    const slug = new URLSearchParams(location.search).get('slug');
+
+    const PRODUCTS = {
+      "black-dress": {
+        name: "Black Dress",
+        price: "$28",
+        photoDesc: "Black Mini Dress",
+        desc: "Classic sleek mini with a soft stretch knit, mini length. Super flattering—perfect for nights out or layered with a cardi. No major flaws; gently worn.",
+        tags: ["#minimal", "#90s", "#romantic"],
+        condition: "Like New",
+        meetUp: true
+      },
+      "platform-boots": {
+        name: "Platform Boots",
+        price: "$45",
+        photoDesc: "Chunky ankle boots",
+        desc: "Chunky platform ankle boots with zipper. Vegan leather. Scuffs on outer edge but looks just fine.",
+        tags: ["#grunge", "#streetwear"],
+        condition: "Good",
+        meetUp: false
+      },
+      "mesh-top": {
+        name: "Mesh Top",
+        price: "$16",
+        photoDesc: "Sheer long-sleeve mesh",
+        desc: "Sheer long-sleeve mesh top great for layering. Stretchy, breathable, lightweight. Looks cute over a bralette or tank.",
+        tags: ["#y2k", "#indie", "#clubwear"],
+        condition: "Great",
+        meetUp: true
+      },
+      "pleated-skirt": {
+        name: "Pleated Skirt",
+        price: "$22",
+        photoDesc: "Pleated Mini Skirt",
+        desc: "Knife-pleat mini, mid-rise. Pairs nicely with baby tees and boots. Minor wear on hem; but not noticeable when its on.",
+        tags: ["#coquette", "#preppy"],
+        condition: "Good",
+        meetUp: false
+      }
+    };
+
+    const mount = document.getElementById('product');
+
+    if (!slug || !PRODUCTS[slug]) {
+      mount.innerHTML = `<p>Product not found.</p>`;
+    } else {
+      const p = PRODUCTS[slug];
+      document.title = p.name;
+
+      const tagBadges = (p.tags || [])
+        .map(t => `<span class="pill pill-blue">${t}</span>`)
+        .join("");
+
+      const meetBadge = p.meetUp
+        ? `<span class="pill pill-green">Meet up available</span>`
+        : "";
+
+      const condition = p.condition
+        ? `<div class="condition">Condition: <strong>${p.condition}</strong></div>`
+        : "";
+
+      mount.innerHTML = `
+        <article class="product-page">
+          <div class="product-left">
+            <div class="product-media product-media--text">
+              <div class="photo-desc">${p.photoDesc}</div>
+            </div>
+            <a class="btn-secondary chat-under-photo" href="chat.html?slug=${slug}">Chat</a>
+          </div>
+
+          <div class="product-details">
+            <h1>${p.name}</h1>
+
+            <div class="meta">
+              <span class="price">${p.price}</span>
+              <div class="tags">${tagBadges} ${meetBadge}</div>
+            </div>
+
+            ${condition}
+
+            <p class="desc">${p.desc}</p>
+
+            <button class="btn-primary">Add to cart</button>
+          </div>
+        </article>
+      `;
+    }
+  </script>
+</body>
+</html>
