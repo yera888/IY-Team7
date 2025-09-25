@@ -1,0 +1,70 @@
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "syn_novabold";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff")
+      format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "syn_novaregular";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.logincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 15vh;
+}
+
+.loginbox {
+  width: 45rem;
+  height: 47rem;
+
+  background-color: black;
+}
+
+h1 {
+  font-family: "syn_novaregular";
+  font-size: 10rem;
+}
+
+h2 {
+  text-decoration: none;
+  color: white;
+}
+
+.loginbox p {
+  color: white;
+}
+
+.loginbutton {
+}
+
+.emptybox {
+}
+
+.loginbox a {
+  text-decoration: none;
+  color: white;
+}
