@@ -1,4 +1,4 @@
-# LocalHarvest Hub - Software Design 
+# Yarah Online Boutique - Software Design 
 
 Version .25  
 Prepared by Isaac Hollaway, Yeraldine Tamayo\
@@ -12,8 +12,8 @@ Table of Contents
 * 2 [Use Cases](#2-use-cases)
   * 2.1 [Use Case Model](#21-use-case-model)
   * 2.2 [Use Case Descriptions](#22-use-case-descriptions)
-    * 2.2.1 [Actor: Farmer](#221-actor-farmer)
-    * 2.2.2 [Actor: Customer](#222-actor-customer) 
+    * 2.2.1 [Actor: Seller](#221-actor-Seller)
+    * 2.2.2 [Actor: Customer](#222-actor-Customer) 
 * 3 [UML Class Diagram](#3-uml-class-diagram)
 * 4 [Database Schema](#4-database-schema)
 
@@ -33,11 +33,11 @@ Table of Contents
 
 ### 2.2 Use Case Descriptions
 
-#### 2.2.1 Actor: Farmer
+#### 2.2.1 Actor: Seller
 ##### 2.2.1.1 Sign Up
 A farmer can sign up to create their profile with their name, email, password, and phone number. Emails must be unique.
 ##### 2.2.1.2 Log In
-A farmer shall be able to sign in using their registred email and password. After logging in, the farmer shall be directed their dashboard where they see an overview of their farm, boxes and stats.
+A farmer shall be able to sign in using their registered email and password. After logging in, the farmer shall be directed their dashboard where they see an overview of their farm, boxes and stats.
 ##### 2.2.1.3 Update Profile
 A farmer shall be to modify their profile by going to their profile page. They can change their email, password, and farm.
 ##### 2.2.1.4 Create Produce Boxes
