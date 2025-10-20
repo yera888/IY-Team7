@@ -1,9 +1,9 @@
 # LocalHarvest Hub - Software Design 
 
-Version 1  
-Prepared by Alice Beback\
-LocalHarvest Hub\
-Oct 8, 2025
+Version .25  
+Prepared by Isaac Hollaway, Yeraldine Tamayo\
+Yarah Hub\
+Oct 20, 2025
 
 Table of Contents
 =================
@@ -20,13 +20,12 @@ Table of Contents
 ## Revision History
 | Name | Date    | Reason For Changes  | Version   |
 | ---- | ------- | ------------------- | --------- |
-|  Al  |10/8     | Initial Design      |    1      |
+|Isaac |10/20    | Initial Design      |    .25    |
 |      |         |                     |           |
 |      |         |                     |           |
 
 ## 1. Product Overview
-LocalHarvest Hub is a simple, comprehensive, easy to use web app with the goal of connecting consumers to locally grown produce. Farmers and customers make use of the centralized platform to meet their needs. 
-Farmers create and publish produce boxes, customers subscribe any available boxes that they are interested in, either as a one-off or recurring subscription.
+ Yarah is an online second hand clothing boutique for customers, and retailers in your area. Giving retailers the ability to easily manage their listings, and customers the ability to easily find them. Yarah will be a web based application, which will simplify the nature of trying to buy and sell second hand, and new clothing. Our main goal is to create a welcoming online community for users that enjoy good deals on quality clothing.
 
 ## 2. Use Cases
 ### 2.1 Use Case Model
