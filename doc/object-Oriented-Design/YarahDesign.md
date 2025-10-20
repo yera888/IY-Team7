@@ -45,7 +45,7 @@ Sellers will be able to modify all the above listing attributes.
 ##### 2.2.1.4 Remove Listing
 Sellers will be able to delete listings that either have not sold or are no longer willing to sell.
 ##### 2.2.1.5 View Stats
-Sellers will be able to view an overview of all their relevant statistics. Such as: Listing views, Revenue, and completed shipments.
+Sellers will be able to view an overview of all their relevant statistics. Such as: Listing views, Revenue, and Completed shipments.
 
 #### 2.2.2 Actor: Customer
 ##### 2.2.2.1 Sign Up
