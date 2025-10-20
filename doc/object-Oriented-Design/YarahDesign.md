@@ -35,16 +35,17 @@ Table of Contents
 
 #### 2.2.1 Actor: Seller
 ##### 2.2.1.1 Sign Up
-
+A seller can sign up first as a customer, and then once they have created their profile apply to be a seller.
 ##### 2.2.1.2 Log In
-
+A seller will be able to sign in using their registered email and password. After logging in sellers will be directed to the homepage.
 ##### 2.2.1.3 Create Listings
-
+Sellers will be able to create new listings. These listings will contain weight, price, description, img, size, and condition
 ##### 2.2.1.4 Modify Listings
-
+Sellers will be able to modify all the above listing attributes.
 ##### 2.2.1.4 Remove Listing
-
+Sellers will be able to delete listings that either have not sold or are no longer willing to sell.
 ##### 2.2.1.5 View Stats
+Sellers will be able to view an overview of all their relevant statistics. Such as: Listing views, Revenue, and completed shipments.
 
 #### 2.2.2 Actor: Customer
 ##### 2.2.2.1 Sign Up
