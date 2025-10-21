@@ -49,21 +49,31 @@ Sellers will be able to view an overview of all their relevant statistics. Such 
 
 #### 2.2.2 Actor: Customer
 ##### 2.2.2.1 Sign Up
+A customer shall sign up with a name, email, password, and phone number. Emails and phone numbers will be one time use and will be directly connected to their profile.
 
 ##### 2.2.2.2 Log In
+A customer shall log in with their registered email and password. After login, they will be directed to the homepage.
 
-##### 2.2.2.3 Create Album
+##### 2.2.2.3 Delivery Checkout
+A costumer will enter their shipping and payment information when they choose the delivery checkout option. Once the order is placed they will receive a confirmation email with their cart information and unique order number.
 
 ##### 2.2.1.4 Like/Heart Product
+A customer can save products to either a “Liked” or “Loved” album by pressing the heart or thumbs up button on each specific product listing. These saved products then appear on the chosen album page that shows of all the "Liked" or "Loved" products.
 
 ##### 2.2.1.5 Leave Review
+A customer can rate one seller 1–5 stars with a short review (optional). Reviews are allowed after a product has been delivered or a meet-up has occured.
 
 ##### 2.2.1.6 Local Pickup
+If a customer chooses not to have their product delivered the customer requests a public meet-up location and time for an "Able for pick-up" listing that is within the radius range the seller has allowed for. The transaction must fully go through in order for them to request the public meet-up. Then the customer meets up with the seller to finish the full transaction and confirms a sucessful exchange.
 
-##### 2.2.1.7 Browse Clothes/Sales
+##### 2.2.1.7 Browse Clothes/Sales. 
+The customer can browse through the clothes by different categorys such as sale, or product types such as skirt, dresses, shoes or by the #tags provided.
 
 ##### 2.2.1.8 Message Seller
+A customer can send a message for each specific listing to the seller.
 
+##### 2.2.1.9 Manage Profile
+A customer can choose to update/edit their profile photo, and username on their profile page.
 
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/class-diagram.png)
