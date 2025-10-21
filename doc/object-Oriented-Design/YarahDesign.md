@@ -77,6 +77,6 @@ The customer can browse through the clothes by different categorys such as sale,
 A customer can send a message for each specific listing to the seller.
 
 ## 3. UML Class Diagram
-![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/class-diagram.png)
+![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/UMLdiagram.png)
 ## 4. Database Schema
-![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/schema.png)
+![Schema Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/use-case-model.png)
