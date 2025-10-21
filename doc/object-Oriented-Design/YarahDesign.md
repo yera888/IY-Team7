@@ -79,4 +79,4 @@ A customer can send a message for each specific listing to the seller.
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/class-diagram.png)
 ## 4. Database Schema
-![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/schema.png)
+![UML Class Diagram][(https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/schema.png](https://github.com/yera888/IY-Team7/blob/3c6a6dd24927564fcdc347e79c78c2180c398e21/doc/object-Oriented-Design/Database-schema.png))
