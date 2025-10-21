@@ -72,9 +72,6 @@ The customer can browse through the clothes by different categorys such as sale,
 ##### 2.2.1.8 Message Seller
 A customer can send a message for each specific listing to the seller.
 
-##### 2.2.1.9 Manage Profile
-A customer can choose to update/edit their profile photo, and username on their profile page.
-
 ## 3. UML Class Diagram
 ![UML Class Diagram](https://github.com/csc340-uncg/f25-team0/blob/main/doc/Object-Oriented-Design/class-diagram.png)
 ## 4. Database Schema
