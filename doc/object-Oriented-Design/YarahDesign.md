@@ -46,6 +46,8 @@ Sellers will be able to modify all the above listing attributes.
 Sellers will be able to delete listings that either have not sold or are no longer willing to sell.
 ##### 2.2.1.5 View Stats
 Sellers will be able to view an overview of all their relevant statistics. Such as: Listing views, Revenue, and Completed shipments.
+##### 2.2.1.6 Local Drop off
+Sellers will be able to make their location public to customers allowing for them to make a drop off locally. Location will be used to offer their listings in the local radius set by the customer.
 
 #### 2.2.2 Actor: Customer
 ##### 2.2.2.1 Sign Up
