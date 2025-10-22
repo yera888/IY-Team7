@@ -10,5 +10,6 @@
         "WCAG",
         "Yarah",
         "Yeraldine"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
