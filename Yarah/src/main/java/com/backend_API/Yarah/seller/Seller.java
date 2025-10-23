@@ -17,10 +17,6 @@ import org.hibernate.annotations.NotFound;
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sellerId;
 
     @NotBlank
@@ -42,10 +38,6 @@ public class Seller {
     private String address;
 
     private String phoneNumber;
-
-    public Seller(Long userId) {
-        this.userId = userId;
-    }
 
     public Seller(Long sellerId) {
         this.sellerId = sellerId;

@@ -18,12 +18,12 @@ public class SellerService {
         return SellerRepository.save(seller);
     }
 
-    public Seller updateSeller(Long userId, Seller sellerDetails) {
-        Seller seller = SellerRepository.findById(Long sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+    public Seller updateSeller(Long sellerId, Seller sellerDetails) {
+        Seller seller = SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
 
         seller.setName(sellerDetails.getName());
         if (!seller.getEmail().equals(sellerDetails.getEmail()) && 
-            sellerRepository.existsByEmail(sellerDetails.getEmail())) {
+            SellerRepository.existsByEmail(sellerDetails.getEmail())) {
                 throw new IllegalStateException("Email already registered");
         }
         seller.setEmail(sellerDetails.getEmail());
@@ -32,11 +32,11 @@ public class SellerService {
         return sellerRepository.save(seller);
     }
 
-    public Seller getSellerById(Long userId) {
-        return sellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+    public Seller getSellerById(Long sellerId) {
+        return SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 
     public Seller getSellerbyEmail(String email) {
-        return sellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+        return SellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 }
