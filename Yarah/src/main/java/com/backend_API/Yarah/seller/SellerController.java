@@ -12,12 +12,12 @@ public class SellerController {
     private final SellerService sellerService;
 
     @PostMapping
-    public ResponseEntity<Seller> createSeller (@Vaild @RequestBody Seller seller) {
+    public ResponseEntity<Seller> createSeller (@Valid @RequestBody Seller seller) {
         return ResponseEntity.ok(sellerService.createSeller(seller));
     }
 
     @PutMapping("/{sellerId}")
-    public ResponseEntity<Seller> updateSeller (@PathVariable Long sellerId, @Vaild @RequestBody Seller sellerDetails) {
+    public ResponseEntity<Seller> updateSeller (@PathVariable Long sellerId, @Valid @RequestBody Seller sellerDetails) {
         return ResponseEntity.ok(sellerService.updateSeller(sellerId, sellerDetails));
     }
 
