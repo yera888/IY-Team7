@@ -29,7 +29,7 @@ public class SellerService {
         seller.setEmail(sellerDetails.getEmail());
         seller.setPhoneNumber(sellerDetails.getPhoneNumber());
 
-        return sellerRepository.save(seller);
+        return SellerRepository.save(seller);
     }
 
     public Seller getSellerById(Long sellerId) {
