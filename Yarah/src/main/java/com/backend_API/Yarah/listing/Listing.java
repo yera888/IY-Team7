@@ -6,11 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.backend_API.Yarah.seller.Seller;
 
@@ -47,6 +44,7 @@ public class Listing {
     private BigDecimal weight;
 
     @NotBlank
+    @Positive
     @Column(nullable = false)
     private BigDecimal price;
 
@@ -55,7 +53,4 @@ public class Listing {
 
     @NotNull
     private boolean sold = true;
-
-    @NotBlank
-    @Column(nullable = false)
 }
