@@ -36,7 +36,7 @@ public class SellerService {
         return SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 
-    public Seller getSellerbyEmail(String email) {
+    public Seller getSellerByEmail(String email) {
         return SellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 }
