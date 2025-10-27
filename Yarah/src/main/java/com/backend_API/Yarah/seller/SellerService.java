@@ -18,20 +18,6 @@ public class SellerService {
         return SellerRepository.save(seller);
     }
 
-    public Seller updateSeller(Long sellerId, Seller sellerDetails) {
-        Seller seller = SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
-
-        seller.setName(sellerDetails.getName());
-        if (!seller.getEmail().equals(sellerDetails.getEmail()) && 
-            SellerRepository.existsByEmail(sellerDetails.getEmail())) {
-                throw new IllegalStateException("Email already registered");
-        }
-        seller.setEmail(sellerDetails.getEmail());
-        seller.setPhoneNumber(sellerDetails.getPhoneNumber());
-
-        return SellerRepository.save(seller);
-    }
-
     public Seller getSellerById(Long sellerId) {
         return SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }

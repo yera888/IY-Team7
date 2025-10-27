@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.seller;
+package com.backend_API.Yarah.user;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -9,11 +9,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "Sellers")
-public class Seller {
+@Table(name = "Users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sellerId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
 
     @NotBlank
     @Column(nullable = false)
@@ -24,8 +28,19 @@ public class Seller {
     @Column(unique = true, nullable = false)
     private String email;
 
-    public Seller(Long sellerId) {
-        this.sellerId = sellerId;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String password;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String address;
+
+    private String phoneNumber;
+
+    public User(Long userId) {
+        this.userId = userId;
     }
 
 }

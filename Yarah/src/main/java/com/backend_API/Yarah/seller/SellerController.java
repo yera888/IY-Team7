@@ -16,11 +16,6 @@ public class SellerController {
         return ResponseEntity.ok(sellerService.createSeller(seller));
     }
 
-    @PutMapping("/{sellerId}")
-    public ResponseEntity<Seller> updateSeller (@PathVariable Long sellerId, @Valid @RequestBody Seller sellerDetails) {
-        return ResponseEntity.ok(sellerService.updateSeller(sellerId, sellerDetails));
-    }
-
     @GetMapping("/{sellerId}")
     public ResponseEntity<Seller> getSeller (@PathVariable Long sellerId) {
         return ResponseEntity.ok(sellerService.getSellerById(sellerId));
