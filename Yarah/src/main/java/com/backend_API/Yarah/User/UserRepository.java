@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.user;
+package com.backend_API.Yarah.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

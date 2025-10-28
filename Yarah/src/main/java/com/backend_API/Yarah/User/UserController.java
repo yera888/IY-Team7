@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.user;
+package com.backend_API.Yarah.User;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
