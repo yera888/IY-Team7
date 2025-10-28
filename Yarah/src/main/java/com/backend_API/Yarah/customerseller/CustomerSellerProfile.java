@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.Customer;
+package com.backend_API.Yarah.customerseller;
 
 import com.csc340.backend_API.Yarah.user.User;
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "customers")
-public class Customer {
+public class CustomerSellerProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,7 +42,7 @@ public class Customer {
 
     private String phoneNumber;
 
-    public Customer(Long id) {
+    public CustomerSellerProfile(Long id) {
         this.id = id;
     }
 

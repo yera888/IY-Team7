@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.Customer;
+package com.backend_API.Yarah.customerseller;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -11,17 +11,17 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class CustomerService {
-private final CustomerRepository customerRepository;
+private final CustomerSellerProfileRepository customerRepository;
 
-    public Customer createCustomer(Customer customer) {
+    public CustomerSellerProfile createCustomer(CustomerSellerProfile customer) {
         if (customerRepository.existsByEmail(customer.getEmail())) {
             throw new IllegalStateException("Email already registered");
         }
         return customerRepository.save(customer);
     }
 
-    public Customer updateCustomer(Long id, Customer customerDetails) {
-        Customer customer = customerRepository.findById(id)
+    public CustomerSellerProfile updateCustomer(Long id, CustomerSellerProfile customerDetails) {
+        CustomerSellerProfile customer = customerRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("Customer not found"));
 
         customer.setName(customerDetails.getName());
@@ -32,20 +32,20 @@ private final CustomerRepository customerRepository;
         return customerRepository.save(customer);
     }
 
-    public Customer getCustomerById(Long id) {
+    public CustomerSellerProfile getCustomerById(Long id) {
         return customerRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("Customer not found"));
     }
 
-    public List<Customer> getAllCustomers() {
+    public List<CustomerSellerProfile> getAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public List<Customer> searchByAddress(String address) {
+    public List<CustomerSellerProfile> searchByAddress(String address) {
         return customerRepository.findByShippingAddressContaining(address);
     }
 
-    public List<Customer> searchByPhoneNumber(String phoneNumber) {
+    public List<CustomerSellerProfile> searchByPhoneNumber(String phoneNumber) {
         return customerRepository.findByPhoneNumberContaining(phoneNumber);
     }
 
