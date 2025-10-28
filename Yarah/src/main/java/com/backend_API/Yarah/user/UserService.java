@@ -19,6 +19,8 @@ public class UserService {
             UserRepository.existsByEmail(userDetails.getEmail())) {
                 throw new IllegalStateException("Email already registered");
         }
+        user.setName(userDetails.getName());
+        user.setAddress(userDetails.getAddress());
         user.setEmail(userDetails.getEmail());
         user.setPhoneNumber(userDetails.getPhoneNumber());
 

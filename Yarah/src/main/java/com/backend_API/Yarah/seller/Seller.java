@@ -24,6 +24,16 @@ public class Seller {
     @Column(unique = true, nullable = false)
     private String email;
 
+    @NotBlank
+    @Column(nullable = false)
+    private String password;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String address;
+
+    private String phoneNumber;
+
     public Seller(Long sellerId) {
         this.sellerId = sellerId;
     }

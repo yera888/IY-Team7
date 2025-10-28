@@ -13,10 +13,6 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sellerId;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     @NotBlank

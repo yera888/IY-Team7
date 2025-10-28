@@ -12,7 +12,7 @@ public class UserController {
     private final UserService userService;
 
     @PutMapping("/{sellerId}")
-    public ResponseEntity<User> updateUser (@PathVariable Long userId, @Valid @RequestBody User userDetails) {
+    public ResponseEntity<User> updateUser (@PathVariable("sellerId") Long userId, @Valid @RequestBody User userDetails) {
         return ResponseEntity.ok(userService.updateUser(userId, userDetails));
     }
 
