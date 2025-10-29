@@ -9,11 +9,11 @@ Content-Type: application/json
 
 {
   "sellerId": 21,
-  "name": "joe shmelly two",
-  "email": "joeshmellytwo@email.com",
-  "password": "oneshmellyguytwo",
-  "address": "big smelly lane drive",
-  "phoneNumber": "1800shmellytwo"
+  "name": "joe test two",
+  "email": "joetesttwo@email.com",
+  "password": "joetesttwo",
+  "address": "lake view drive",
+  "phoneNumber": "1800lakeview"
 }
 ```
 
@@ -29,11 +29,11 @@ Content-Type: application/json
 
 {
   "sellerId": 21,
-  "name": "joe shmelly two",
-  "email": "joeshmellytwo@email.com",
-  "password": "oneshmellyguytwo",
-  "address": "big smelly lane drive",
-  "phoneNumber": "1800shmellytwo"
+  "name": "joe test two",
+  "email": "joetesttwo@email.com",
+  "password": "joetesttwo",
+  "address": "lake view drive",
+  "phoneNumber": "1800lakeview"
 }
 ```
 
