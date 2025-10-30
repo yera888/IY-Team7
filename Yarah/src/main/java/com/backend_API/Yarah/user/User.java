@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.backend_API.Yarah.profile.Profile;
+
 
 @Data
 @NoArgsConstructor
@@ -24,6 +26,8 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
 
     @NotBlank
     @Column(nullable = false)
@@ -37,6 +41,7 @@ public class User {
 
     public User(Long userId) {
         this.userId = userId;
+        
     }
 
 }

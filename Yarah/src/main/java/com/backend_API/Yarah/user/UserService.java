@@ -17,7 +17,7 @@ public class UserService {
         user.setName(userDetails.getName());
         if (!user.getEmail().equals(userDetails.getEmail()) && 
             UserRepository.existsByEmail(userDetails.getEmail())) {
-                throw new IllegalStateException("Email already registered");
+                throw new IllegalStateException("Email is already registered");
         }
         user.setName(userDetails.getName());
         user.setAddress(userDetails.getAddress());
