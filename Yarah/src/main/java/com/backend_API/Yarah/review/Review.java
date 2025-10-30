@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 
 @Data
@@ -21,10 +22,13 @@ public class Review {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String username;
     
-    @NotBlank
-    @Column(nullable = false)
+    @Column
     private BigDecimal seller_rating;
 
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String comment;
 
+    @Column(nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
 }
