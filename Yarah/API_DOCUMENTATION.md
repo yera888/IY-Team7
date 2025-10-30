@@ -4,13 +4,16 @@
 
 ### Create Seller
 ```
+POST /api/sellers
+Content-Type: application/json
+
 {
   "sellerId": 21,
-  "name": "joe shmelly two",
-  "email": "joeshmellytwo@email.com",
-  "password": "oneshmellyguytwo",
-  "address": "big smelly lane drive",
-  "phoneNumber": "1800shmellytwo"
+  "name": "joe test two",
+  "email": "joetesttwo@email.com",
+  "password": "joetesttwo",
+  "address": "lake view drive",
+  "phoneNumber": "1800lakeview"
 }
 ```
 
@@ -21,18 +24,24 @@ Doesn't work
 
 ### Get Seller
 ```
+GET /api/sellers/{sellerId}
+Content-Type: application/json
+
 {
   "sellerId": 21,
-  "name": "joe shmelly two",
-  "email": "joeshmellytwo@email.com",
-  "password": "oneshmellyguytwo",
-  "address": "big smelly lane drive",
-  "phoneNumber": "1800shmellytwo"
+  "name": "joe test two",
+  "email": "joetesttwo@email.com",
+  "password": "joetesttwo",
+  "address": "lake view drive",
+  "phoneNumber": "1800lakeview"
 }
 ```
 
 ### Create Listing
 ```
+POST /api/listings
+Content-Type: application/json
+
 {
   "listingId": 1,
   "seller": {
@@ -53,6 +62,9 @@ Doesn't work
 
 ### Get Listing
 ```
+GET /api/listings/{id}
+Content-Type: application/json
+
 {
   "listingId": 2,
   "seller": {
@@ -73,6 +85,9 @@ Doesn't work
 
 ### Get All Listings
 ```
+GET /api/listings
+Content-Type: application/json
+
 [
   {
     "listingId": 1,
@@ -111,6 +126,9 @@ Doesn't work
 
 ### Update Listing
 ```
+PUT /api/listings/{id}
+Content-Type: application/json
+
 {
   "listingId": 2,
   "seller": {
@@ -131,6 +149,9 @@ Doesn't work
 
 ### Delete Listing
 ```
+DELETE /api/listings/{id}
+Content-Type: application/json
+
 [
   {
     "listingId": 1,
