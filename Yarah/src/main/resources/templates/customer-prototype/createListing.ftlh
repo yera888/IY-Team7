@@ -53,33 +53,42 @@
     <div class="backGroundFlare"></div>
     <div class="createListingContainer">
         <div class="formContainer">
-            <h1>List an Item</h1>
+            <h1>${title}</h1>
+            <form id="newListing" action="/create" method="post" enctype="multipart/form-data">
             <div class="lineBoxTwo"></div>
                 <h2>Photos</h2>
             <div class="photoBox">
                 <div class="photoPlaceHolder">
                     <p>add a photo</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>cover photo</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>front</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>back</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>side</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>label</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>details</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
                 <div class="photoPlaceHolder">
                     <p>flaws</p>
+                    <input type="file" name="photo" id="photo">
                 </div>
             </div>
             <h3>Description</h3>
@@ -128,12 +137,13 @@
             <div class="space"></div>
             <div class="postEditBox">
                 <div class="postBox">
-                    <button>Post Now</button>
+                    <button type="submit">Post Now</button>
                 </div>
                 <div class="editBox">
-                    <button>Save and Edit later</button>
+                    <button type="submit">Save and Edit later</button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
     <div class="footerTwo">
