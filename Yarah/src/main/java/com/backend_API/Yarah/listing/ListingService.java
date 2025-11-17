@@ -24,11 +24,11 @@ public class ListingService {
         
         listing.setDescription(listingInfo.getDescription());
         listing.setCondition(listingInfo.getCondition());
-        listing.setImgUrl(listingInfo.getImgUrl());
+        listing.setListingPhotoPath(listingInfo.getListingPhotoPath());
         listing.setSize(listingInfo.getSize());
         listing.setWeight(listingInfo.getWeight());
         listing.setPrice(listingInfo.getPrice());
-        listing.setAvailable(listingInfo.isAvailable());
+        listing.setAvailable(listingInfo.getAvailable());
 
         return listingRepository.save(listing);
     }
