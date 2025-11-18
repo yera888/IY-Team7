@@ -54,35 +54,39 @@
     <div class="backGroundFlare"></div>
 
     <div class="spacer"></div>
-
+    
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Choose Your Account Type</h3>
+                        <h3 class="card-title">Seller Sign Up</h3>
                     </div>
-                    <div class="card-body text-center">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">User</h5>
-                                        <p class="card-text">Sign up to browse affordable clothing near you.</p>
-                                        <a href="/users/signup" class="btn btn-primary">Sign Up as User</a>
-                                    </div>
-                                </div>
+                    <div class="card-body">
+                        <form action="/seller/signup" method="post">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
-                            <div class="col-md-6">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Seller</h5>
-                                        <p class="card-text">Sign up to start selling your clothes</p>
-                                        <a href="/sellers/signup" class="btn btn-success">Sign Up as Seller</a>
-                                    </div>
-                                </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-                        </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="shippingAddress" class="form-label">Shipping Address</label>
+                                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="3"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
                         <div class="mt-3">
                             <a href="/signin">Already have an account? Sign in</a>
                         </div>
