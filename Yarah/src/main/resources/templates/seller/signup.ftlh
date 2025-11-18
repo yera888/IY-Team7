@@ -61,7 +61,7 @@
                         <h3 class="card-title">Customer Sign Up</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/customers/signup" method="post">
+                        <form action="/seller/signup" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
