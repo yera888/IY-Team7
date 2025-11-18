@@ -1,7 +1,5 @@
 package com.backend_API.Yarah.user;
 
-
-import com.backend_API.Yarah.profile.Profile;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -26,9 +24,6 @@ public class User {
     @NotBlank
     @Column(unique = true, nullable = false)
     private String email;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Profile profile;
 
     @NotBlank
     @Column(nullable = false)
