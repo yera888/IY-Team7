@@ -66,7 +66,7 @@
                                     href="#user">User</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="seller-tab" data-bs-toggle="tab" href="#seller">Farmer</a>
+                                <a class="nav-link" id="seller-tab" data-bs-toggle="tab" href="#seller">Seller</a>
                             </li>
                         </ul>
                     </div>
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="seller">
-                                <h3 class="card-title mb-4">Farmer Sign In</h3>
+                                <h3 class="card-title mb-4">Seller Sign In</h3>
                                 <form action="/sellers/signin" method="post">
                                     <div class="mb-3">
                                         <label for="sellerEmail" class="form-label">Email</label>
