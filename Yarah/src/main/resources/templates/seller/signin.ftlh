@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/normalize.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/universalNavStyle.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/sellerOverview.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/normalize.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/universalNavStyle.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/sellerOverview.css">
     <title>Sign In</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Seller Overview</a></li>
+                        <li><a href="/high-fidelity-prototype/seller/sellerOverview.html">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
@@ -60,51 +60,51 @@
                     <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" id="customer-tab" data-bs-toggle="tab"
-                                    href="#customer">Customer</a>
+                                <a class="nav-link active" id="user-tab" data-bs-toggle="tab"
+                                    href="#user">User</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="farmer-tab" data-bs-toggle="tab" href="#farmer">Farmer</a>
+                                <a class="nav-link" id="seller-tab" data-bs-toggle="tab" href="#seller">Farmer</a>
                             </li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="tab-pane fade show active" id="customer">
-                                <h3 class="card-title mb-4">Customer Sign In</h3>
-                                <form action="/customers/signin" method="post">
+                            <div class="tab-pane fade show active" id="user">
+                                <h3 class="card-title mb-4">User Sign In</h3>
+                                <form action="/users/signin" method="post">
                                     <div class="mb-3">
-                                        <label for="customerEmail" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="customerEmail" name="email"
+                                        <label for="userEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="userEmail" name="email"
                                             required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="customerPassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="customerPassword"
+                                        <label for="userPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="userPassword"
                                             name="password" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Sign In</button>
                                 </form>
                                 <div class="mt-3">
-                                    <a href="/customers/signup">Need an account? Sign up as a customer</a>
+                                    <a href="/users/signup">Need an account? Sign up as a user</a>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="farmer">
+                            <div class="tab-pane fade" id="seller">
                                 <h3 class="card-title mb-4">Farmer Sign In</h3>
-                                <form action="/farmers/signin" method="post">
+                                <form action="/sellers/signin" method="post">
                                     <div class="mb-3">
-                                        <label for="farmerEmail" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="farmerEmail" name="email" required>
+                                        <label for="sellerEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="sellerEmail" name="email" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="farmerPassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="farmerPassword" name="password"
+                                        <label for="sellerPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="sellerPassword" name="password"
                                             required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Sign In</button>
                                 </form>
                                 <div class="mt-3">
-                                    <a href="/farmers/signup">Need an account? Sign up as a farmer</a>
+                                    <a href="/sellers/signup">Need an account? Sign up as a seller</a>
                                 </div>
                             </div>
                         </div>
