@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/normalize.css">
     <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/universalNavStyle.css">
     <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/sellerOverview.css">
+    <#include "normalize.css">
+    <#include "universalNavStyle.css">
+    <#include "sellerOverview.css">
     <title>Document</title>
 </head>
 <body>
