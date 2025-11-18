@@ -3,14 +3,11 @@ package com.backend_API.Yarah.mvc.controller;
 import com.backend_API.Yarah.seller.Seller;
 import com.backend_API.Yarah.seller.SellerService;
 
-import java.util.List;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/sellers")
