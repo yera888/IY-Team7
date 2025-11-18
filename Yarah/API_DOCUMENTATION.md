@@ -170,4 +170,12 @@ Content-Type: application/json
     "sold": false
   }
 ]
+
+## Customer API Endpoints
+
+### Sign up
+
+
+
+
 ```

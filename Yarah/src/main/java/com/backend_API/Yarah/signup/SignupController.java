@@ -19,13 +19,11 @@ public class SignupController {
     private final ProfileRepository profileRepository;
     private final SignupService signupService;
 
-
     @PostMapping
     public ResponseEntity<User> signup(@RequestBody User user) {
         User savedUser = signupService.signup(user);
         return ResponseEntity.status(201).body(savedUser);
     }
-
 
     @GetMapping("/user/{id}")
     public ResponseEntity<User> getUser(@PathVariable Long id) {
@@ -34,7 +32,6 @@ public class SignupController {
         return ResponseEntity.ok(user);
     }
 
-  
     @GetMapping("/profile/{userId}")
     public ResponseEntity<Profile> getProfileByUser(@PathVariable Long userId) {
         Profile profile = profileRepository.findByUser_UserId(userId)

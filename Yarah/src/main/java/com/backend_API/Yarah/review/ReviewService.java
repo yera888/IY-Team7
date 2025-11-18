@@ -5,8 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -19,24 +19,24 @@ public class ReviewService {
         if (review.getComment() == null || review.getComment().isBlank()) {
             throw new IllegalArgumentException("Comment cannot be empty");
         }
-
+        if (review.getRating() < 1 || review.getRating() > 5) {
+            throw new IllegalArgumentException("Rating must be between 1 and 5");
+        }
         if (review.getCreatedAt() == null) {
             review.setCreatedAt(LocalDateTime.now());
         }
-
         return reviewRepository.save(review);
     }
 
-    public Review setSellerRating(Long reviewId, BigDecimal rating) {
-        if (rating.compareTo(BigDecimal.ONE) < 0 || rating.compareTo(BigDecimal.valueOf(5)) > 0) {
-            throw new IllegalArgumentException("Rating must be between 1 and 5");
-        }
+    @Transactional(readOnly = true)
+    public List<Review> getAll() {
+        return reviewRepository.findAll();
+    }
 
-        Review review = reviewRepository.findById(reviewId)
+    @Transactional(readOnly = true)
+    public Review getById(Long id) {
+        return reviewRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Review not found"));
-
-        review.setSeller_rating(rating);
-        return reviewRepository.save(review);
     }
 
     public void deleteReview(Long id) {
@@ -45,5 +45,4 @@ public class ReviewService {
         }
         reviewRepository.deleteById(id);
     }
-
 }

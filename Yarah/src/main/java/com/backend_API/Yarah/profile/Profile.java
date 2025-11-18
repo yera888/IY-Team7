@@ -17,40 +17,41 @@ import java.time.LocalDateTime;
 public class Profile {
 
     @Id
-    private Long id; 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "profile_id")
+    private Long profileId;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false, unique = true)
     private User user;
 
     @Size(max = 120)
+    @Column(name = "first_name")
     private String firstName;
 
     @Size(max = 120)
+    @Column(name = "last_name")
     private String lastName;
 
-    @Size(max = 50)
-    private String phone;
+    @Column(name = "account_type", length = 20)
+    private String accountType = "CUSTOMER"; // CUSTOMER | SELLER | ADMIN
 
-    @Column(length = 20)
-    private String accountType; 
-
+    @Column(name = "location_enabled")
     private boolean locationEnabled = false;
 
     @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     public Profile(User user) {
         this.user = user;
-        this.id = user.getUserId();
-        this.firstName = user.getName();
+        this.firstName = user != null ? user.getName() : "";
         this.lastName = "";
-        this.phone = user.getPhoneNumber();
-        this.accountType = "customer";
+        this.accountType = "CUSTOMER";
         this.locationEnabled = false;
     }
 }

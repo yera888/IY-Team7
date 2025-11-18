@@ -1,21 +1,24 @@
 package com.backend_API.Yarah.profile;
 
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import jakarta.persistence.EntityNotFoundException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/profiles")
 @RequiredArgsConstructor
 public class ProfileController {
+
     private final ProfileService service;
 
     @PostMapping
-    public ResponseEntity<Profile> create(@RequestBody Profile p) {
+    public ResponseEntity<Profile> create(@Valid @RequestBody Profile p) {
         try {
             Profile created = service.createOrUpdate(p);
             return ResponseEntity.status(HttpStatus.CREATED).body(created);
@@ -27,9 +30,9 @@ public class ProfileController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Profile> update(@PathVariable Long id, @RequestBody Profile p) {
+    public ResponseEntity<Profile> update(@PathVariable Long id, @Valid @RequestBody Profile p) {
         try {
-            p.setId(id);
+            p.setProfileId(id);
             Profile updated = service.createOrUpdate(p);
             return ResponseEntity.ok(updated);
         } catch (EntityNotFoundException ex) {
@@ -57,6 +60,11 @@ public class ProfileController {
         }
     }
 
+    @GetMapping
+    public ResponseEntity<List<Profile>> getAll() {
+        return ResponseEntity.ok(service.getAll());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         try {
@@ -67,3 +75,5 @@ public class ProfileController {
         }
     }
 }
+
+
