@@ -215,3 +215,7 @@ ul li ul li:hover {
     background-position: center;
     z-index: -1;
 }
+
+.spacer {
+    height: 20rem;
+}
