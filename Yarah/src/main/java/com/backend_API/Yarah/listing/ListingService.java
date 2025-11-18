@@ -29,6 +29,7 @@ public class ListingService {
         listing.setWeight(listingInfo.getWeight());
         listing.setPrice(listingInfo.getPrice());
         listing.setAvailable(listingInfo.getAvailable());
+        listing.setSold(listingInfo.getSold());
 
         return listingRepository.save(listing);
     }
