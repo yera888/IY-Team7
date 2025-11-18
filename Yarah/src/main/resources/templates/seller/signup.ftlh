@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/normalize.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/universalNavStyle.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/sellerOverview.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/normalize.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/universalNavStyle.css">
+    <link rel="stylesheet" href="/high-fidelity-prototype/seller/css/sellerOverview.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Seller Overview</a></li>
+                        <li><a href="/high-fidelity-prototype/seller/sellerOverview.html">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
