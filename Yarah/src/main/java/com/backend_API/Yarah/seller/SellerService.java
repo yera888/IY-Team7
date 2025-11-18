@@ -2,7 +2,6 @@ package com.backend_API.Yarah.seller;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,20 +9,29 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 public class SellerService {
-    private final SellerRepository SellerRepository;
+    private final SellerRepository sellerRepository;
 
     public Seller createSeller(Seller seller) {
-        if (SellerRepository.existsByEmail(seller.getEmail())) {
+        if (sellerRepository.existsByEmail(seller.getEmail())) {
             throw new IllegalStateException("Email already registered");
         }
-        return SellerRepository.save(seller);
+        return sellerRepository.save(seller);
     }
 
-    public Seller getSellerById(Long sellerId) {
-        return SellerRepository.findById(sellerId).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+    public Seller getSellerById(Long id) {
+        return sellerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 
     public Seller getSellerByEmail(String email) {
-        return SellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+        return sellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+    }
+
+    public Seller authenticate(String email, String password) {
+        Seller seller = sellerRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid email or password"));
+        if (!seller.getPassword().equals(password)) {
+            throw new IllegalArgumentException("Invalid email or password");
+        }
+        return seller;
     }
 }

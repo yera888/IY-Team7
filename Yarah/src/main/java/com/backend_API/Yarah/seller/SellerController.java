@@ -17,8 +17,8 @@ public class SellerController {
         return ResponseEntity.ok(SellerService.createSeller(seller));
     }
 
-    @GetMapping("/{sellerId}")
-    public ResponseEntity<Seller> getSeller (@PathVariable Long sellerId) {
-        return ResponseEntity.ok(SellerService.getSellerById(sellerId));
+    @GetMapping("/{id}")
+    public ResponseEntity<Seller> getSeller (@PathVariable Long id) {
+        return ResponseEntity.ok(SellerService.getSellerById(id));
     }
 }

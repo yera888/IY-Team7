@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sellerId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -34,8 +34,8 @@ public class Seller {
 
     private String phoneNumber;
 
-    public Seller(Long sellerId) {
-        this.sellerId = sellerId;
+    public Seller(Long id) {
+        this.id = id;
     }
 
 }
