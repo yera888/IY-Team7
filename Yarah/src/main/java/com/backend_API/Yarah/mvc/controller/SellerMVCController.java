@@ -58,7 +58,7 @@ public class SellerMVCController {
     }
 
 
-    @GetMapping("/Listing/New")
+    @GetMapping("/createListing/New")
     public String newListingForm(HttpSession session, Model model) {
         Long sellerId = (Long) session.getAttribute("sellerId");
         if (sellerId == null) {
@@ -130,7 +130,6 @@ public class SellerMVCController {
         listingService.createListing(listing);
 
         return "redirect:/sellers/sellerSelling";
-
     }
 
 }

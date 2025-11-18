@@ -54,7 +54,7 @@
     <div class="createListingContainer">
         <div class="formContainer">
             <h1>${title}</h1>
-            <form id="newListing" action="/create" method="post" enctype="multipart/form-data">
+            <form id="newListing" action="/sellers/createListing/new" method="post" enctype="multipart/form-data">
             <div class="lineBoxTwo"></div>
                 <h2>Photos</h2>
             <div class="photoBox">
