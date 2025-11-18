@@ -28,16 +28,6 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
-        @GetMapping("/search/address")
-    public ResponseEntity<List<User>> searchByAddress(@RequestParam String address) {
-        return ResponseEntity.ok(userService.searchByAddress(address));
-    }
-
-    @GetMapping("/search/phone")
-    public ResponseEntity<List<User>> searchByPhoneNumber(@RequestParam String phoneNumber) {
-        return ResponseEntity.ok(userService.searchByPhoneNumber(phoneNumber));
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);

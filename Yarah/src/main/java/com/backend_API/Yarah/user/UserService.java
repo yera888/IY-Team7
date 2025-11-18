@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -35,14 +33,6 @@ public class UserService {
     public User getUserById(Long id) {
         return userRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User not found"));
-    }
-
-    public List<User> searchByAddress(String shippingAddress) {
-        return userRepository.findByShippingAddressContaining(shippingAddress);
-    }
-
-    public List<User> searchByPhoneNumber(String phoneNumber) {
-        return userRepository.findByPhoneNumberContaining(phoneNumber);
     }
 
     public void deleteUser(Long id) {

@@ -5,6 +5,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import com.backend_API.Yarah.listing.Listing;
 
 @Data
 @NoArgsConstructor
@@ -31,6 +34,10 @@ public class Seller {
     @NotBlank
     @Column(nullable = false)
     private String address;
+
+    @OneToOne(mappedBy = "seller", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("seller")
+    private Listing listing;
 
     private String phoneNumber;
 

@@ -34,11 +34,13 @@ public class SellerService {
     }
 
     public Seller getSellerById(Long id) {
-        return sellerRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+        return sellerRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 
     public Seller getSellerByEmail(String email) {
-        return sellerRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("Seller not found"));
+        return sellerRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("Seller not found"));
     }
 
     public Seller authenticate(String email, String password) {
