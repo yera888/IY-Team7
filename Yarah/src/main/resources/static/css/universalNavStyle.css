@@ -4,8 +4,8 @@ html {
 
 @font-face {
     font-family: 'porcelainregular';
-    src: url('/Yarah/src/main/resources/static/css/fonts/porcelain/porcelain-webfont.woff2') format('woff2'),
-         url('/Yarah/src/main/resources/static/css/fonts/porcelain/porcelain-webfont.woff') format('woff');
+    src: url('/fonts/porcelain/porcelain-webfont.woff2') format('woff2'),
+         url('/fonts/porcelain/porcelain-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,8 +13,8 @@ html {
 
 @font-face {
     font-family: 'synnovabold';
-    src: url('/Yarah/src/main/resources/static/css/fonts/synnova/synnova-bold-webfont.woff2') format('woff2'),
-         url('/Yarah/src/main/resources/static/css/css/fonts/synnova/synnova-bold-webfont.woff') format('woff');
+    src: url('/fonts/synnova/synnova-bold-webfont.woff2') format('woff2'),
+         url('/fonts/synnova/synnova-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 
@@ -209,7 +209,7 @@ ul li ul li:hover {
 
     margin-top: -10rem;
 
-    background-image: url(/Yarah/src/main/resources/static/images/whiteDressBackgroundImage.jpg);
+    background-image: url(/images/whiteDressBackgroundImage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
