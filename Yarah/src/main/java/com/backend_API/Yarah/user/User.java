@@ -31,7 +31,7 @@ public class User {
 
     @NotBlank
     @Column(nullable = false)
-    private String address;
+    private String shippingAddress;
 
     private String phoneNumber;
 

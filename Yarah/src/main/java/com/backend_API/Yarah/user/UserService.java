@@ -25,7 +25,7 @@ public class UserService {
             .orElseThrow(() -> new EntityNotFoundException("User not found"));
 
         user.setName(userDetails.getName());
-        user.setAddress(userDetails.getAddress());
+        user.setShippingAddress(userDetails.getShippingAddress());
         user.setEmail(userDetails.getEmail());
         user.setPhoneNumber(userDetails.getPhoneNumber());
 
@@ -37,8 +37,8 @@ public class UserService {
             .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
-    public List<User> searchByAddress(String address) {
-        return userRepository.findByShippingAddressContaining(address);
+    public List<User> searchByAddress(String shippingAddress) {
+        return userRepository.findByShippingAddressContaining(shippingAddress);
     }
 
     public List<User> searchByPhoneNumber(String phoneNumber) {
