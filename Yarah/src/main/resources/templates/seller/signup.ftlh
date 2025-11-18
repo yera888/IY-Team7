@@ -58,10 +58,10 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Customer Sign Up</h3>
+                        <h3 class="card-title">User Sign Up</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/seller/signup" method="post">
+                        <form action="/user/signup" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
