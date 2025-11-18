@@ -1,11 +1,17 @@
 package com.backend_API.Yarah.user;
 
+
+import com.backend_API.Yarah.profile.Profile;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import com.backend_API.Yarah.profile.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -13,6 +19,7 @@ import com.backend_API.Yarah.profile.Profile;
 @Entity
 @Table(name = "Users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
@@ -39,9 +46,8 @@ public class User {
 
     private String phoneNumber;
 
-    public User(Long userId) {
-        this.userId = userId;
-        
+    public User(Long id) {
+        this.userId = id;
     }
 
 }
