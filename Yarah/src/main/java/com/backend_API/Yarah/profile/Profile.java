@@ -46,7 +46,7 @@ public class Profile {
 
     public Profile(User user) {
         this.user = user;
-        this.id = user.getUserId();
+        this.id = user.getId();
         this.firstName = user.getName();
         this.lastName = "";
         this.phone = user.getPhoneNumber();

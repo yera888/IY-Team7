@@ -27,12 +27,12 @@ public class ProfileService {
             existing.setLocationEnabled(profile.isLocationEnabled());
             return profileRepository.save(existing);
         } else {
-            if (profile.getUser() == null || profile.getUser().getUserId() == null) {
+            if (profile.getUser() == null || profile.getUser().getId() == null) {
                 throw new IllegalArgumentException("User id must be provided in request body (profile.user.userId).");
             }
 
-            User user = userRepository.findById(profile.getUser().getUserId())
-                    .orElseThrow(() -> new EntityNotFoundException("User not found: " + profile.getUser().getUserId()));
+            User user = userRepository.findById(profile.getUser().getId())
+                    .orElseThrow(() -> new EntityNotFoundException("User not found: " + profile.getUser().getId()));
 
             profile.setUser(user);
             return profileRepository.save(profile);

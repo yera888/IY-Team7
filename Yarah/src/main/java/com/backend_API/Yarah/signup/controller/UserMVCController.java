@@ -2,20 +2,12 @@ package com.backend_API.Yarah.signup.controller;
 
 import com.backend_API.Yarah.user.User;
 import com.backend_API.Yarah.user.UserService;
-import com.backend_API.Yarah.listing.ListingService;
-import com.backend_API.Yarah.profile.Profile;
-import com.backend_API.Yarah.profile.ProfileRepository;
-import com.backend_API.Yarah.signup.SignupService;
-import com.backend_API.Yarah.review.ReviewService;
-import com.backend_API.Yarah.seller.SellerService;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/users")

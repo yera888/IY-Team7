@@ -6,23 +6,21 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
 @Data
 @NoArgsConstructor
-@Entity
 @Table(name = "Users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -47,7 +45,7 @@ public class User {
     private String phoneNumber;
 
     public User(Long id) {
-        this.userId = id;
+        this.id = id;
     }
 
 }
