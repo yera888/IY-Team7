@@ -1,4 +1,4 @@
-package com.backend_API.Yarah.signup.controller;
+package com.backend_API.Yarah.mvc.controller;
 
 import com.backend_API.Yarah.user.User;
 import com.backend_API.Yarah.user.UserService;
