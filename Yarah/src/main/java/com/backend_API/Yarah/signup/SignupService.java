@@ -35,12 +35,12 @@ public class SignupService {
             throw new IllegalArgumentException("Password required");
         }
 
-        if (incoming.getAddress() == null || incoming.getAddress().isBlank()) {
-            throw new IllegalArgumentException("Address required");
+        // ❌ no longer require address
+        if (incoming.getAddress() == null) {
+            // allow null/blank in DB, or default to empty string
+            incoming.setAddress("");
         }
 
-        // Adjust to your existing methods (existsByEmail vs existsByEmailIgnoreCase,
-        // etc.)
         if (userRepository.existsByEmailIgnoreCase(incoming.getEmail())) {
             throw new IllegalArgumentException("Email already in use");
         }
@@ -52,7 +52,7 @@ public class SignupService {
         // prevent client from forcing ID
         incoming.setUserId(null);
 
-        // hash the password
+        // hash password
         String rawPassword = incoming.getPassword();
         String encoded = passwordEncoder.encode(rawPassword);
         incoming.setPassword(encoded);
@@ -76,28 +76,28 @@ public class SignupService {
         profile.setUser(savedUser);
         profile.setFirstName(firstName);
         profile.setLastName(lastName);
-        profile.setAccountType("CUSTOMER"); // default type
-        profile.setLocationEnabled(false); // hidden by default
+        profile.setAccountType("CUSTOMER");
+        profile.setLocationEnabled(false);
 
         profileRepository.save(profile);
 
         return savedUser;
     }
 
-    // Optional helper overload if you want to call signup with explicit args
+    // Optional helper without address now
     public User signup(String firstName,
             String lastName,
             String email,
             String phoneNumber,
-            String address,
             String rawPassword) {
 
         User u = new User();
         u.setName((firstName + " " + lastName).trim());
         u.setEmail(email);
         u.setPhoneNumber(phoneNumber);
-        u.setAddress(address);
         u.setPassword(rawPassword);
+        // address left blank
+        u.setAddress("");
 
         return signup(u);
     }

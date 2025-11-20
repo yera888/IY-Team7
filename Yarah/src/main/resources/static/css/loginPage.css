@@ -103,3 +103,12 @@ footer.small {
   color: #444;
   margin-top: .4rem;
 }
+
+.error-message {
+  color: #c00;
+  min-height: 1.4rem;
+}
+.success-message {
+  color: #080;
+  min-height: 1.4rem;
+}

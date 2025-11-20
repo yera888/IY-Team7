@@ -68,7 +68,6 @@
 			<optional>true</optional>
 		</dependency>
 
-		<!-- This is fine, but strictly optional because Boot already manages validation deps -->
 		<dependency>
 			<groupId>jakarta.validation</groupId>
 			<artifactId>jakarta.validation-api</artifactId>

@@ -1,0 +1,125 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1.6rem;
+}
+
+.account-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10rem 2rem 4rem;
+}
+
+.account-card {
+  border: 1px solid #111;
+  border-radius: 1.2rem;
+  padding: 2rem 2.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.6rem;
+  align-items: center;
+  background: #fff;
+}
+
+.account-avatar {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  border: 1px solid #111;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.account-main {
+  min-width: 0;
+}
+
+.account-name {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.account-email {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.account-type {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.account-actions {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.btn,
+.btn-outline {
+  appearance: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn {
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+}
+
+.btn:hover,
+.btn-outline:hover {
+  opacity: 0.94;
+}
+
+.account-links {
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.account-links a {
+  text-decoration: none;
+  color: #111;
+}
+
+.account-links a:hover {
+  text-decoration: underline;
+}
+
+.account-empty {
+  margin-top: 2.4rem;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+@media (max-width: 720px) {
+  .account-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .account-actions {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+}

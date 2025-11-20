@@ -4,117 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Account — YARAH</title>
-    <link rel="stylesheet" href="css/loginPage.css" />
+    <link
+      rel="stylesheet"
+      href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css"
+    />
+    <link rel="stylesheet" href="css/account.css" />
   </head>
   <body>
-    <div class="logincontainer">
-      <div class="loginbox">
-        <h1 class="brand"><a href="/">YARAH</a></h1>
-        <p class="subhead">Your account</p>
+    <div class="navContainer">
+      <div class="menu-burger">
+        <input id="nav-toggle" type="checkbox" />
+        <label for="nav-toggle" aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </label>
+        <ul class="menu-burger__item-list">
+          <li><a href="/products.html?slug=shop-all">Shop All</a></li>
+          <li><a href="/products.html?slug=new-arrivals">New Arrivals</a></li>
+          <li><a href="/products.html?slug=sale">Sale</a></li>
+          <li><a href="/products.html?slug=dresses">Dresses</a></li>
+          <li><a href="/products.html?slug=tops">Tops</a></li>
+          <li><a href="/products.html?slug=bottoms">Skirts & Pants</a></li>
+          <li><a href="/products.html?slug=outerwear">Outerwear</a></li>
+          <li><a href="/products.html?slug=shoes">Shoes</a></li>
+          <li><a href="/products.html?slug=accessories">Accessories</a></li>
+        </ul>
+      </div>
 
-        <div id="account-content">
-          <!-- Filled by JS -->
-          <p class="small">Loading your profile…</p>
-        </div>
-
-        <div class="actions" style="margin-top: 1.6rem">
-          <a class="btn" href="seller-register.html">Become a seller</a>
-        </div>
-
-        <div class="switch">
-          <a href="likes.html">View your likes</a> ·
-          <a href="/">Back to home</a>
-        </div>
+      <div class="navBoxOne">
+        <p>YARAH</p>
+      </div>
+      <div class="navBoxTwo">
+        <ul>
+          <li>
+            <a href="#">Dropdown Link</a>
+            <ul class="nav-dropdown">
+              <li><a href="/products.html?slug=shop-all">Shop All</a></li>
+              <li>
+                <a href="/products.html?slug=new-arrivals">New Arrivals</a>
+              </li>
+              <li><a href="/products.html?slug=sale">Sale</a></li>
+              <li><a href="/products.html?slug=dresses">Dresses</a></li>
+              <li><a href="/products.html?slug=tops">Tops</a></li>
+              <li><a href="/products.html?slug=bottoms">Skirts & Pants</a></li>
+              <li><a href="/products.html?slug=outerwear">Outerwear</a></li>
+              <li><a href="/products.html?slug=shoes">Shoes</a></li>
+              <li><a href="/products.html?slug=accessories">Accessories</a></li>
+              <li><a href="/Client-Side/login.html">Sign In</a></li>
+              <li><a href="/Client-Side/signup.html">Create Account</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <script>
-      (async function () {
-        const mount = document.getElementById("account-content");
-        const userId = localStorage.getItem("yarahUserId");
-
-        if (!userId) {
-          mount.innerHTML = `
-          <p class="small">
-            You are not signed in. Please
-            <a href="login.html">log in</a> or
-            <a href="signup.html">create an account</a>.
+    <main class="account-wrap">
+      <section class="account-card">
+        <div class="account-avatar" id="account-avatar">Y</div>
+        <div class="account-main">
+          <h1 class="account-name" id="account-name">Loading…</h1>
+          <p class="account-email" id="account-email"></p>
+          <p class="account-type">
+            Account type: <span id="account-type">—</span>
           </p>
-        `;
-          return;
-        }
+        </div>
+        <div class="account-actions">
+          <a class="btn" href="/Client-Side/profile.html">View profile</a>
+          <button class="btn-outline" id="account-logout" type="button">
+            Log out
+          </button>
+        </div>
+      </section>
 
-        try {
-          const res = await fetch(
-            "/api/profiles/by-user/" + encodeURIComponent(userId),
-            {
-              method: "GET",
-              credentials: "include",
-            }
-          );
+      <section class="account-links">
+        <a href="/products.html?slug=shop-all">Browse all listings</a>
+        <a href="/Client-Side/profile.html?tab=listings">Your listings</a>
+        <a href="/Client-Side/profile.html?tab=reviews">Your reviews</a>
+      </section>
 
-          if (!res.ok) {
-            mount.innerHTML = `
-            <p class="small">
-              Could not load your profile (status ${res.status}).<br/>
-              Try logging in again.
-            </p>
-          `;
-            return;
-          }
+      <section class="account-empty" id="account-empty" hidden>
+        <p>You’re not signed in. Please <a href="login.html">log in</a>.</p>
+      </section>
+    </main>
 
-          const profile = await res.json();
-          // profile.user will contain the User object if your JPA relationship is mapped like that
-          const user = profile.user || {};
-
-          const fullName =
-            [profile.firstName, profile.lastName].filter(Boolean).join(" ") ||
-            user.name ||
-            "(no name)";
-
-          const email = user.email || "(no email)";
-          const phone = user.phoneNumber || "(no phone)";
-          const address = user.address || "(no address)";
-          const accountType = profile.accountType || "CUSTOMER";
-          const locationEnabled = profile.locationEnabled ? "On" : "Off";
-
-          mount.innerHTML = `
-          <div class="form" style="gap: .6rem;">
-            <div>
-              <div class="label">Name</div>
-              <div>${fullName}</div>
-            </div>
-            <div>
-              <div class="label">Email</div>
-              <div>${email}</div>
-            </div>
-            <div>
-              <div class="label">Phone</div>
-              <div>${phone}</div>
-            </div>
-            <div>
-              <div class="label">Address</div>
-              <div>${address}</div>
-            </div>
-            <div>
-              <div class="label">Account type</div>
-              <div>${accountType}</div>
-            </div>
-            <div>
-              <div class="label">Location sharing</div>
-              <div>${locationEnabled}</div>
-            </div>
-          </div>
-        `;
-        } catch (err) {
-          console.error(err);
-          mount.innerHTML = `
-          <p class="small">
-            Network error loading your profile. Please try again.
-          </p>
-        `;
-        }
-      })();
-    </script>
+    <script src="js/account.js"></script>
   </body>
 </html>
