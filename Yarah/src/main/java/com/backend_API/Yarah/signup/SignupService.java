@@ -5,6 +5,7 @@ import com.backend_API.Yarah.profile.ProfileRepository;
 import com.backend_API.Yarah.user.User;
 import com.backend_API.Yarah.user.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ public class SignupService {
 
     private final UserRepository userRepository;
     private final ProfileRepository profileRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public User signup(User incoming) {
         if (incoming == null) {
@@ -37,7 +39,9 @@ public class SignupService {
             throw new IllegalArgumentException("Address required");
         }
 
-        if (userRepository.existsByEmail(incoming.getEmail())) {
+        // Adjust to your existing methods (existsByEmail vs existsByEmailIgnoreCase,
+        // etc.)
+        if (userRepository.existsByEmailIgnoreCase(incoming.getEmail())) {
             throw new IllegalArgumentException("Email already in use");
         }
 
@@ -45,9 +49,15 @@ public class SignupService {
             throw new IllegalArgumentException("Phone number already in use");
         }
 
-        // Make sure we don't accidentally reuse an ID from the client
+        // prevent client from forcing ID
         incoming.setUserId(null);
 
+        // hash the password
+        String rawPassword = incoming.getPassword();
+        String encoded = passwordEncoder.encode(rawPassword);
+        incoming.setPassword(encoded);
+
+        // save user
         User savedUser = userRepository.save(incoming);
 
         // Split full name into first + last for Profile
@@ -61,15 +71,34 @@ public class SignupService {
             }
         }
 
+        // Create initial Profile as CUSTOMER
         Profile profile = new Profile();
         profile.setUser(savedUser);
         profile.setFirstName(firstName);
         profile.setLastName(lastName);
-        profile.setAccountType("CUSTOMER");
-        profile.setLocationEnabled(false);
+        profile.setAccountType("CUSTOMER"); // default type
+        profile.setLocationEnabled(false); // hidden by default
 
         profileRepository.save(profile);
 
         return savedUser;
+    }
+
+    // Optional helper overload if you want to call signup with explicit args
+    public User signup(String firstName,
+            String lastName,
+            String email,
+            String phoneNumber,
+            String address,
+            String rawPassword) {
+
+        User u = new User();
+        u.setName((firstName + " " + lastName).trim());
+        u.setEmail(email);
+        u.setPhoneNumber(phoneNumber);
+        u.setAddress(address);
+        u.setPassword(rawPassword);
+
+        return signup(u);
     }
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile — YARAH</title>
+
+    <!-- Navbar + profile styling -->
+    <link rel="stylesheet" href="css/navbaruniversal.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <!-- NAVBAR (copied/minified from navbaruniversal.html, using same classes) -->
+    <header class="navContainer">
+      <div class="nav-logo">
+        <a href="/" class="nav-brand">YARAH</a>
+      </div>
+      <nav class="nav-main">
+        <a href="/webHomepage.html">Home</a>
+        <a href="/products.html?slug=new">New</a>
+        <a href="/products.html?slug=sale">Sale</a>
+        <a href="/likes.html">Likes</a>
+      </nav>
+      <nav class="nav-secondary">
+        <a href="/login.html" id="nav-login-link">Log in</a>
+        <a href="/signup.html" class="nav-cta" id="nav-signup-link">Sign up</a>
+        <a href="/account.html" id="nav-account-link" class="hidden">Account</a>
+      </nav>
+    </header>
+
+    <main class="profile-wrap">
+      <!-- Top: avatar + name + stats -->
+      <section class="profile-header">
+        <div class="profile-avatar" id="profile-avatar">Y</div>
+
+        <div class="profile-main">
+          <h1 class="profile-name" id="profile-name">Loading…</h1>
+          <div class="profile-username" id="profile-username">@username</div>
+
+          <div class="profile-meta">
+            <div class="profile-meta-item">
+              <span id="profile-listing-count">0</span>
+              <span class="label">Listings</span>
+            </div>
+            <div class="profile-meta-item">
+              <span id="profile-rating">–</span>
+              <span class="label">Rating</span>
+            </div>
+            <div class="profile-meta-item">
+              <span id="profile-reviews-count">0</span>
+              <span class="label">Reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-actions" id="profile-actions">
+          <!-- Filled by JS depending on whether this is your own profile -->
+          <button class="btn-outline" id="btn-switch-seller" type="button">
+            Become a seller
+          </button>
+        </div>
+      </section>
+
+      <!-- Bio + info -->
+      <section class="profile-bio-block">
+        <div class="profile-bio" id="profile-bio">
+          Write something about your style, sizing, and shipping…
+        </div>
+
+        <dl class="profile-info">
+          <div>
+            <dt>Account type</dt>
+            <dd id="profile-account-type">CUSTOMER</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd id="profile-email">–</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd id="profile-location">Hidden</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Tabs -->
+      <section class="profile-tabs">
+        <button class="profile-tab active" type="button" data-tab="listings">
+          Listings
+        </button>
+        <button class="profile-tab" type="button" data-tab="reviews">
+          Reviews
+        </button>
+      </section>
+
+      <!-- Listings grid -->
+      <section
+        id="profile-listings"
+        class="profile-section profile-section--active"
+      >
+        <div id="profile-listings-grid" class="profile-grid">
+          <!-- Filled by JS -->
+        </div>
+      </section>
+
+      <!-- Reviews list -->
+      <section id="profile-reviews" class="profile-section">
+        <div id="profile-reviews-list" class="profile-reviews">
+          <!-- Filled by JS -->
+        </div>
+      </section>
+
+      <section class="profile-empty" id="profile-empty-state" hidden>
+        <p>This seller hasn’t listed anything yet.</p>
+      </section>
+    </main>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>
