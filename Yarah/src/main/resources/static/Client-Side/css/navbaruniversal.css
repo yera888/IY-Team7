@@ -4,9 +4,9 @@ html {
 
 @font-face {
   font-family: "syn_novabold";
-  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff2")
+  src: url("./fonts/Synnova/synnova-bold-webfont.woff2")
       format("woff2"),
-    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff")
+    url("./fonts/Synnova/synnova-bold-webfont.woff")
       format("woff");
   font-weight: bold;
   font-style: normal;
@@ -14,13 +14,14 @@ html {
 
 @font-face {
   font-family: "syn_novaregular";
-  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff2")
+  src: url("./fonts/Synnova/synnova-regular-webfont.woff2")
       format("woff2"),
-    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff")
+    url("./fonts/Synnova/synnova-regular-webfont.woff")
       format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 
 body {
   font-size: 2rem;

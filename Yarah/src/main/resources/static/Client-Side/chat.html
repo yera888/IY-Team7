@@ -5,17 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chat</title>
 
-    <link
-      rel="stylesheet"
-      href="/high-fidelity-prototype/provider-prototype/css/navbaruniversal.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/high-fidelity-prototype/provider-prototype/css/chat.css"
-    />
+    <link rel="stylesheet" href="css/navbaruniversal.css" />
+    <link rel="stylesheet" href="css/chat.css" />
   </head>
   <body>
-
     <main class="chat-wrap">
       <header class="chat-header">
         <div class="avatar">
@@ -26,7 +19,8 @@
 
       <section class="chat-body" id="chat-body">
         <div class="msg msg-left">
-          Hey! Ask about measurements, meet-ups, or any other questions you may have!
+          Hey! Ask about measurements, meet-ups, or any other questions you may
+          have!
         </div>
       </section>
 
@@ -45,18 +39,15 @@
       const PRODUCTS = {
         "black-dress": {
           name: "Black Dress",
-          photoDesc:
-            "Classic Black Dress",
+          photoDesc: "Classic Black Dress",
         },
         "platform-boots": {
           name: "Platform Boots",
-          photoDesc:
-            "Chunky ankle boots",
+          photoDesc: "Chunky ankle boots",
         },
         "mesh-top": {
           name: "Mesh Top",
-          photoDesc:
-            "Sheer long-sleeve mesh",
+          photoDesc: "Sheer long-sleeve mesh",
         },
         "pleated-skirt": {
           name: "Pleated Skirt",
@@ -73,7 +64,7 @@
         title.textContent = `Chat about ${p.name}`;
         document.title = `Chat — ${p.name}`;
 
-        avatarImg.src = p.img; 
+        avatarImg.src = p.img;
         avatarImg.alt = p.name;
       } else {
         avatarImg.removeAttribute("src");
