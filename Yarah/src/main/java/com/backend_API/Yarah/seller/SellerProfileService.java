@@ -1,12 +1,15 @@
 package com.backend_API.Yarah.seller;
 
-import com.backend_API.Yarah.profile.ProfileService;
+import com.backend_API.Yarah.profile.Profile;
+import com.backend_API.Yarah.profile.ProfileRepository;
 import com.backend_API.Yarah.user.User;
 import com.backend_API.Yarah.user.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -15,46 +18,88 @@ public class SellerProfileService {
 
     private final SellerProfileRepository sellerProfileRepository;
     private final UserRepository userRepository;
-    private final ProfileService profileService;
+    private final ProfileRepository profileRepository;
 
-    @Transactional(readOnly = true)
-    public SellerProfileForm getFormForUser(Long userId) {
-        SellerProfile sp = sellerProfileRepository.findByUser_UserId(userId)
-                .orElse(null);
+    /**
+     * Create a new seller profile or update an existing one.
+     *
+     * For CREATE:
+     * - sellerProfile.sellerProfileId must be null
+     * - sellerProfile.user.userId must be set
+     *
+     * For UPDATE:
+     * - sellerProfile.sellerProfileId must be set (path variable in controller)
+     */
+    public SellerProfile createOrUpdate(SellerProfile sellerProfile) {
+        if (sellerProfile.getSellerProfileId() != null) {
+            // UPDATE existing seller profile
+            SellerProfile existing = sellerProfileRepository.findById(sellerProfile.getSellerProfileId())
+                    .orElseThrow(() -> new EntityNotFoundException("Seller profile not found"));
 
-        boolean locationEnabled = profileService.getByUserId(userId).isLocationEnabled();
+            if (sellerProfile.getShopName() != null) {
+                existing.setShopName(sellerProfile.getShopName());
+            }
+            if (sellerProfile.getBio() != null) {
+                existing.setBio(sellerProfile.getBio());
+            }
+            if (sellerProfile.getPayoutDetails() != null) {
+                existing.setPayoutDetails(sellerProfile.getPayoutDetails());
+            }
 
-        if (sp == null) {
-            SellerProfileForm f = new SellerProfileForm();
-            f.setUserId(userId);
-            f.setLocationEnabled(locationEnabled);
-            return f;
+            return sellerProfileRepository.save(existing);
+        } else {
+            // CREATE new seller profile
+            if (sellerProfile.getUser() == null || sellerProfile.getUser().getUserId() == null) {
+                throw new IllegalArgumentException("User id must be provided in sellerProfile.user.userId");
+            }
+
+            Long userId = sellerProfile.getUser().getUserId();
+
+            User user = userRepository.findById(userId)
+                    .orElseThrow(() -> new EntityNotFoundException("User not found: " + userId));
+
+            // Enforce one seller profile per user
+            sellerProfileRepository.findByUser_UserId(userId).ifPresent(sp -> {
+                throw new IllegalArgumentException("User already has a seller profile");
+            });
+
+            sellerProfile.setUser(user);
+
+            SellerProfile saved = sellerProfileRepository.save(sellerProfile);
+
+            // Flip the profile's accountType to SELLER if a profile exists
+            profileRepository.findByUser_UserId(userId).ifPresent(profile -> {
+                if (!"SELLER".equalsIgnoreCase(profile.getAccountType())) {
+                    profile.setAccountType("SELLER");
+                    profileRepository.save(profile);
+                }
+            });
+
+            return saved;
         }
-
-        return SellerProfileForm.fromEntity(sp, locationEnabled);
     }
 
-    public void saveFromForm(SellerProfileForm form, Long currentUserId) {
-        if (!currentUserId.equals(form.getUserId())) {
-            throw new IllegalArgumentException("Cannot edit seller profile for a different user");
+    @Transactional(readOnly = true)
+    public SellerProfile getById(Long id) {
+        return sellerProfileRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Seller profile not found"));
+    }
+
+    @Transactional(readOnly = true)
+    public SellerProfile getByUserId(Long userId) {
+        return sellerProfileRepository.findByUser_UserId(userId)
+                .orElseThrow(() -> new EntityNotFoundException("Seller profile not found for user " + userId));
+    }
+
+    @Transactional(readOnly = true)
+    public List<SellerProfile> getAll() {
+        return sellerProfileRepository.findAll();
+    }
+
+    public void delete(Long id) {
+        if (!sellerProfileRepository.existsById(id)) {
+            throw new EntityNotFoundException("Seller profile not found");
         }
-
-        User user = userRepository.findById(currentUserId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
-
-        SellerProfile sp = sellerProfileRepository.findByUser_UserId(currentUserId)
-                .orElseGet(() -> {
-                    SellerProfile fresh = new SellerProfile();
-                    fresh.setUser(user);
-                    return fresh;
-                });
-
-        sp.setShopName(form.getShopName());
-        sp.setBio(form.getBio());
-        sp.setPayoutDetails(form.getPayoutDetails());
-
-        sellerProfileRepository.save(sp);
-
-        profileService.markUserAsSeller(currentUserId, form.isLocationEnabled());
+        sellerProfileRepository.deleteById(id);
     }
 }

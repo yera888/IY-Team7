@@ -1,0 +1,247 @@
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "syn_novabold";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-bold-webfont.woff")
+      format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "syn_novaregular";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-size: 2rem;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9.9rem;
+  background: transparent;
+  border-bottom: none;
+  z-index: 1000;
+  padding-inline: 2rem;
+}
+
+.navContainer a {
+  color: #000;
+  font-family: "syn_novaregular", system-ui, sans-serif;
+}
+
+.menu-burger > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu-burger input {
+  height: 3.2rem;
+  margin: 0;
+  opacity: 0;
+  width: 3.2rem;
+  z-index: 5;
+}
+
+.menu-burger svg {
+  height: 3.2rem;
+  width: 3.2rem;
+  z-index: 4;
+}
+
+ul.menu-burger__item-list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 28rem;
+  height: 100vh;
+  background: #fff;
+  color: #111;
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  transform: translateX(-110%);
+  transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+  z-index: 9999;
+}
+
+#nav-toggle:checked ~ .menu-burger__item-list {
+  transform: translateX(0);
+}
+
+.menu-burger__item-list a {
+  color: #111;
+}
+
+.menu-burger input:checked ~ svg line {
+  stroke: #000;
+}
+
+.menu-burger svg line:nth-of-type(1) {
+  stroke: #000;
+  transform-origin: center 0.6rem;
+}
+
+.menu-burger svg line:nth-of-type(2) {
+  stroke: #000;
+  transform-origin: center 1.2rem;
+}
+
+.menu-burger svg line:nth-of-type(3) {
+  stroke: #000;
+  transform-origin: center 1.8rem;
+}
+
+.menu-burger svg line {
+  transition-duration: 0.5s;
+  transition-property: stroke, opacity, transform;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(2) {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(1) {
+  transform: translate(0, 0.6rem) rotate(45deg);
+}
+
+.menu-burger input:checked ~ svg line:nth-of-type(3) {
+  transform: translate(0, -0.6rem) rotate(-45deg);
+}
+
+.menu-burger {
+  position: relative;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.navBoxOne {
+  height: 9.9rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.navContainer a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navBoxOne p {
+  padding-left: 12rem;
+  color: #000;
+  font-family: "syn_novaregular", system-ui, sans-serif;
+  font-size: 5rem;
+
+  z-index: 1;
+}
+
+.navBoxTwo {
+  height: 9.9rem;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.navBoxTwo a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  padding: 1.5rem;
+  display: inline-block;
+}
+
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li:hover {
+  background: rgba(255, 255, 255, 0.213);
+}
+
+ul li:hover ul {
+  display: block;
+}
+
+ul li {
+  position: relative;
+}
+ul li ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 20rem;
+  display: none;
+}
+
+ul li ul li {
+  background: rgba(255, 255, 255, 0.213);
+  display: block;
+}
+
+ul li ul li a {
+  display: block !important;
+}
+
+ul li ul li:hover {
+  background: rgba(255, 255, 255, 0.213);
+}
+
+.backGroundFlare {
+  height: 20rem;
+  width: 256rem;
+
+  margin-top: -10rem;
+
+  background-image: url(/high-fidelity-prototype/customer-prototype/images/whiteDressBackground-ezgif.com-rotate.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.menu-burger__item-list {
+  background:#fff;
+  padding: 2.4rem 2rem;
+}
+.menu-burger__item-list li + li {
+  margin-top: .6rem;
+}
+.menu-burger__item-list a {
+  color:#111;
+  font-size: 1.8rem;
+  text-decoration: none;
+  display: block;
+  padding: .6rem 0;
+}
+.menu-burger__item-list a:hover {
+  background: rgba(0,0,0,.05);
+}
+

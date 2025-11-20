@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up — YARAH</title>
+    <link rel="stylesheet" href="css/loginPage.css" />
+  </head>
+  <body>
+    <div class="logincontainer">
+      <div class="loginbox">
+        <h1 class="brand"><a href="/">YARAH</a></h1>
+        <p class="subhead">Create your account</p>
+
+        <form class="form" id="signup-form" novalidate>
+          <label class="label" for="first-name">First name</label>
+          <input
+            class="input"
+            id="first-name"
+            name="first_name"
+            type="text"
+            placeholder="First name"
+            required
+          />
+
+          <label class="label" for="last-name">Last name</label>
+          <input
+            class="input"
+            id="last-name"
+            name="last_name"
+            type="text"
+            placeholder="Last name"
+            required
+          />
+
+          <label class="label" for="signup-email">Email</label>
+          <input
+            class="input"
+            id="signup-email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label class="label" for="phone">Phone number</label>
+          <input
+            class="input"
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="(555) 555-5555"
+            required
+          />
+
+          <label class="label" for="address">Address</label>
+          <input
+            class="input"
+            id="address"
+            name="address"
+            type="text"
+            placeholder="Street, City, State"
+            required
+          />
+
+          <label class="label" for="password">Password</label>
+          <input
+            class="input"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            required
+          />
+
+          <p
+            id="signup-error"
+            class="small"
+            style="color: #c00; min-height: 1.4rem"
+          ></p>
+
+          <div class="actions">
+            <button class="btn" type="submit">Create account</button>
+          </div>
+        </form>
+
+        <div class="switch">
+          Already have an account?
+          <a href="login.html">Log in</a>
+        </div>
+
+        <footer class="small">
+          By creating an account you agree to our Terms &amp; Privacy.
+        </footer>
+        <footer class="small">
+          You can <strong>NOT</strong> buy or sell unless you have an account.
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const form = document.getElementById("signup-form");
+        const errorEl = document.getElementById("signup-error");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          errorEl.textContent = "";
+
+          const firstName = document.getElementById("first-name").value.trim();
+          const lastName = document.getElementById("last-name").value.trim();
+          const email = document.getElementById("signup-email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const address = document.getElementById("address").value.trim();
+          const password = document.getElementById("password").value;
+
+          if (
+            !firstName ||
+            !lastName ||
+            !email ||
+            !phone ||
+            !address ||
+            !password
+          ) {
+            errorEl.textContent = "Please fill out all fields.";
+            return;
+          }
+
+          // This must match the User entity fields: name, email, phoneNumber, password, address
+          const payload = {
+            name: firstName + " " + lastName,
+            email: email,
+            phoneNumber: phone,
+            address: address,
+            password: password,
+          };
+
+          try {
+            const res = await fetch("/api/signup", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+            });
+
+            if (res.ok) {
+              const user = await res.json();
+              // Save the userId so you can fetch profile later
+              if (user && user.userId) {
+                localStorage.setItem("yarahUserId", String(user.userId));
+              }
+              // Redirect to some account/profile page (adjust path as needed)
+              window.location.href = "/account.html";
+              return;
+            }
+
+            // Handle 400 / 409 nicely if your backend uses those
+            let msg = "Something went wrong. Please try again.";
+            if (res.status === 400 || res.status === 409) {
+              try {
+                // Spring default error response often has JSON with "message"
+                const data = await res.json();
+                if (data && data.message) {
+                  msg = data.message;
+                } else {
+                  const text = await res.text();
+                  if (text) msg = text;
+                }
+              } catch (_) {
+                // ignore parse errors, keep generic msg
+              }
+            }
+            errorEl.textContent = msg;
+          } catch (err) {
+            console.error(err);
+            errorEl.textContent = "Network error. Please try again.";
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

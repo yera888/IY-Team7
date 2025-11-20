@@ -1,14 +1,13 @@
 package com.backend_API.Yarah.listing;
 
+import com.backend_API.Yarah.seller.SellerProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import com.backend_API.Yarah.seller.Seller;
 
 import java.util.List;
 
-@Repository
 public interface ListingRepository extends JpaRepository<Listing, Long> {
-    List<Listing> findBySellerAndAvailable(Seller seller, boolean available);
-    List<Listing> findByAvailable(boolean available);
+
+    List<Listing> findByListingStatus(String listingStatus);
+
+    List<Listing> findBySellerProfile(SellerProfile sellerProfile);
 }

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-YarahApplication<Yarah>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.backend_API.Yarah.YarahApplication",
+      "projectName": "Yarah",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

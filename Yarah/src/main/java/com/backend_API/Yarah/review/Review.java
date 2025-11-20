@@ -1,7 +1,7 @@
 package com.backend_API.Yarah.review;
 
 import com.backend_API.Yarah.user.User;
-import com.backend_API.Yarah.listing.Listing; // adjust package to whatever your partner uses
+import com.backend_API.Yarah.listing.Listing; 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

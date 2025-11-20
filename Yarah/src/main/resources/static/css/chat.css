@@ -1,0 +1,138 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1.6rem;
+}
+
+@font-face {
+  font-family: "syn_novaregular";
+  src: url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff2")
+      format("woff2"),
+    url("/high-fidelity-prototype/provider-prototype/css/fonts/Synnova/synnova-regular-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chat-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12rem 2rem 4rem;
+}
+
+.chat-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+  text-align: center;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  overflow: hidden;
+  background: #f7f7f7;
+  flex: 0 0 160px;
+}
+.avatar {
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 400;
+
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  overflow: hidden;
+  background: #f7f7f7;
+  display: grid;
+  place-items: center;
+}
+
+#avatar-text {
+  font-family: "syn_novaregular", system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0 0.6rem;
+}
+
+.chat-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.chat-body {
+  height: 50vh;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  overflow: auto;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.msg {
+  max-width: 70%;
+  padding: 0.8rem 1rem;
+  border-radius: 1.2rem;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  color: #111;
+  text-align: center;
+}
+
+.msg-left {
+  align-self: flex-start;
+}
+
+.msg-right {
+  align-self: flex-end;
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.chat-input input {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.8rem;
+  outline: none;
+}
+.chat-input button {
+  appearance: none;
+  border: none;
+  background: #111;
+  color: #fff;
+  padding: 1rem 1.4rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.chat-input button:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 720px) {
+  .chat-body {
+    height: 45vh;
+  }
+}

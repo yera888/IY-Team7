@@ -12,10 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(
-    name = "seller_profiles",
-    uniqueConstraints = @UniqueConstraint(columnNames = "user_id")
-)
+@Table(name = "seller_profiles")
 public class SellerProfile {
 
     @Id
@@ -33,7 +30,8 @@ public class SellerProfile {
     @Column(name = "bio", columnDefinition = "TEXT")
     private String bio;
 
-    @Column(name = "payout_details", columnDefinition = "TEXT")
+    // store JSON as text; Postgres column can be jsonb
+    @Column(name = "payout_details", columnDefinition = "jsonb")
     private String payoutDetails;
 
     @CreationTimestamp

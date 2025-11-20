@@ -1,6 +1,7 @@
 package com.backend_API.Yarah.user;
 
 import com.backend_API.Yarah.profile.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -10,13 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(
-    name = "users",
-    uniqueConstraints = {
-        @UniqueConstraint(columnNames = "email"),
-        @UniqueConstraint(columnNames = "phone_number")
-    }
-)
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = { "email" }),
+        @UniqueConstraint(columnNames = { "phone_number" })
+})
 public class User {
 
     @Id
@@ -30,22 +28,25 @@ public class User {
 
     @Email
     @NotBlank
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
-
-    @NotBlank
-    @Column(name = "password_hash", nullable = false)
-    private String password;
-
-    // you can keep this required or optional; schema-wise it's okay if nullable
-    @Column(name = "address")
-    private String address;
 
     @NotBlank
     @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
 
+    // If you still want address here, keep it; otherwise remove & migrate schema.
+    @NotBlank
+    @Column(nullable = false)
+    private String address;
+
+    @JsonIgnore
+    @NotBlank
+    @Column(name = "password_hash", nullable = false)
+    private String password;
+
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore // avoid infinite recursion
     private Profile profile;
 
     public User(Long userId) {

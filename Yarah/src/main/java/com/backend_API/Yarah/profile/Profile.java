@@ -34,7 +34,7 @@ public class Profile {
     private String lastName;
 
     @Column(name = "account_type", length = 20)
-    private String accountType = "CUSTOMER"; // CUSTOMER | SELLER | ADMIN
+    private String accountType = "CUSTOMER"; // CUSTOMER, SELLER, ADMIN
 
     @Column(name = "location_enabled")
     private boolean locationEnabled = false;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seller Registration — YARAH</title>
+  <link rel="stylesheet" href="css/loginPage.css" />
+  <link rel="stylesheet" href="css/sellerRegistration.css" />
+</head>
+<body>
+  <div class="logincontainer">
+    <div class="loginbox">
+      <h1 class="brand"><a href="/">YARAH</a></h1>
+      <p class="subhead">Register as a seller</p>
+
+      <form class="form" action="#" method="post">
+        <label class="label" for="shop-name">Shop name</label>
+        <input class="input" id="shop-name" name="shop_name" type="text" placeholder="Your shop name" required />
+
+        <fieldset class="fieldset">
+          <legend class="label">Enable location?</legend>
+          <div class="radio-row">
+            <label class="radio">
+              <input type="radio" name="location_enabled" value="yes" required />
+              <span>Yes</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="location_enabled" value="no" />
+              <span>No</span>
+            </label>
+          </div>
+        </fieldset>
+
+    
+      <footer class="small">Why would I want to enable my location?</footer>
+    </div>
+  </div>
+</body>
+</html>

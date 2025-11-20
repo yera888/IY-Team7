@@ -1,14 +1,13 @@
 package com.backend_API.Yarah.signup;
 
-import com.backend_API.Yarah.user.User;
-import com.backend_API.Yarah.user.UserRepository;
 import com.backend_API.Yarah.profile.Profile;
 import com.backend_API.Yarah.profile.ProfileRepository;
+import com.backend_API.Yarah.user.User;
+import com.backend_API.Yarah.user.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import jakarta.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/api/signup")
@@ -22,6 +21,7 @@ public class SignupController {
     @PostMapping
     public ResponseEntity<User> signup(@RequestBody User user) {
         User savedUser = signupService.signup(user);
+        // Password is @JsonIgnore so it won't be sent back
         return ResponseEntity.status(201).body(savedUser);
     }
 

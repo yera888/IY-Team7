@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seller Registration — YARAH</title>
+    <link rel="stylesheet" href="/css/loginPage.css" />
+    <link rel="stylesheet" href="/css/sellerRegistration.css" />
+  </head>
+  <body>
+    <div class="logincontainer">
+      <div class="loginbox">
+        <h1 class="brand"><a href="/">YARAH</a></h1>
+        <p class="subhead">Register as a seller</p>
+
+        <div id="seller-error" style="color: #d00; font-size: 1.3rem"></div>
+        <div id="seller-success" style="color: #0a0; font-size: 1.3rem"></div>
+
+        <form class="form" id="seller-form">
+          <label class="label" for="shop-name">Shop name</label>
+          <input
+            class="input"
+            id="shop-name"
+            name="shop_name"
+            type="text"
+            placeholder="Your shop name"
+            required
+          />
+
+          <label class="label" for="bio">Shop bio</label>
+          <textarea
+            class="input"
+            id="bio"
+            name="bio"
+            rows="3"
+            placeholder="Describe your shop"
+          ></textarea>
+
+          <fieldset class="fieldset">
+            <legend class="label">Enable location?</legend>
+            <div class="radio-row">
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="location_enabled"
+                  value="yes"
+                  checked
+                />
+                <span>Yes</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="location_enabled" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="label" for="payout">Payout details</label>
+          <textarea
+            class="input"
+            id="payout"
+            name="payout"
+            rows="2"
+            placeholder="Cashapp, Venmo, PayPal, etc."
+          ></textarea>
+
+          <div class="actions">
+            <button class="btn" type="submit">Save seller profile</button>
+          </div>
+        </form>
+
+        <div class="switch">
+          <a href="/account.html">Back to account</a>
+        </div>
+
+        <footer class="small">
+          Your seller profile makes it easier for buyers to understand who they
+          are buying from.
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("seller-form");
+      const errorBox = document.getElementById("seller-error");
+      const okBox = document.getElementById("seller-success");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorBox.textContent = "";
+        okBox.textContent = "";
+
+        const locationEnabled =
+          document.querySelector('input[name="location_enabled"]:checked')
+            ?.value === "yes";
+
+        const payload = {
+          shopName: document.getElementById("shop-name").value.trim(),
+          bio: document.getElementById("bio").value.trim(),
+          payoutDetails: document.getElementById("payout").value.trim(),
+          locationEnabled: locationEnabled,
+        };
+
+        try {
+          const res = await fetch("/api/seller-profiles/me", {
+            method: "POST", // or PUT, depending on how you design the API
+            headers: { "Content-Type": "application/json" },
+            credentials: "same-origin",
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json().catch(() => ({}));
+
+          if (!res.ok) {
+            errorBox.textContent =
+              data.error || "Could not save seller profile";
+            return;
+          }
+
+          okBox.textContent =
+            "Seller profile saved! Your account type should now be SELLER.";
+        } catch (err) {
+          errorBox.textContent = "Network error, please try again.";
+        }
+      });
+
+      // Bonus: you can add a GET here to pre-fill existing seller data if you have an endpoint for it.
+    </script>
+  </body>
+</html>
