@@ -32,7 +32,6 @@
         return;
       }
 
-      // no localStorage – just go to account, which will call /api/users/me
       window.location.href = "/Client-Side/account.html";
     } catch (err) {
       console.error(err);
