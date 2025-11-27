@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/universalNavStyle.css">
     <link rel="stylesheet" href="/css/sellerOverview.css">
-    <title>Seller Overview</title>
+    <title>Seller Dashboard</title>
 </head>
 <body>
     <div class="navContainer">

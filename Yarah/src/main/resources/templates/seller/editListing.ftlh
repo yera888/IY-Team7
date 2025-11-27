@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/normalize.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/universalNavStyle.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/sellerOverview.css">
-    <#include "normalize.css">
-    <#include "universalNavStyle.css">
-    <#include "sellerOverview.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/universalNavStyle.css">
+    <link rel="stylesheet" href="/css/sellerOverview.css">
+    <title>Edit listing</title>
 </head>
 <body>
       <div class="navContainer">
@@ -45,7 +42,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Seller Overview</a></li>
+                        <li><a href="/dashboard.ftlh">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
