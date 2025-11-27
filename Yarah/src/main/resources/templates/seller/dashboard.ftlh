@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE ftlh>
+<ftlh lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/normalize.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/universalNavStyle.css">
-    <link rel="stylesheet" href="/high-fidelity-prototype/customer-prototype/css/sellerOverview.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/universalNavStyle.css">
+    <link rel="stylesheet" href="/css/sellerOverview.css">
     <title>Seller Overview</title>
 </head>
 <body>
@@ -42,7 +42,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Seller Overview</a></li>
+                        <li><a href="/dashboard.ftlh">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
@@ -53,28 +53,28 @@
     <div class="sellerStatAndBarContainer">
         <div class="sellerQuickBarContainer">
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Overview</a>
+                <a href="/dashboard.ftlh">Overview</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/selllerSold.html">Sold</a>
+                <a href="/sellerSold.ftlh">Sold</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerSelling.html">Selling</a>
+                <a href="/sellerSelling.ftlh">Selling</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerBalance.html">Balance</a>
+                <a href="/sellerBalance.ftlh">Balance</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerStats.html">Stats</a>
+                <a href="/sellerStats.ftlh">Stats</a>
             </div>
         </div>
         <div class="sellerWeeklyStatOverviewContainer">
             <div class="sellerCreateListing">
                 <div class="boxButton">
-                    <a href="/high-fidelity-prototype/customer-prototype/createListing.html">Create Listing</a>
+                    <a href="/createListing.ftlh">Create Listing</a>
                 </div>
                 <div class="boxButton">
-                    <a href="/high-fidelity-prototype/customer-prototype/editListing.html">Edit Listing</a>
+                    <a href="/editListing.ftlh">Edit Listing</a>
                 </div>
             </div>
             <div class="sellerWeeklyStats">
@@ -142,4 +142,4 @@
         </p>
     </div>
 </body>
-</html>
+</ftlh>
