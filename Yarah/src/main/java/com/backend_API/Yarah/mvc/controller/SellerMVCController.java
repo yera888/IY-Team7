@@ -130,7 +130,7 @@ public class SellerMVCController {
 
         listingService.createListing(listing);
 
-        return "redirect:/sellers/sellerSelling";
+        return "redirect:/seller/sellerSelling";
     }
 
 }
