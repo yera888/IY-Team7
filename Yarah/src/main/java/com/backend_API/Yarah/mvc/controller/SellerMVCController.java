@@ -23,7 +23,7 @@ public class SellerMVCController {
         this.sellerService = sellerService;
         this.listingService = listingService;
     }
-    
+
     @GetMapping("/signup")
     public String signupForm(Model model) {
         model.addAttribute("seller", new Seller());
