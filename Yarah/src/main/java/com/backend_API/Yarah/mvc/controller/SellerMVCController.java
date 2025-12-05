@@ -68,6 +68,7 @@ public class SellerMVCController {
 
         Seller seller = sellerService.getSellerById(sellerId);
         model.addAttribute("seller", seller);
+        model.addAttribute("title", "Create New Listing");
         return "seller/createListing";
     }
 
@@ -86,7 +87,10 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
 
+        Seller seller = sellerService.getSellerById(sellerId);
         Listing listing = new Listing();
+        
+        listing.setSeller(seller);
         listing.setDescription(description);
         listing.setCondition(condition);
         listing.setListingPhotoPath(listingPhotoPath);

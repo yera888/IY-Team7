@@ -44,7 +44,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/high-fidelity-prototype/seller/sellerOverview.html">Seller Overview</a></li>
+                        <li><a href="/sellers/dashboard.ftlh">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>

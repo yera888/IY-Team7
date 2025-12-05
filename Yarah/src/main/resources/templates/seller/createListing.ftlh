@@ -43,7 +43,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/dashboard.html">Seller Overview</a></li>
+                        <li><a href="/sellers/dashboard.ftlh">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
@@ -54,7 +54,7 @@
     <div class="createListingContainer">
         <div class="formContainer">
             <h1>${title}</h1>
-            <form id="newListing" action="/seller/createListing/new" method="post">
+            <form id="newListing" action="/sellers/Listing/new" method="post">
             <div class="lineBoxTwo"></div>
                 <h2>Photos</h2>
             <div class="photoBox">
