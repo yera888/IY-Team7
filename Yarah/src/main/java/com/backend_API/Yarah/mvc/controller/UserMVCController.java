@@ -36,7 +36,7 @@ public class UserMVCController {
         try {
             User user = userService.authenticate(email, password);
             session.setAttribute("userId", user.getId());
-            return "redirect:/sellers/dashboard";
+            return "redirect:/users/dashboard";
         } catch (Exception e) {
             return "redirect:/signin?error";
         }
