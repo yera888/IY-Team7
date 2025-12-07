@@ -4,11 +4,13 @@ import com.backend_API.Yarah.listing.Listing;
 import com.backend_API.Yarah.listing.ListingService;
 import com.backend_API.Yarah.seller.Seller;
 import com.backend_API.Yarah.seller.SellerService;
+import com.backend_API.Yarah.file.FileStorageService;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
@@ -18,10 +20,12 @@ public class SellerMVCController {
     
     private final SellerService sellerService;
     private final ListingService listingService;
+    private final FileStorageService fileStorageService;
 
-    public SellerMVCController(SellerService sellerService, ListingService listingService) {
+    public SellerMVCController(SellerService sellerService, ListingService listingService, FileStorageService fileStorageService) {
         this.sellerService = sellerService;
         this.listingService = listingService;
+        this.fileStorageService = fileStorageService;
     }
 
     @GetMapping("/signup")
@@ -120,7 +124,7 @@ public class SellerMVCController {
     @PostMapping("/Listing/new")
     public String createListing(@RequestParam String description,
                                 @RequestParam String condition, 
-                                @RequestParam String listingPhotoPath,
+                                @RequestParam(required = true) MultipartFile[] photos,
                                 @RequestParam BigDecimal size,
                                 @RequestParam BigDecimal weight,
                                 @RequestParam BigDecimal price,
@@ -134,11 +138,14 @@ public class SellerMVCController {
 
         Seller seller = sellerService.getSellerById(sellerId);
         Listing listing = new Listing();
-        
+
         listing.setSeller(seller);
         listing.setDescription(description);
         listing.setCondition(condition);
-        listing.setListingPhotoPath(listingPhotoPath);
+
+        String photoUrls = fileStorageService.storeFiles(photos);
+        listing.setListingPhotoPath(photoUrls);
+
         listing.setSize(size);
         listing.setWeight(weight);
         listing.setPrice(price);
@@ -155,7 +162,7 @@ public class SellerMVCController {
     public String updateListing(@PathVariable Long id,
                                 @RequestParam String description,
                                 @RequestParam String condition, 
-                                @RequestParam String listingPhotoPath,
+                                @RequestParam(required = true) MultipartFile[] photos,
                                 @RequestParam BigDecimal size,
                                 @RequestParam BigDecimal weight,
                                 @RequestParam BigDecimal price,
@@ -170,7 +177,12 @@ public class SellerMVCController {
         Listing listing = listingService.getListingById(id);
         listing.setDescription(description);
         listing.setCondition(condition);
-        listing.setListingPhotoPath(listingPhotoPath);
+
+        if (photos != null && photos.length > 0 && photos[0] != null && photos[0].isEmpty()) {
+            String photoUrls = fileStorageService.storeFiles(photos);
+            listing.setListingPhotoPath(photoUrls);
+        }
+    
         listing.setSize(size);
         listing.setWeight(weight);
         listing.setPrice(price);
