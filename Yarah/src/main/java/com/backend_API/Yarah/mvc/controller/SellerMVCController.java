@@ -47,6 +47,51 @@ public class SellerMVCController {
         }
     }
 
+    @GetMapping("/sellerSelling")
+    public String sellerSelling(HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Seller seller = sellerService.getSellerById(sellerId);
+        model.addAttribute("seller", seller);
+        model.addAttribute("listings", listingService.getListingBySeller(seller));
+        return "seller/sellerSelling";
+    }
+
+    @GetMapping("/sellerBalance")
+    public String sellerBalance(HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Seller seller = sellerService.getSellerById(sellerId);
+        model.addAttribute("seller", seller);
+        return "seller/sellerBalance";
+    }
+
+    @GetMapping("/sellerStats")
+    public String sellerStats(HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Seller seller = sellerService.getSellerById(sellerId);
+        model.addAttribute("seller", seller);
+        return "seller/sellerStats";
+    }
+
+    @GetMapping("/sellerSold")
+    public String sellerSold(HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Seller seller = sellerService.getSellerById(sellerId);
+        model.addAttribute("seller", seller);
+        return "seller/sellerSold";
+    }
+
     @GetMapping("/dashboard")
     public String dashboard(HttpSession session, Model model) {
         Long sellerId = (Long) session.getAttribute("sellerId");
