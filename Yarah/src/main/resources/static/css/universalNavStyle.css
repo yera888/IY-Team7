@@ -23,11 +23,10 @@ html {
 
 @font-face {
     font-family: 'synnovaregular';
-    src: url('/Yarah/src/main/resources/static/css/fonts/synnova/synnova-regular-webfont.woff2') format('woff2'),
-         url('/Yarah/src/main/resources/static/css/fonts/synnova/synnova-regular-webfont.woff') format('woff');
+    src: url('/fonts/synnova/synnova-regular-webfont.woff2') format('woff2'),
+         url('/fonts/synnova/synnova-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 body {
