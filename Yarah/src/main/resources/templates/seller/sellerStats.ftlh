@@ -48,7 +48,7 @@ src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0">
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/sellers/dashboard.ftlh">Seller Overview</a></li>
+                        <li><a href="/sellers/dashboard">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
@@ -59,19 +59,19 @@ src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0">
     <div class="sellerStatAndBarContainer">
         <div class="sellerQuickBarContainer">
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerOverview.html">Overview</a>
+                <a href="/sellers/dashboard">Overview</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/selllerSold.html">Sold</a>
+                <a href="/sellers/sellerSold">Sold</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerSelling.html">Selling</a>
+                <a href="/sellers/sellerSelling">Selling</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerBalance.html">Balance</a>
+                <a href="/sellers/sellerBalance">Balance</a>
             </div>
             <div class="quickBarBox">
-                <a href="/high-fidelity-prototype/customer-prototype/sellerStats.html">Stats</a>
+                <a href="/sellers/sellerStats">Stats</a>
             </div>
         </div>
         <div class="sellerStatOverviewContainer">

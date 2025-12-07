@@ -42,7 +42,7 @@
                     <a href="#">Dropdown</a>
                     <ul>
                         <li><a href="#">Profile</a></li>
-                        <li><a href="/sellers/dashboard.ftlh">Seller Overview</a></li>
+                        <li><a href="/sellers/dashboard">Seller Overview</a></li>
                         <li><a href="#">Link 3</a></li>
                     </ul>
                 </li>
@@ -53,28 +53,28 @@
     <div class="sellerStatAndBarContainer">
         <div class="sellerQuickBarContainer">
             <div class="quickBarBox">
-                <a href="/dashboard.ftlh">Overview</a>
+                <a href="/sellers/dashboard">Overview</a>
             </div>
             <div class="quickBarBox">
-                <a href="/sellerSold.ftlh">Sold</a>
+                <a href="/sellers/sellerSold">Sold</a>
             </div>
             <div class="quickBarBox">
-                <a href="/sellerSelling.ftlh">Selling</a>
+                <a href="/sellers/sellerSelling">Selling</a>
             </div>
             <div class="quickBarBox">
-                <a href="/sellerBalance.ftlh">Balance</a>
+                <a href="/sellers/sellerBalance">Balance</a>
             </div>
             <div class="quickBarBox">
-                <a href="/sellerStats.ftlh">Stats</a>
+                <a href="/sellers/sellerStats">Stats</a>
             </div>
         </div>
         <div class="sellerWeeklyStatOverviewContainer">
             <div class="sellerCreateListing">
                 <div class="boxButton">
-                    <a href="/createListing.ftlh">Create Listing</a>
+                    <a href="/sellers/createListing/New">Create Listing</a>
                 </div>
                 <div class="boxButton">
-                    <a href="/editListing.ftlh">Edit Listing</a>
+                    <a href="/sellers/editListing">Edit Listing</a>
                 </div>
             </div>
             <div class="sellerWeeklyStats">
