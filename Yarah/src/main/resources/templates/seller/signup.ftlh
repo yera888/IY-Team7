@@ -77,8 +77,8 @@
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                             <div class="mb-3">
-                                <label for="shippingAddress" class="form-label">Shipping Address</label>
-                                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="3"
+                                <label for="addresss" class="form-label">Shipping Address</label>
+                                <textarea class="form-control" id="address" name="address" rows="3"
                                     required></textarea>
                             </div>
                             <div class="mb-3">
