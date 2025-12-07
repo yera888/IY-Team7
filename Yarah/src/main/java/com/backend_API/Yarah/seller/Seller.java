@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.backend_API.Yarah.listing.Listing;
 
 @Data
@@ -37,7 +40,7 @@ public class Seller {
 
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("seller")
-    private Listing listing;
+    private List<Listing> listing = new ArrayList<>();
 
     private String phoneNumber;
 
