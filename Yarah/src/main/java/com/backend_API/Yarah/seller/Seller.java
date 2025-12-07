@@ -35,7 +35,7 @@ public class Seller {
     @Column(nullable = false)
     private String address;
 
-    @OneToOne(mappedBy = "seller", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("seller")
     private Listing listing;
 

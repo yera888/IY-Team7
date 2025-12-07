@@ -151,7 +151,7 @@ public class SellerMVCController {
 
     }
 
-    @PostMapping("/Listing/edit")
+    @PostMapping("/Listing/edit/{id}")
     public String updateListing(@PathVariable Long id,
                                 @RequestParam String description,
                                 @RequestParam String condition, 
@@ -167,7 +167,7 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
 
-        Listing listing = new Listing();
+        Listing listing = listingService.getListingById(id);
         listing.setDescription(description);
         listing.setCondition(condition);
         listing.setListingPhotoPath(listingPhotoPath);
@@ -177,7 +177,7 @@ public class SellerMVCController {
         listing.setAvailable(available);
         listing.setSold(sold);
 
-        listingService.createListing(listing);
+        listingService.updateListing(id, listing);
 
         return "redirect:/seller/sellerSelling";
     }
