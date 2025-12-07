@@ -35,15 +35,15 @@ public class Listing {
     @Column(nullable = false)
     private String listingPhotoPath;
 
-    @NotBlank
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @NotNull
+    @Column(nullable = false)
     private BigDecimal size;
 
-    @NotBlank
+    @NotNull
     @Column(nullable = false)
     private BigDecimal weight;
 
-    @NotBlank
+    @NotNull
     @Positive
     @Column(nullable = false)
     private BigDecimal price;
