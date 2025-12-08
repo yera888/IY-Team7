@@ -83,7 +83,30 @@
                 <div class="emptyBox"></div>
             </div>
             <div class="soldRecipets">
-                <p>Customer Purchases will appear here once completed!</p>
+                <#if listings?? && (listings?size > 0)>
+                    <h2 class="listings-header">Sold Items</h2>
+                    <div class="listings-grid">
+                        <#list listings as listing>
+                            <div class="listing-card">
+                                <#if listing.listingPhotoPath?? && listing.listingPhotoPath?has_content>
+                                    <#assign photoUrl = listing.listingPhotoPath?split(",")[0]>
+                                    <img src="${photoUrl}" alt="${listing.description}" class="listing-image">
+                                <#else>
+                                    <img src="/images/placeholder.jpg" alt="No image" class="listing-image">
+                                </#if>
+                                <h3 class="listing-title">${listing.description?truncate(50)}</h3>
+                                <p class="listing-info">Condition: ${listing.condition}</p>
+                                <p class="listing-info">Size: ${listing.size}</p>
+                                <p class="listing-price">$${listing.price}</p>
+                                <p class="sold-badge">✓ SOLD</p>
+                            </div>
+                        </#list>
+                    </div>
+                <#else>
+                    <div class="no-listings-container">
+                        <p class="no-listings-text">Sales will appear here once completed!</p>
+                    </div>
+                </#if>
             </div>
         </div>
     </div>

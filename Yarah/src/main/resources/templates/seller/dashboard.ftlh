@@ -74,7 +74,7 @@
                     <a href="/sellers/createListing/New">Create Listing</a>
                 </div>
                 <div class="boxButton">
-                    <a href="/sellers/editListing">Edit Listing</a>
+                    <a href="/sellers/sellerSelling">Edit a Listing</a>
                 </div>
             </div>
             <div class="sellerWeeklyStats">
@@ -86,52 +86,47 @@
                 </div>
             </div>
             <div class="sellerSellingContainer">
-                <div class="boxSelling">
-                    <p>Selling</p>
-                </div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
-                <div class="boxSelling"></div>
+                <#if sellingListings?? && (sellingListings?size > 0)>
+                    <#list sellingListings as listing>
+                        <div class="dashboard-listing-box">
+                            <#if listing.listingPhotoPath?? && listing.listingPhotoPath?has_content>
+                                <#assign photoUrl = listing.listingPhotoPath?split(",")[0]>
+                                <img src="${photoUrl}" alt="${listing.description}" class="dashboard-listing-image">
+                            <#else>
+                                <img src="/images/placeholder.jpg" alt="No image" class="dashboard-listing-image">
+                            </#if>
+                            <p class="dashboard-listing-text"><strong>${listing.description?truncate(50)}</strong></p>
+                            <p class="dashboard-listing-text">Price: $${listing.price}</p>
+                            <p class="dashboard-listing-text">Size: ${listing.size}</p>
+                            <a href="/sellers/editListing/${listing.listingId}" class="listing-link">Edit</a>
+                        </div>
+                    </#list>
+                <#else>
+                    <div class="dashboard-listing-box">
+                        <p class="dashboard-listing-text">No listings available</p>
+                    </div>
+                </#if>
             </div>
             <div class="sellerSoldContainer">
-                <div class="boxSold">
-                    <p>Sold</p>
-                </div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
-                <div class="boxSold"></div>
+                <#if soldListings?? && (soldListings?size > 0)>
+                    <#list soldListings as listing>
+                        <div class="dashboard-listing-box">
+                            <#if listing.listingPhotoPath?? && listing.listingPhotoPath?has_content>
+                                <#assign photoUrl = listing.listingPhotoPath?split(",")[0]>
+                                <img src="${photoUrl}" alt="${listing.description}" class="dashboard-listing-image">
+                            <#else>
+                                <img src="/images/placeholder.jpg" alt="No image" class="dashboard-listing-image">
+                            </#if>
+                            <p class="dashboard-listing-text"><strong>${listing.description?truncate(50)}</strong></p>
+                            <p class="dashboard-listing-text">Sold for: $${listing.price}</p>
+                            <p class="dashboard-listing-text">Size: ${listing.size}</p>
+                        </div>
+                    </#list>
+                <#else>
+                    <div class="dashboard-listing-box">
+                        <p class="dashboard-listing-text">No sold items</p>
+                    </div>
+                </#if>
             </div>
         </div>
     </div>

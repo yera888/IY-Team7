@@ -72,11 +72,36 @@
         </div>
         </div>
         <div class="newListingContainer">
-            <div class="listingsBox">
-                <p>You haven't listed anything yet!</p>
-            </div>
+            <#if listings?? && (listings?size > 0)>
+                <h2 class="listings-header">Your Active Listings</h2>
+                <div class="listings-grid">
+                    <#list listings as listing>
+                        <div class="listing-card">
+                            <#if listing.listingPhotoPath?? && listing.listingPhotoPath?has_content>
+                                <#assign photoUrl = listing.listingPhotoPath?split(",")[0]>
+                                <img src="${photoUrl}" alt="${listing.description}" class="listing-image">
+                            <#else>
+                                <img src="/images/placeholder.jpg" alt="No image" class="listing-image">
+                            </#if>
+                            <h3 class="listing-title">${listing.description?truncate(50)}</h3>
+                            <p class="listing-info">Condition: ${listing.condition}</p>
+                            <p class="listing-info">Size: ${listing.size}</p>
+                            <p class="listing-price">$${listing.price}</p>
+                            <div class="listing-actions">
+                                <a href="/sellers/editListing/${listing.listingId}" class="listing-link">Edit</a>
+                                <span class="listing-divider">|</span>
+                                <a href="/api/listings/${listing.listingId}" class="listing-link">View</a>
+                            </div>
+                        </div>
+                    </#list>
+                </div>
+            <#else>
+                <div class="no-listings-container">
+                    <p class="no-listings-text">You haven't listed anything yet!</p>
+                </div>
+            </#if>
             <div class="createListing">
-                <a href="/high-fidelity-prototype/customer-prototype/createListing.html">Create a Listing!</a>
+                <a href="/sellers/createListing/New">Create a Listing!</a>
             </div>
         </div>
     </div>

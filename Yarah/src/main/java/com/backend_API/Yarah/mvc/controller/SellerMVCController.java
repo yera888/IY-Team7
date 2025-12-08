@@ -214,7 +214,7 @@ public class SellerMVCController {
         }
 
         model.addAttribute("listing", listing);
-        model.addAttribute("title", "Edit Listing");
+        model.addAttribute("title", "Edit Your Listing");
 
         return "seller/editListing";
     }
