@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/sellers")
@@ -58,8 +60,14 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+        List<Listing> listings = listingService.getListingBySeller(seller).stream()
+            .filter(Listing::getAvailable)
+            .filter(l -> !l.getSold())
+            .collect(Collectors.toList());
+
         model.addAttribute("seller", seller);
-        model.addAttribute("listings", listingService.getListingBySeller(seller));
+        model.addAttribute("listings",listings);
+
         return "seller/sellerSelling";
     }
 
@@ -92,7 +100,13 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+        List<Listing> listings = listingService.getListingBySeller(seller).stream()
+            .filter(Listing::getSold)
+            .collect(Collectors.toList());
+
         model.addAttribute("seller", seller);
+        model.addAttribute("Listings", listings);
+
         return "seller/sellerSold";
     }
 
@@ -103,7 +117,21 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+        List<Listing> allListings = listingService.getListingBySeller(seller);
+
+        List<Listing> sellingListings = allListings.stream()
+            .filter(Listing::getAvailable)
+            .filter(l -> !l.getSold())
+            .collect(Collectors.toList());
+        List<Listing> soldListings = allListings.stream()
+            .filter(Listing::getSold)
+            .collect(Collectors.toList());
+
         model.addAttribute("seller", seller);
+        model.addAttribute("SellingListings", sellingListings);
+        model.addAttribute("soldListings", soldListings);
+        model.addAttribute("totalListings", allListings.size());
+
         return "seller/dashboard";
     }
 
@@ -156,6 +184,39 @@ public class SellerMVCController {
 
         return "redirect:/sellers/sellerSelling";
 
+    }
+
+    @GetMapping("/editListing")
+    public String editListing(HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Seller seller = sellerService.getSellerById(sellerId);
+        List<Listing> listings = listingService.getListingBySeller(seller);
+
+        model.addAttribute("seller", seller);
+        model.addAttribute("listings", listings);
+        
+        return "seller/editListing";
+    }
+
+    @GetMapping("/editListing/{id}")
+    public String editExistingListing(@PathVariable Long id, HttpSession session, Model model) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        Listing listing = listingService.getListingById(id);
+
+        if (!listing.getSeller().getId().equals(sellerId)) {
+            return "redirect:/sellers/sellerSelling?error=unauthorized";
+        }
+
+        model.addAttribute("listing", listing);
+        model.addAttribute("title", "Edit Listing");
+
+        return "seller/editListing";
     }
 
     @PostMapping("/Listing/edit/{id}")
