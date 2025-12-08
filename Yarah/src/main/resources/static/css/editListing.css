@@ -242,15 +242,19 @@ h6 {
 }
 
 .current-photos-grid {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 144px);
+    grid-template-rows: repeat(2, 144px);
+
+    justify-content: center;
 }
 
 .current-photo-thumbnail {
-    width: 100px;
-    height: 100px;
+    width: 124px;
+    height: 124px;
     object-fit: cover;
     border: 1px solid white;
     border-radius: 0.3rem;
+
+    margin: 1rem;
 }

@@ -54,95 +54,118 @@
     <div class="editListingContainer">
         <div class="formContainer">
             <h1>${title}</h1>
-            <form id="newListing" action="/sellers/Listing/new" method="post" enctype="multipart/form-data">
-            <div class="lineBoxTwo"></div>
-                <h2>Photos</h2>
-            <div class="photoBox">
-                <div class="photoPlaceHolder">
-                    <p>add a photo</p>
-                    <input type="file" name="photos" id="photo" accept="image/*">
+            <form id="editListing" action="/sellers/Listing/edit/${listing.listingId}" method="post" enctype="multipart/form-data">
+                
+                <div class="lineBoxTwo"></div>
+                <h2>Current Photos</h2>
+                
+                <#if listing.listingPhotoPath?? && listing.listingPhotoPath != "/images/placeholder.jpg">
+                    <div class="current-photos-section">
+                        <p class="current-photos-label">Current photos (upload new ones to replace):</p>
+                        <div class="current-photos-grid">
+                            <#list listing.listingPhotoPath?split(",") as photoUrl>
+                                <img src="${photoUrl?trim}" alt="Listing photo" class="current-photo-thumbnail">
+                            </#list>
+                        </div>
+                    </div>
+                </#if>
+
+                <h2>Upload New Photos (Optional)</h2>
+                <div class="photoBox">
+                    <div class="photoPlaceHolder">
+                        <p>add a photo</p>
+                        <input type="file" name="photos" id="photo" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>cover photo</p>
+                        <input type="file" name="photos" id="photoOne" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>front</p>
+                        <input type="file" name="photos" id="photoTwo" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>back</p>
+                        <input type="file" name="photos" id="photoThree" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>side</p>
+                        <input type="file" name="photos" id="photoFour" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>label</p>
+                        <input type="file" name="photos" id="photoFive" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>details</p>
+                        <input type="file" name="photos" id="photoSix" accept="image/*">
+                    </div>
+                    <div class="photoPlaceHolder">
+                        <p>flaws</p>
+                        <input type="file" name="photos" id="photoSeven" accept="image/*">
+                    </div>
                 </div>
-                <div class="photoPlaceHolder">
-                    <p>cover photo</p>
-                    <input type="file" name="photos" id="photoOne" accept="image/*">
+                
+                <h3>Description</h3>
+                <div class="descriptionBox">
+                    <input class="descriptionInput" type="text" name="description" id="description" 
+                           value="${listing.description}" required>
                 </div>
-                <div class="photoPlaceHolder">
-                    <p>front</p>
-                    <input type="file" name="photos" id="photoTwo" accept="image/*">
+                
+                <h4>Item Info</h4>
+                <div class="itemBox">
+                    <div class="infoBox">
+                        <label for="size">Size</label>
+                        <input type="number" step="0.01" name="size" id="size" 
+                               value="${listing.size}" required>
+                    </div>
+                    <div class="space"></div>
+                    <div class="infoBox">
+                        <label for="weight">Weight</label>
+                        <input type="number" step="0.01" name="weight" id="weight" 
+                               value="${listing.weight}" required>
+                    </div>
+                    <div class="space"></div>
+                    <div class="infoBox">
+                        <label for="condition">Condition</label>
+                        <input type="text" name="condition" id="condition" 
+                               value="${listing.condition}" required>
+                    </div>
+                    <div class="space"></div>
+                    <div class="infoBox">
+                        <label for="price">Price ($)</label>
+                        <input type="number" step="0.01" name="price" id="price" 
+                               value="${listing.price}" required>
+                    </div>
+                    <div class="space"></div>
+                    <div class="infoBox">
+                        <label for="available">Available</label>
+                        <select name="available" id="available">
+                            <option value="true" <#if listing.available>selected</#if>>Yes</option>
+                            <option value="false" <#if !listing.available>selected</#if>>No</option>
+                        </select>
+                    </div>
+                    <div class="space"></div>
+                    <div class="infoBox">
+                        <label for="sold">Sold</label>
+                        <select name="sold" id="sold">
+                            <option value="false" <#if !listing.sold>selected</#if>>No</option>
+                            <option value="true" <#if listing.sold>selected</#if>>Yes</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="photoPlaceHolder">
-                    <p>back</p>
-                    <input type="file" name="photos" id="photoThree" accept="image/*">
-                </div>
-                <div class="photoPlaceHolder">
-                    <p>side</p>
-                    <input type="file" name="photos" id="photoFour" accept="image/*">
-                </div>
-                <div class="photoPlaceHolder">
-                    <p>label</p>
-                    <input type="file" name="photos" id="photoFive" accept="image/*">
-                </div>
-                <div class="photoPlaceHolder">
-                    <p>details</p>
-                    <input type="file" name="photos" id="photoSix" accept="image/*">
-                </div>
-                <div class="photoPlaceHolder">
-                    <p>flaws</p>
-                    <input type="file" name="photos" id="photoSeven" accept="image/*">
-                </div>
-            </div>
-            <h3>Description</h3>
-            <div class="descriptionBox">
-                <input class="descriptionInput" type="text" name="description" id="description">
-            </div>
-            <h4>Item Info</h4>
-            <div class="itemBox">
-                <div class="infoBox">
-                    <label for="">Brand</label>
-                    <input type="text" name="brand" id="brand">
-                </div>
+                
                 <div class="space"></div>
-                <div class="infoBox">
-                    <label for="">Size</label>
-                    <input type="text" name="size" id="size">
+                <div class="postEditBox">
+                    <div class="postBox">
+                        <button type="submit">Update Listing</button>
+                    </div>
+                    <div class="editBox">
+                        <a href="/sellers/sellerSelling">
+                            <button type="button">Cancel</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="space"></div>
-                <div class="infoBox">
-                    <label for="">Weight</label>
-                    <input type="text" name="weight" id="weight">
-                </div>
-                <div class="space"></div>
-                <div class="infoBox">
-                    <label for="">Condition</label>
-                    <input type="text" name="condition" id="condition">
-                </div>
-                <div class="space"></div>
-                <div class="infoBox">
-                    <label for="">Price</label>
-                    <input type="text" name="price" id="price">
-                </div>
-            </div>
-            <h5>Location</h5>
-            <div class="locationBox">
-                <div class="locationInput">
-                    <label for="">Country</label>
-                    <input type="text" name="" id="">
-                </div>
-                <div class="space"></div>
-                <div class="locationInput">
-                    <label for="">City</label>
-                    <input type="text" name="" id="">
-                </div>
-            </div>
-            <div class="space"></div>
-            <div class="postEditBox">
-                <div class="postBox">
-                    <button type="submit">Post Now</button>
-                </div>
-                <div class="editBox">
-                    <button type="submit">Save and Edit later</button>
-                </div>
-            </div>
             </form>
         </div>
     </div>

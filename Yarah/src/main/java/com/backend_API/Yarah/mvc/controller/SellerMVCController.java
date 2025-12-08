@@ -239,7 +239,7 @@ public class SellerMVCController {
         listing.setDescription(description);
         listing.setCondition(condition);
 
-        if (photos != null && photos.length > 0 && photos[0] != null && photos[0].isEmpty()) {
+        if (photos != null && photos.length > 0 && photos[0] != null && !photos[0].isEmpty()) {
             String photoUrls = fileStorageService.storeFiles(photos);
             listing.setListingPhotoPath(photoUrls);
         }
@@ -252,7 +252,7 @@ public class SellerMVCController {
 
         listingService.updateListing(id, listing);
 
-        return "redirect:/seller/sellerSelling";
+        return "redirect:/sellers/sellerSelling";
     }
 
 }

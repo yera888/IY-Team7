@@ -52,7 +52,7 @@ public class Listing {
     private boolean available = true;
 
     @NotNull
-    private boolean sold = true;
+    private boolean sold = false;
 
     public Listing (Long listingId, String description, String condition, String listingPhotoPath, BigDecimal size, BigDecimal weight, BigDecimal price, boolean available, boolean sold) {
         this.listingId = listingId;
