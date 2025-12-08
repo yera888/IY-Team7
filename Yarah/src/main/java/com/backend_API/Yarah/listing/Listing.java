@@ -32,7 +32,7 @@ public class Listing {
     private String condition;
 
     @NotBlank
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String listingPhotoPath;
 
     @NotNull
