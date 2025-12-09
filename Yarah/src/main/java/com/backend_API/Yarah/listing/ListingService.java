@@ -18,6 +18,10 @@ public class ListingService {
         return listingRepository.save(listing);
     }
 
+    public List<Listing> getAllListingsBySeller(Seller seller) {
+    return listingRepository.findBySeller(seller);
+    }
+
     public Listing updateListing(Long listingId, Listing listingInfo) {
         Listing listing = listingRepository.findById(listingId)
             .orElseThrow(() -> new EntityNotFoundException("Listing not found"));

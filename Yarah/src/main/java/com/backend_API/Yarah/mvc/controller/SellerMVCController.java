@@ -78,7 +78,9 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+
         model.addAttribute("seller", seller);
+
         return "seller/sellerBalance";
     }
 
@@ -89,7 +91,9 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+
         model.addAttribute("seller", seller);
+
         return "seller/sellerStats";
     }
 
@@ -100,12 +104,14 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
-        List<Listing> listings = listingService.getListingBySeller(seller).stream()
+        List<Listing> allListings = listingService.getAllListingsBySeller(seller);
+
+        List<Listing> listings = allListings.stream()
             .filter(Listing::getSold)
             .collect(Collectors.toList());
 
         model.addAttribute("seller", seller);
-        model.addAttribute("Listings", listings);
+        model.addAttribute("listings", listings);
 
         return "seller/sellerSold";
     }
@@ -117,12 +123,13 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
-        List<Listing> allListings = listingService.getListingBySeller(seller);
+        List<Listing> allListings = listingService.getAllListingsBySeller(seller);
 
         List<Listing> sellingListings = allListings.stream()
             .filter(Listing::getAvailable)
             .filter(l -> !l.getSold())
             .collect(Collectors.toList());
+
         List<Listing> soldListings = allListings.stream()
             .filter(Listing::getSold)
             .collect(Collectors.toList());
@@ -271,13 +278,13 @@ public class SellerMVCController {
         if (sellerId == null) {
             return "redirect:/signin";
         }
-        
+
         // Verify the listing belongs to this seller before deleting
         Listing listing = listingService.getListingById(id);
         if (!listing.getSeller().getId().equals(sellerId)) {
             return "redirect:/sellers/sellerSelling?error=unauthorized";
         }
-        
+
         listingService.deleteListing(id);
         return "redirect:/sellers/sellerSelling";
 }
