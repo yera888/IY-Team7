@@ -95,10 +95,7 @@
                             <#else>
                                 <img src="/images/placeholder.jpg" alt="No image" class="dashboard-listing-image">
                             </#if>
-                            <p class="dashboard-listing-text"><strong>${listing.description?truncate(50)}</strong></p>
-                            <p class="dashboard-listing-text">Price: $${listing.price}</p>
-                            <p class="dashboard-listing-text">Size: ${listing.size}</p>
-                            <a href="/sellers/editListing/${listing.listingId}" class="listing-link">Edit</a>
+                            <p class="dashboard-listing-text">Available</p>
                         </div>
                     </#list>
                 <#else>
@@ -117,9 +114,7 @@
                             <#else>
                                 <img src="/images/placeholder.jpg" alt="No image" class="dashboard-listing-image">
                             </#if>
-                            <p class="dashboard-listing-text"><strong>${listing.description?truncate(50)}</strong></p>
-                            <p class="dashboard-listing-text">Sold for: $${listing.price}</p>
-                            <p class="dashboard-listing-text">Size: ${listing.size}</p>
+                            <p class="dashboard-listing-text">Sold</p>
                         </div>
                     </#list>
                 <#else>

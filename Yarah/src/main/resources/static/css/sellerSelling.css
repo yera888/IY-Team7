@@ -54,3 +54,33 @@
 .createListing p:hover {
     text-decoration: underline;
 }
+
+.delete-link {
+    color: #d65c5c;
+    text-decoration: underline;
+    font-family: 'beryliumregular';
+    cursor: pointer;
+}
+
+.delete-link:hover {
+    color: #a02828;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #a02828;
+    text-decoration: underline;
+    font-family: 'beryliumregular';
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.delete-button:hover {
+    color: #a02828;
+}

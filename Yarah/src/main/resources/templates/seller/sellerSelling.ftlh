@@ -74,6 +74,9 @@
         <div class="newListingContainer">
             <#if listings?? && (listings?size > 0)>
                 <h2 class="listings-header">Your Active Listings</h2>
+                <div class="createListing">
+                    <a href="/sellers/createListing/New">Create a Listing!</a>
+                </div>
                 <div class="listings-grid">
                     <#list listings as listing>
                         <div class="listing-card">
@@ -85,12 +88,13 @@
                             </#if>
                             <h3 class="listing-title">${listing.description?truncate(50)}</h3>
                             <p class="listing-info">Condition: ${listing.condition}</p>
-                            <p class="listing-info">Size: ${listing.size}</p>
                             <p class="listing-price">$${listing.price}</p>
                             <div class="listing-actions">
                                 <a href="/sellers/editListing/${listing.listingId}" class="listing-link">Edit</a>
                                 <span class="listing-divider">|</span>
-                                <a href="/api/listings/${listing.listingId}" class="listing-link">View</a>
+                                <form action="/sellers/Listing/delete/${listing.listingId}" method="post" style="display: inline;">
+                                    <button type="submit" class="delete-link" style="background: none; border: none; padding: 0; font: inherit; cursor: pointer;">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </#list>
@@ -100,9 +104,6 @@
                     <p class="no-listings-text">You haven't listed anything yet!</p>
                 </div>
             </#if>
-            <div class="createListing">
-                <a href="/sellers/createListing/New">Create a Listing!</a>
-            </div>
         </div>
     </div>
     <div class="footer">

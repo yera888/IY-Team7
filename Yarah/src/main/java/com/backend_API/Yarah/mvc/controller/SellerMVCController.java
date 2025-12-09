@@ -265,4 +265,20 @@ public class SellerMVCController {
         return "redirect:/sellers/sellerSelling";
     }
 
+    @PostMapping("/Listing/delete/{id}")
+    public String deleteListing(@PathVariable Long id, HttpSession session) {
+        Long sellerId = (Long) session.getAttribute("sellerId");
+        if (sellerId == null) {
+            return "redirect:/signin";
+        }
+        
+        // Verify the listing belongs to this seller before deleting
+        Listing listing = listingService.getListingById(id);
+        if (!listing.getSeller().getId().equals(sellerId)) {
+            return "redirect:/sellers/sellerSelling?error=unauthorized";
+        }
+        
+        listingService.deleteListing(id);
+        return "redirect:/sellers/sellerSelling";
+}
 }

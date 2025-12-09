@@ -28,6 +28,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .sellerStatAndBarContainer {
@@ -174,6 +175,8 @@ a:hover {
     border-bottom: 0;
     width: 236rem;
     height: 20rem;
+
+    align-items: center;
 }
 
 .sellerSellingContainer p {
@@ -207,6 +210,8 @@ a:hover {
     border-bottom: 0;
     width: 236rem;
     height: 20rem;
+
+    align-items: center;
 }
 
 .sellerSoldContainer p {
@@ -383,23 +388,48 @@ a:hover {
 
 .dashboard-listing-box {
     min-width: 180px;
-    margin: 2rem;
+    max-width: 180px;
+    height: 180px;
     background: rgba(255, 255, 255, 0.213);
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-sizing: border-box;
 }
 
 .dashboard-listing-image {
     width: 100%;
-    height: 150px;
+    height: 140px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .dashboard-listing-text {
     color: white;
     font-family: 'beryliumregular';
-    margin: 0.5rem 0;
-    text-align: left;
+    margin: 0;
+    text-align: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.no-listings-container {
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+    font-family: 'beryliumregular';
+}
+
+.no-listings-text {
+    font-size: 2.5rem;
+}
+
+.listings-header {
+    color: white;
+    font-family: 'beryliumregular';
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0;
 }
 
 .listing-divider {
