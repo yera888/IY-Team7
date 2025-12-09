@@ -128,7 +128,7 @@ public class SellerMVCController {
             .collect(Collectors.toList());
 
         model.addAttribute("seller", seller);
-        model.addAttribute("SellingListings", sellingListings);
+        model.addAttribute("sellingListings", sellingListings);
         model.addAttribute("soldListings", soldListings);
         model.addAttribute("totalListings", allListings.size());
 
