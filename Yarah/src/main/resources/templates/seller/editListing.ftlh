@@ -74,35 +74,35 @@
                 <div class="photoBox">
                     <div class="photoPlaceHolder">
                         <p>add a photo</p>
-                        <input type="file" name="photos" id="photo" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>cover photo</p>
-                        <input type="file" name="photos" id="photoOne" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>front</p>
-                        <input type="file" name="photos" id="photoTwo" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>back</p>
-                        <input type="file" name="photos" id="photoThree" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>side</p>
-                        <input type="file" name="photos" id="photoFour" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>label</p>
-                        <input type="file" name="photos" id="photoFive" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>details</p>
-                        <input type="file" name="photos" id="photoSix" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                     <div class="photoPlaceHolder">
                         <p>flaws</p>
-                        <input type="file" name="photos" id="photoSeven" accept="image/*">
+                        <input type="file" name="photos" accept="image/*">
                     </div>
                 </div>
                 

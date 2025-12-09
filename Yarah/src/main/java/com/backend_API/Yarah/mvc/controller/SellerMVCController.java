@@ -152,7 +152,7 @@ public class SellerMVCController {
     @PostMapping("/Listing/new")
     public String createListing(@RequestParam String description,
                                 @RequestParam String condition, 
-                                @RequestParam(required = true) MultipartFile[] photos,
+                                @RequestParam(required = false) MultipartFile[] photos,
                                 @RequestParam BigDecimal size,
                                 @RequestParam BigDecimal weight,
                                 @RequestParam BigDecimal price,
@@ -223,7 +223,7 @@ public class SellerMVCController {
     public String updateListing(@PathVariable Long id,
                                 @RequestParam String description,
                                 @RequestParam String condition, 
-                                @RequestParam(required = true) MultipartFile[] photos,
+                                @RequestParam(required = false) MultipartFile[] photos,
                                 @RequestParam BigDecimal size,
                                 @RequestParam BigDecimal weight,
                                 @RequestParam BigDecimal price,
@@ -239,9 +239,19 @@ public class SellerMVCController {
         listing.setDescription(description);
         listing.setCondition(condition);
 
-        if (photos != null && photos.length > 0 && photos[0] != null && !photos[0].isEmpty()) {
-            String photoUrls = fileStorageService.storeFiles(photos);
-            listing.setListingPhotoPath(photoUrls);
+        if (photos != null && photos.length > 0) {
+            boolean hasValidFiles = false;
+            for (MultipartFile photo : photos) {
+                if (photo != null && !photo.isEmpty()) {
+                    hasValidFiles = true;
+                    break;
+                }
+            }
+            
+            if (hasValidFiles) {
+                String photoUrls = fileStorageService.storeFiles(photos);
+                listing.setListingPhotoPath(photoUrls);
+            }
         }
     
         listing.setSize(size);

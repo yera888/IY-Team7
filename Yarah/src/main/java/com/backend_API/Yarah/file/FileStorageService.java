@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,53 +17,66 @@ import java.util.UUID;
 @Service
 public class FileStorageService {
 
-    @Value("${file.upload-dir:src/main/resources/static/uploads}")
+    @Value("${file.upload-dir:uploads}")
     private String uploadDir;
 
-    public FileStorageService() {
-    }
+    private Path uploadPath;
 
+    @PostConstruct
     public void init() {
         try {
-            Path uploadPath = Paths.get(uploadDir);
+            uploadPath = Paths.get(uploadDir);
             if (!Files.exists(uploadPath)) {
                 Files.createDirectories(uploadPath);
+                System.out.println("Upload directory created at: " + uploadPath.toAbsolutePath());
             }
         } catch (IOException e) {
-            throw new RuntimeException("No upload directory", e);
+            throw new RuntimeException("Could not create upload directory!", e);
         }
     }
 
-    @SuppressWarnings("null")
     public String storeFile(MultipartFile file) {
         try {
-            if (file.isEmpty()) {
-                throw new RuntimeException("Empty File");
+            if (file == null || file.isEmpty()) {
+                throw new RuntimeException("Empty or null file");
             }
 
-            init();
-
             String originalFilename = file.getOriginalFilename();
-            String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
+            if (originalFilename == null) {
+                throw new RuntimeException("File has no name");
+            }
+
+            String fileExtension = "";
+            int dotIndex = originalFilename.lastIndexOf(".");
+            if (dotIndex > 0) {
+                fileExtension = originalFilename.substring(dotIndex);
+            }
+            
             String newFilename = UUID.randomUUID().toString() + fileExtension;
-
-            Path destinationPath = Paths.get(uploadDir).resolve(newFilename);
+            Path destinationPath = uploadPath.resolve(newFilename);
+            
             Files.copy(file.getInputStream(), destinationPath, StandardCopyOption.REPLACE_EXISTING);
-
+            
+            System.out.println("File stored successfully: " + destinationPath.toAbsolutePath());
             return "/uploads/" + newFilename;
+            
         } catch (IOException e) {
-            throw new RuntimeException("Cannot Store File", e);
+            throw new RuntimeException("Cannot store file: " + e.getMessage(), e);
         }
     }
 
     public String storeFiles(MultipartFile[] files) {
         List<String> fileUrls = new ArrayList<>();
         
-        if (files != null) {
+        if (files != null && files.length > 0) {
             for (MultipartFile file : files) {
                 if (file != null && !file.isEmpty()) {
-                    String fileUrl = storeFile(file);
-                    fileUrls.add(fileUrl);
+                    try {
+                        String fileUrl = storeFile(file);
+                        fileUrls.add(fileUrl);
+                    } catch (Exception e) {
+                        System.err.println("Error storing file: " + e.getMessage());
+                    }
                 }
             }
         }
@@ -72,10 +86,10 @@ public class FileStorageService {
 
     public void deleteFile(String filename) {
         try {
-            Path filePath = Paths.get(uploadDir).resolve(filename);
+            Path filePath = uploadPath.resolve(filename);
             Files.deleteIfExists(filePath);
         } catch (IOException e) {
-            throw new RuntimeException("Cannot Delete File", e);
+            throw new RuntimeException("Cannot delete file", e);
         }
     }
 }
