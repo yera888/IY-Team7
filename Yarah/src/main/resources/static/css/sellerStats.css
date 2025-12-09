@@ -13,7 +13,6 @@
 
 .sellerStatOverviewContainer p {
     color: white;
-    text-decoration: underline;
     margin-left: 2rem
 }
 
@@ -28,10 +27,11 @@ img {
     padding: 2rem;
     color: white;
     font-family: 'beryliumregular';
+
+    
 }
 
 .stats-section {
-    background: rgba(255, 255, 255, 0.1);
     border: 1.5px solid white;
     padding: 2rem;
     margin: 2rem 0;
@@ -41,7 +41,6 @@ img {
 .stats-title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    text-decoration: underline;
 }
 
 .stats-grid {
