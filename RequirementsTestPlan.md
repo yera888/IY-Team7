@@ -18,18 +18,17 @@
 2. When a listing is sold the sellers stats are updated to reflect their total revenue weekly and monthly
 
 #### 2. Customer: Create customer profile:
-1. Customer C1 logs in for the first time and creates a profile.
+1. Customer C1 signs in creating an account which creates a profile for C1.
 
-#### 3. Customer:  View and subscribe to services:
+#### 3. Customer:  Customer Sees their profile:
 1. Customer C2 logs in for the first time and creates a new profile.
-2. C2 views available services S1 and S2.
-3. C2 subscribes to S1.
+2. C2 views product listings S1 and S2.
+
 
 #### 4. Customer: Write review
 1. C2 log in and views their subscriptions.
 2. C2 writes a positive review of service S1. C2 exits.
 
-#### 5. Customer: Modify profile
-1. C1 logs in and modifies their profile.
-2. C1 views service S1 and the positive review.
-3. C1 subscribes to S1. C1 exits.
+#### 5. Customer: Modify user profile
+1. C1 logs in and edits their profile.
+3. C1 changes the option to change their location. C1 logs out. 
