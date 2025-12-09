@@ -2,6 +2,7 @@ package com.backend_API.Yarah.config;
 
 import com.backend_API.Yarah.user.User;
 import com.backend_API.Yarah.user.UserRepository;
+import com.backend_API.Yarah.profile.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     private final UserRepository userRepository;
+    private final ProfileRepository profileRepository;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -29,14 +31,20 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> {
-            // use email as username
+            // Use email as username
             User user = userRepository.findByEmailIgnoreCase(username)
                     .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
+            // Get profile to determine role
+            var profile = profileRepository.findByUser(user).orElse(null);
+            String role = (profile != null && profile.getAccountType() != null) 
+                ? profile.getAccountType() 
+                : "CUSTOMER";
+
             return org.springframework.security.core.userdetails.User
                     .withUsername(user.getEmail())
-                    .password(user.getPassword()) // already encoded
-                    .roles("USER")
+                    .password(user.getPassword())
+                    .roles(role)
                     .build();
         };
     }
@@ -44,40 +52,60 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // easier for fetch() calls, you can tighten later
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Public endpoints
                         .requestMatchers(
-                                "/", // home
-                                "/webHomepage.html",
-                                "/products.html",
-                                "/likes.html",
-                                "/profile.html",
-                                "/login.html",
-                                "/signup.html",
-                                "/sellerReg.html",
+                                "/",
+                                "/Client-Side/**",
                                 "/css/**",
                                 "/js/**",
                                 "/images/**",
-                                "/api/signup/**")
-                        .permitAll()
-                        .anyRequest().authenticated())
+                                "/api/signup/**",
+                                "/api/listings",
+                                "/api/listings/{id}",
+                                "/api/reviews/for-profile/**"
+                        ).permitAll()
+                        
+                        // Seller-only endpoints
+                        .requestMatchers(
+                                "/api/listings",
+                                "/api/listings/{id}"
+                        ).hasAnyRole("SELLER", "ADMIN")
+                        
+                        // Authenticated user endpoints
+                        .requestMatchers(
+                                "/api/profiles/me",
+                                "/api/profiles/me/**",
+                                "/api/seller-profiles/me",
+                                "/api/seller-profiles/create",
+                                "/api/chat/**",
+                                "/api/reviews"
+                        ).authenticated()
+                        
+                        // All other requests require authentication
+                        .anyRequest().authenticated()
+                )
                 .formLogin(form -> form
-                        .loginPage("/login.html")
+                        .loginPage("/Client-Side/login.html")
                         .loginProcessingUrl("/login")
-                        .usernameParameter("username") // your login form uses name="username" for email
+                        .usernameParameter("username")
                         .passwordParameter("password")
                         .successHandler((req, res, auth) -> {
-                            // 200 so fetch() can see success
                             res.setStatus(HttpStatus.OK.value());
                         })
                         .failureHandler((req, res, ex) -> {
                             res.setStatus(HttpStatus.UNAUTHORIZED.value());
                             res.getWriter().write("Invalid email or password");
                         })
-                        .permitAll())
+                        .permitAll()
+                )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessHandler((req, res, auth) -> res.setStatus(HttpStatus.OK.value())));
+                        .logoutSuccessHandler((req, res, auth) -> 
+                            res.setStatus(HttpStatus.OK.value())
+                        )
+                );
 
         return http.build();
     }

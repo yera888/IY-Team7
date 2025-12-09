@@ -26,11 +26,12 @@ public class ProfileService {
             existing.setLastName(profile.getLastName());
             existing.setAccountType(profile.getAccountType());
             existing.setLocationEnabled(profile.isLocationEnabled());
+            existing.setLocation(profile.getLocation());
 
             return profileRepository.save(existing);
         } else {
             if (profile.getUser() == null || profile.getUser().getUserId() == null) {
-                throw new IllegalArgumentException("User id must be provided in request body (profile.user.userId).");
+                throw new IllegalArgumentException("User id must be provided.");
             }
 
             User user = userRepository.findById(profile.getUser().getUserId())
@@ -68,12 +69,58 @@ public class ProfileService {
         profileRepository.deleteById(id);
     }
 
-    public void markUserAsSeller(Long userId, boolean locationEnabled) {
+    /**
+     * Update location settings for a profile
+     */
+    public Profile updateLocation(Long profileId, boolean enabled, String location) {
+        Profile profile = profileRepository.findById(profileId)
+                .orElseThrow(() -> new EntityNotFoundException("Profile not found"));
+
+        profile.setLocationEnabled(enabled);
+        if (enabled && location != null) {
+            profile.setLocation(location);
+        } else if (!enabled) {
+            profile.setLocation(null);
+        }
+
+        return profileRepository.save(profile);
+    }
+
+    /**
+     * Upgrade account from CUSTOMER to SELLER
+     */
+    public Profile upgradeToSeller(Long userId) {
         Profile profile = profileRepository.findByUser_UserId(userId)
                 .orElseThrow(() -> new EntityNotFoundException("Profile not found for user"));
 
+        if ("SELLER".equals(profile.getAccountType())) {
+            throw new IllegalStateException("User is already a seller");
+        }
+
         profile.setAccountType("SELLER");
-        profile.setLocationEnabled(locationEnabled);
-        profileRepository.save(profile);
+        return profileRepository.save(profile);
+    }
+
+    /**
+     * Update profile by current user
+     */
+    public Profile updateProfile(Long profileId, String firstName, String lastName, 
+                                  Boolean locationEnabled, String location) {
+        Profile profile = profileRepository.findById(profileId)
+                .orElseThrow(() -> new EntityNotFoundException("Profile not found"));
+
+        if (firstName != null) profile.setFirstName(firstName);
+        if (lastName != null) profile.setLastName(lastName);
+        if (locationEnabled != null) {
+            profile.setLocationEnabled(locationEnabled);
+            if (!locationEnabled) {
+                profile.setLocation(null);
+            }
+        }
+        if (location != null && profile.isLocationEnabled()) {
+            profile.setLocation(location);
+        }
+
+        return profileRepository.save(profile);
     }
 }

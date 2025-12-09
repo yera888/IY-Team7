@@ -39,6 +39,10 @@ public class Profile {
     @Column(name = "location_enabled")
     private boolean locationEnabled = false;
 
+    @Size(max = 255)
+    @Column(name = "location", length = 255)
+    private String location;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

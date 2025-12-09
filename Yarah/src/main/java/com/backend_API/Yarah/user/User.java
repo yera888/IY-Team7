@@ -35,9 +35,8 @@ public class User {
     @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
 
-    // If you still want address here, keep it; otherwise remove & migrate schema.
-    @NotBlank
-    @Column(nullable = false)
+    // Address is now optional
+    @Column(nullable = true)
     private String address;
 
     @JsonIgnore
@@ -46,7 +45,7 @@ public class User {
     private String password;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore // avoid infinite recursion
+    @JsonIgnore
     private Profile profile;
 
     public User(Long userId) {

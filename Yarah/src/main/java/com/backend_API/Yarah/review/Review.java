@@ -1,13 +1,13 @@
 package com.backend_API.Yarah.review;
 
-import com.backend_API.Yarah.user.User;
-import com.backend_API.Yarah.listing.Listing; 
+import com.backend_API.Yarah.profile.Profile;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name = "reviews", uniqueConstraints = {
-        @UniqueConstraint(columnNames = { "user_id", "listing_id" })
+        @UniqueConstraint(columnNames = { "reviewer_profile_id", "reviewed_profile_id" })
 })
 public class Review {
 
@@ -24,13 +24,19 @@ public class Review {
     @Column(name = "review_id")
     private Long reviewId;
 
+    /**
+     * Profile writing the review
+     */
     @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "reviewer_profile_id", nullable = false)
+    private Profile reviewerProfile;
 
+    /**
+     * Profile being reviewed
+     */
     @ManyToOne(optional = false)
-    @JoinColumn(name = "listing_id", nullable = false)
-    private Listing listing;
+    @JoinColumn(name = "reviewed_profile_id", nullable = false)
+    private Profile reviewedProfile;
 
     @Min(1)
     @Max(5)
@@ -41,6 +47,7 @@ public class Review {
     @Column(name = "comment", nullable = false, columnDefinition = "TEXT")
     private String comment;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 }
