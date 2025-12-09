@@ -1,13 +1,21 @@
-# Project-Name Requirements Testing
+# Yarah Requirements Testing
 ## Actors
-- Provider
+- Seller
 - Customer
 
 ### Use Cases
-#### 1. Provider: Create provider profile use case:
-1. Provider P1 logs in for the first time and creates a profile.
-2. P1 creates new services S1 and S2 with values for searchable criteria C1, C2, C3 (C1=V1, C2=V2, C3=V3).  
-P1 exits the app.
+#### 1. Seller: Create seller account, and Update User account use cases:
+1. A new user can start out by signing up as a seller
+2. An existing user signs up to be a seller 
+
+#### 2. Seller: Create Listing, Edit listing, and Delete listing use cases:
+1. A seller can create a listing giving a detailed description of the article of clothing
+2. At any time a seller can edit their existing listings, changing any detail about them
+3. At any time a seller may delete one of their listings that they no longer wish to sell
+
+#### 3. Seller: Seller Balance, and Seller Stats use cases:
+1. When a listing is sold the sellers balance is updated to reflect the sale
+2. When a listing is sold the sellers stats are updated to reflect their total revenue weekly and monthly
 
 #### 2. Customer: Create customer profile:
 1. Customer C1 logs in for the first time and creates a profile.
@@ -25,7 +33,3 @@ P1 exits the app.
 1. C1 logs in and modifies their profile.
 2. C1 views service S1 and the positive review.
 3. C1 subscribes to S1. C1 exits.
-
-#### 6. Provider:  Reply to Review, View Customer Statistics, & Modify Profile use cases
-1. Provider P1 logs in and reads their review and replies with thanks. 
-2. P1 views customer statistics.  P1 modifies his profile. P1 exits.
