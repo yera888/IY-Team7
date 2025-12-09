@@ -75,10 +75,10 @@
                 <h1>Here is your <span class="specific">YARAH</span> Balance!</h1>
                 <div class="cardBox">
                     <p>
-                        US$0.00
+                        US$${balance?string["0.00"]}
                     </p>
                     <div class="line"></div>
-                    <h2>Customer Name</h2>
+                    <h2>${seller.name}</h2>
                 </div>
             </div>
         </div>

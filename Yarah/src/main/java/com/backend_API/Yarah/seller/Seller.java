@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import com.backend_API.Yarah.listing.Listing;
@@ -44,8 +45,17 @@ public class Seller {
 
     private String phoneNumber;
 
+    @Column(nullable = false)
+    private BigDecimal balance = BigDecimal.ZERO;
+
     public Seller(Long id) {
         this.id = id;
     }
 
+    public void addToBalance(BigDecimal amount) {
+        if (this.balance == null) {
+            this.balance = BigDecimal.ZERO;
+        }
+        this.balance = this.balance.add(amount);
+    }
 }

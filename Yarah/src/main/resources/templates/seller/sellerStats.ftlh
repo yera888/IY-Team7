@@ -75,10 +75,35 @@ src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0">
             </div>
         </div>
         <div class="sellerStatOverviewContainer">
-            <p>Weekly Sales</p>
-            <img src="/high-fidelity-prototype/customer-prototype/images/svgBarChart.jpeg" alt="">
-            <p>Customer Views Of Your Listings</p>
-            <img src="/high-fidelity-prototype/customer-prototype/images/svgLineChart.jpeg" alt="">
+            <div class="stats-container">
+                <div class="stats-section">
+                    <h2 class="stats-title">Weekly Sales (Last 7 Days)</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <p class="stat-label">Number of Sales</p>
+                            <p class="stat-value">${weeklyStats.salesCount}</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-label">Revenue</p>
+                            <p class="stat-value">$${weeklyStats.revenue?string["0.00"]}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <h2 class="stats-title">Monthly Sales (Last 30 Days)</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <p class="stat-label">Number of Sales</p>
+                            <p class="stat-value">${monthlyStats.salesCount}</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-label">Revenue</p>
+                            <p class="stat-value">$${monthlyStats.revenue?string["0.00"]}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer">

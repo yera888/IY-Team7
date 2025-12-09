@@ -79,10 +79,10 @@
             </div>
             <div class="sellerWeeklyStats">
                 <div class="boxSales">
-                    <p>Weekly Sales</p>
+                    <p>Weekly Sales: ${weeklyStats.salesCount} items</p>
                 </div>
                 <div class="boxRevenue">
-                    <p>Revenue</p>
+                    <p>Revenue: $${weeklyStats.revenue?string["0.00"]}</p>
                 </div>
             </div>
             <div class="sellerSellingContainer">

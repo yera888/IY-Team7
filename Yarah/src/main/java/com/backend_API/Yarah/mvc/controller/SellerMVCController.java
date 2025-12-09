@@ -5,6 +5,7 @@ import com.backend_API.Yarah.listing.ListingService;
 import com.backend_API.Yarah.seller.Seller;
 import com.backend_API.Yarah.seller.SellerService;
 import com.backend_API.Yarah.file.FileStorageService;
+import com.backend_API.Yarah.sales.SalesService;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
@@ -23,11 +25,14 @@ public class SellerMVCController {
     private final SellerService sellerService;
     private final ListingService listingService;
     private final FileStorageService fileStorageService;
+    private final SalesService salesService;
 
-    public SellerMVCController(SellerService sellerService, ListingService listingService, FileStorageService fileStorageService) {
+    public SellerMVCController(SellerService sellerService, ListingService listingService, 
+                              FileStorageService fileStorageService, SalesService salesService) {
         this.sellerService = sellerService;
         this.listingService = listingService;
         this.fileStorageService = fileStorageService;
+        this.salesService = salesService;
     }
 
     @GetMapping("/signup")
@@ -80,6 +85,7 @@ public class SellerMVCController {
         Seller seller = sellerService.getSellerById(sellerId);
 
         model.addAttribute("seller", seller);
+        model.addAttribute("balance", seller.getBalance());
 
         return "seller/sellerBalance";
     }
@@ -91,8 +97,13 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
         Seller seller = sellerService.getSellerById(sellerId);
+        
+        Map<String, Object> weeklyStats = salesService.getWeeklySalesStats(seller);
+        Map<String, Object> monthlyStats = salesService.getMonthlySalesStats(seller);
 
         model.addAttribute("seller", seller);
+        model.addAttribute("weeklyStats", weeklyStats);
+        model.addAttribute("monthlyStats", monthlyStats);
 
         return "seller/sellerStats";
     }
@@ -133,15 +144,17 @@ public class SellerMVCController {
         List<Listing> soldListings = allListings.stream()
             .filter(Listing::getSold)
             .collect(Collectors.toList());
+        
+        Map<String, Object> weeklyStats = salesService.getWeeklySalesStats(seller);
 
         model.addAttribute("seller", seller);
         model.addAttribute("sellingListings", sellingListings);
         model.addAttribute("soldListings", soldListings);
         model.addAttribute("totalListings", allListings.size());
+        model.addAttribute("weeklyStats", weeklyStats);
 
         return "seller/dashboard";
     }
-
 
     @GetMapping("/createListing/New")
     public String newListingForm(HttpSession session, Model model) {
@@ -190,7 +203,6 @@ public class SellerMVCController {
         listingService.createListing(listing);
 
         return "redirect:/sellers/sellerSelling";
-
     }
 
     @GetMapping("/editListing")
@@ -279,7 +291,6 @@ public class SellerMVCController {
             return "redirect:/signin";
         }
 
-        // Verify the listing belongs to this seller before deleting
         Listing listing = listingService.getListingById(id);
         if (!listing.getSeller().getId().equals(sellerId)) {
             return "redirect:/sellers/sellerSelling?error=unauthorized";
@@ -287,5 +298,5 @@ public class SellerMVCController {
 
         listingService.deleteListing(id);
         return "redirect:/sellers/sellerSelling";
-}
+    }
 }

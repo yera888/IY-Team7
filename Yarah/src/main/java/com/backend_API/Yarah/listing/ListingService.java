@@ -8,23 +8,31 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 import com.backend_API.Yarah.seller.*;
+import com.backend_API.Yarah.sales.SalesService;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class ListingService {
     private final ListingRepository listingRepository;
+    private final SellerRepository sellerRepository;
+    private final SalesService saleService;
     
     public Listing createListing(Listing listing) {
         return listingRepository.save(listing);
     }
 
     public List<Listing> getAllListingsBySeller(Seller seller) {
-    return listingRepository.findBySeller(seller);
+        return listingRepository.findBySeller(seller);
     }
 
     public Listing updateListing(Long listingId, Listing listingInfo) {
         Listing listing = listingRepository.findById(listingId)
             .orElseThrow(() -> new EntityNotFoundException("Listing not found"));
+        
+        // Check if the listing is being marked as sold for the first time
+        boolean wasNotSold = !listing.getSold();
+        boolean isNowSold = listingInfo.getSold();
         
         listing.setDescription(listingInfo.getDescription());
         listing.setCondition(listingInfo.getCondition());
@@ -35,7 +43,21 @@ public class ListingService {
         listing.setAvailable(listingInfo.getAvailable());
         listing.setSold(listingInfo.getSold());
 
-        return listingRepository.save(listing);
+        Listing savedListing = listingRepository.save(listing);
+        
+        // If the listing is marked as sold for the first time, record the sale
+        if (wasNotSold && isNowSold) {
+            Seller seller = listing.getSeller();
+            
+            // Add to seller balance
+            seller.addToBalance(listing.getPrice());
+            sellerRepository.save(seller);
+            
+            // Record the sale
+            saleService.recordSale(seller, listing, listing.getPrice());
+        }
+        
+        return savedListing;
     }
 
     public void deleteListing(Long listingId) {
