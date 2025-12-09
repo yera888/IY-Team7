@@ -32,6 +32,7 @@ public class ReviewService {
             throw new IllegalArgumentException("Rating must be between 1 and 5");
         }
 
+        @SuppressWarnings("null")
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new EntityNotFoundException("Review not found"));
 
@@ -39,6 +40,7 @@ public class ReviewService {
         return reviewRepository.save(review);
     }
 
+    @SuppressWarnings("null")
     public void deleteReview(Long id) {
         if (!reviewRepository.existsById(id)) {
             throw new EntityNotFoundException("Review not found");

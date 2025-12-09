@@ -18,6 +18,7 @@ public class ListingService {
     private final SellerRepository sellerRepository;
     private final SalesService saleService;
     
+    @SuppressWarnings("null")
     public Listing createListing(Listing listing) {
         return listingRepository.save(listing);
     }
@@ -27,6 +28,7 @@ public class ListingService {
     }
 
     public Listing updateListing(Long listingId, Listing listingInfo) {
+        @SuppressWarnings("null")
         Listing listing = listingRepository.findById(listingId)
             .orElseThrow(() -> new EntityNotFoundException("Listing not found"));
         
@@ -60,6 +62,7 @@ public class ListingService {
         return savedListing;
     }
 
+    @SuppressWarnings("null")
     public void deleteListing(Long listingId) {
         if (!listingRepository.existsById(listingId)) {
             throw new EntityNotFoundException("Listing not found");
@@ -67,6 +70,7 @@ public class ListingService {
         listingRepository.deleteById(listingId);
     }
 
+    @SuppressWarnings("null")
     public Listing getListingById(Long listingId) {
         return listingRepository.findById(listingId)
             .orElseThrow(() -> new EntityNotFoundException("Listing not found"));

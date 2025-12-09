@@ -19,6 +19,7 @@ public class SellerService {
     }
 
     public Seller updateSeller(Long id, Seller sellerDetails) {
+        @SuppressWarnings("null")
         Seller seller = sellerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Seller not found"));
 
@@ -33,6 +34,7 @@ public class SellerService {
         return sellerRepository.save(seller);
     }
 
+    @SuppressWarnings("null")
     public Seller getSellerById(Long id) {
         return sellerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Seller not found"));

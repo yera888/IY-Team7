@@ -19,6 +19,7 @@ public class UserService {
     }
 
     public User updateUser(Long id, User userDetails) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User not found"));
 
@@ -30,11 +31,13 @@ public class UserService {
         return userRepository.save(user);
     }
     
+    @SuppressWarnings("null")
     public User getUserById(Long id) {
         return userRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
+    @SuppressWarnings("null")
     public void deleteUser(Long id) {
         if (!userRepository.existsById(id)) {
             throw new EntityNotFoundException("User not found");

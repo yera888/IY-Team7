@@ -113,8 +113,14 @@
                 </div>
                 <div class="space"></div>
                 <div class="infoBox">
-                    <label for="">Condition</label>
-                    <input type="text" name="condition" id="condition">
+                    <label for="condition">Condition</label>
+                    <select name="condition" id="condition" required>
+                        <option value="">Select Condition</option>
+                        <option value="Like New">Like New</option>
+                        <option value="Lightly Used">Lightly Used</option>
+                        <option value="Used">Used</option>
+                        <option value="Roughly Used">Roughly Used</option>
+                    </select>
                 </div>
                 <div class="space"></div>
                 <div class="infoBox">

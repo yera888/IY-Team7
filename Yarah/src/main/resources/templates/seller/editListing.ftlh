@@ -128,8 +128,12 @@
                     <div class="space"></div>
                     <div class="infoBox">
                         <label for="condition">Condition</label>
-                        <input type="text" name="condition" id="condition" 
-                               value="${listing.condition}" required>
+                        <select name="condition" id="condition" required>
+                            <option value="Like New" <#if listing.condition == "Like New">selected</#if>>Like New</option>
+                            <option value="Lightly Used" <#if listing.condition == "Lightly Used">selected</#if>>Lightly Used</option>
+                            <option value="Used" <#if listing.condition == "Used">selected</#if>>Used</option>
+                            <option value="Roughly Used" <#if listing.condition == "Roughly Used">selected</#if>>Roughly Used</option>
+                        </select>
                     </div>
                     <div class="space"></div>
                     <div class="infoBox">
