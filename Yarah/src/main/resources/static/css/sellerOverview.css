@@ -380,7 +380,6 @@ a:hover {
     font-family: 'beryliumregular';
 }
 
-/* Dashboard Specific Styles */
 .dashboard-listings-container {
     width: 100%;
     overflow-x: auto;
@@ -395,6 +394,8 @@ a:hover {
     flex-direction: column;
     gap: 0.5rem;
     box-sizing: border-box;
+
+    margin-left: 2rem;
 }
 
 .dashboard-listing-image {
