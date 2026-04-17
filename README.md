@@ -4,7 +4,7 @@ Team 7 repository for CSC340 (OneDrive)
 Team: IY Team 7
 
 ## Title
-> E-COM 
+> Yarah
 
 ## Team Members
 > Yeraldine Tamayo \
